@@ -1,0 +1,349 @@
+{
+  "task": "强化学习 python 代码 github",
+  "clues_count": 16,
+  "subtasks_count": 3,
+  "successful_searches": 3,
+  "success_rate": 1.0,
+  "execution_time": 82.58,
+  "is_completed": true,
+  "timestamp": "2026-01-15 16:23:39",
+  "subtasks_summary": [
+    {
+      "query": "强化学习 python 代码 site:github.com",
+      "status": "success",
+      "tier": "tier1",
+      "clue_count": 0
+    },
+    {
+      "query": "强化学习 python 实现教程",
+      "status": "success",
+      "tier": "tier2",
+      "clue_count": 10
+    },
+    {
+      "query": "强化学习 python 代码示例",
+      "status": "success",
+      "tier": "tier3",
+      "clue_count": 10
+    }
+  ],
+  "all_clues": [
+    {
+      "url": "https://github.com/fighting41love/funNLP",
+      "title": "fighting41love/funNLP",
+      "snippet": "中英文敏感词、语言检测、中外手机/电话归属地/运营商查询、名字推断性别、手机号抽取、身份证抽取、邮箱抽取、中日文人名库、中文缩写库、拆字词典、词汇情感值、停用词、反动词表、暴恐词表、繁简体转换、英文模拟中文发音、汪峰歌词生成器、职业名称词库、同义词库、反义词库、否定词库、汽车品牌词库、汽车零件词库、连续英文切割、各种中文词向量、公司名字大全、古诗词库、IT词库、财经词库、成语词库、地名词库、历史名人词库、诗词词库、医学词库、饮食词库、法律词库、汽车词库、动物词库、中文聊天语料、中文谣言数据、百度中文问答数据集、句子相似度匹配算法集合、bert资源、文本生成&摘要相关工具、cocoNLP信息抽取",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 10.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 1,
+        "engine": "github"
+      },
+      "timestamp": "2026-01-15T16:22:50.796761"
+    },
+    {
+      "url": "https://github.com/Dujltqzv/Some-Many-Books",
+      "title": "Dujltqzv/Some-Many-Books",
+      "snippet": "个人收藏书籍列表　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 10.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 2,
+        "engine": "github"
+      },
+      "timestamp": "2026-01-15T16:22:50.796785"
+    },
+    {
+      "url": "https://github.com/analoganddigital/sekiro_tensorflow",
+      "title": "analoganddigital/sekiro_tensorflow: This is the code of using machine learning to play Sekiro - GitHub",
+      "snippet": "我非常高兴地告诉大家，我最近又开发出了用DQN强化学习打只狼的代码。 众所周知，监督学习只能学习到我们所提供的数据集的相关技能，但是利用强化学习，我们将看到一个完全不 ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 10.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 3,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:22:50.796798"
+    },
+    {
+      "url": "https://github.com/topics/pytorch-nlp?o=desc",
+      "title": "pytorch-nlp · GitHub Topics",
+      "snippet": "PyTorch 官方中文教程包含 60 分钟快速入门教程，强化教程，计算机视觉，自然语言处理，生成对抗网络，强化学习。欢迎 Star，Fork！ pytorch pytorch-tutorial pytorch ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 10.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 4,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:22:50.796808"
+    },
+    {
+      "url": "https://github.com/volcengine/verl",
+      "title": "volcengine/verl: verl: Volcano Engine Reinforcement Learning for LLMs - GitHub",
+      "snippet": "veMLP x verl ：玩转强化学习训练 · 使用 verl 进行 GRPO 分布式强化学习训练最佳实践 · HybridFlow verl 原文浅析 · 最高提升 20 倍吞吐量！豆包大模型团队发布全新 RLHF ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 9.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 5,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:22:50.796818"
+    },
+    {
+      "url": "https://github.com/LIANGQINGYUAN/RL-Notebook/blob/master/tf-agent/1_dqn_tutorial_cn.ipynb",
+      "title": "RL-Notebook/tf-agent/1_dqn_tutorial_cn.ipynb at master - GitHub",
+      "snippet": "data.Dataset 的管道实现，它将数据提供给代理。 重播缓冲区的每一行只存储一个观察步骤。但是，由于DQN代理需要当前和下一个观察值来计算损失，因此数据集管道将为批 ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 9.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 6,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:22:50.796828"
+    },
+    {
+      "url": "https://github.com/kaixindelele/RHER",
+      "title": "The Code for Paper “Relay Hindsight Experience Replay: Self-Guided Continual Reinforcement Learning for Sequential Object Manipulation Tasks with Sparse Rewards” - GitHub",
+      "snippet": "该方法结合基于模型的方案，利用前瞻性虚拟交互，提供虚拟目标用于扩增数据，可以进一步提高了在经典任务FetchPush和FetchPickAndPlace中的样本效率。 从论文中可以看出，作者 ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 8.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 7,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:22:50.796838"
+    },
+    {
+      "url": "https://github.com/cirosantilli/china-dictatorship",
+      "title": "cirosantilli/china-dictatorship",
+      "snippet": "反中共政治宣传库。Anti Chinese government propaganda. 住在中国真名用户的网友请别给星星，不然你要被警察请喝茶。常见问答集，新闻集和饭店和音乐建议。卐习万岁卐。冠状病毒审查郝海东新疆改造中心六四事件法轮功 996.ICU709大抓捕巴拿马文件邓家贵低端人口西藏骚乱。Friends who live in China and have real name on account, please don't star this repo, or else the police might pay you a visit.  Home to the mega-FAQ,",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 7.798,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 8,
+        "engine": "github"
+      },
+      "timestamp": "2026-01-15T16:22:50.796846"
+    },
+    {
+      "url": "https://github.com/ZhiningLiu1998/awesome-machine-learning-resources",
+      "title": "ZhiningLiu1998/awesome-machine-learning-resources - GitHub",
+      "snippet": "| 机器学习/深度学习/人工智能一切主题 (学习范式/任务/应用/模型/道德/交叉学科/数据集/框架/教程) 的资源列表汇总。 Topics. machine-learning awesome neural ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 6.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 9,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:22:50.796855"
+    },
+    {
+      "url": "https://github.com/WangRongsheng/awesome-LLM-resources",
+      "title": "WangRongsheng/awesome-LLM-resources: 全世界最好的LLM资料总结（多模态生成、Agent、辅助编程、AI审稿 - GitHub",
+      "snippet": "数据 Data. Note. 此处命名为 数据 ，但这里并没有提供具体数据集，而是提供了处理获取大规模数据的方法. AotoLabel: Label, clean and enrich text datasets with LLMs.",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 6.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 10,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:22:50.796865"
+    },
+    {
+      "url": "https://github.com/open-gap/Deep-Learning-with-Python?search=1",
+      "title": "at master · open-gap/Deep-Learning-with-Python - GitHub",
+      "snippet": "... 《Python 深度学习》(Deep Learning with Python )一书的代码 ... 1 IMDB 数据集51. 3.4.2 准备数据52. 3.4.3 构建网络52. 3.4.4 验证你的方法56. 3.4.5 ...",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 10.0,
+      "query": "强化学习 python 代码示例",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 3,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:23:39.570014"
+    },
+    {
+      "url": "https://github.com/rafa2000/Top-TensorFlow",
+      "title": "rafa2000/Top-TensorFlow: Top Vision Github Projects",
+      "snippet": "Data science Python notebooks: Deep learning (TensorFlow, Theano, Caffe ... tensorflow实战练习，包括强化学习、推荐系统、nlp等, Python, 4160, 2370. 95 ...",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 10.0,
+      "query": "强化学习 python 代码示例",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 4,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:23:39.570019"
+    },
+    {
+      "url": "https://github.com/Tongzhenguo/Python-Project",
+      "title": "Tongzhenguo/Python-Project: 我的简单python 程序 - GitHub",
+      "snippet": "dataminingcontest:数据城堡数据竞赛题. dataset:示例数据集. datastructure:数据结构定义. learntoNLP:NLP/NLU相关学习. learntomatplotlib:matplotlib学习.",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 9.0,
+      "query": "强化学习 python 代码示例",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 5,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:23:39.570024"
+    },
+    {
+      "url": "https://github.com/rexrex9",
+      "title": "rexrex9 - GitHub",
+      "snippet": "真-极简强化学习(基于torch的强化学习框架pfrl). Python 99 40 · nlp_torchtext ... 用来处理freebase, kb4rec, movielens它们数据集的项目. Python 40 16.",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 9.0,
+      "query": "强化学习 python 代码示例",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 6,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:23:39.570028"
+    },
+    {
+      "url": "https://github.com/aymericdamien/TopDeepLearning",
+      "title": "aymericdamien/TopDeepLearning: A list of popular github projects related to deep learning",
+      "snippet": "Jul 9, 2020 · 告别枯燥，致力于打造 Python 富有体系且实用的小例子、小案例。 ... Debugging, monitoring and visualization for Python Machine Learning and Data ...",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 7.0,
+      "query": "强化学习 python 代码示例",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 9,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:23:39.570042"
+    },
+    {
+      "url": "https://github.com/alibaba/Pai-Megatron-Patch/blob/main/examples/moonlight/README_verl.md",
+      "title": "Pai-Megatron-Patch/examples/moonlight/README_verl.md at main - GitHub",
+      "snippet": "数据&模型准备. 以MATH-lighteval数据集作为示例. # 下载数据集 mkdir -p /mnt/data/datasets modelscope download --dataset AI-ModelScope/MATH-lighteval --local_dir ...",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 6.0,
+      "query": "强化学习 python 代码示例",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 10,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:23:39.570046"
+    }
+  ],
+  "sample_clues": [
+    {
+      "url": "https://github.com/fighting41love/funNLP",
+      "title": "fighting41love/funNLP",
+      "snippet": "中英文敏感词、语言检测、中外手机/电话归属地/运营商查询、名字推断性别、手机号抽取、身份证抽取、邮箱抽取、中日文人名库、中文缩写库、拆字词典、词汇情感值、停用词、反动词表、暴恐词表、繁简体转换、英文模拟中文发音、汪峰歌词生成器、职业名称词库、同义词库、反义词库、否定词库、汽车品牌词库、汽车零件词库、连续英文切割、各种中文词向量、公司名字大全、古诗词库、IT词库、财经词库、成语词库、地名词库、历史名人词库、诗词词库、医学词库、饮食词库、法律词库、汽车词库、动物词库、中文聊天语料、中文谣言数据、百度中文问答数据集、句子相似度匹配算法集合、bert资源、文本生成&摘要相关工具、cocoNLP信息抽取",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 10.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 1,
+        "engine": "github"
+      },
+      "timestamp": "2026-01-15T16:22:50.796761"
+    },
+    {
+      "url": "https://github.com/Dujltqzv/Some-Many-Books",
+      "title": "Dujltqzv/Some-Many-Books",
+      "snippet": "个人收藏书籍列表　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 10.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 2,
+        "engine": "github"
+      },
+      "timestamp": "2026-01-15T16:22:50.796785"
+    },
+    {
+      "url": "https://github.com/analoganddigital/sekiro_tensorflow",
+      "title": "analoganddigital/sekiro_tensorflow: This is the code of using machine learning to play Sekiro - GitHub",
+      "snippet": "我非常高兴地告诉大家，我最近又开发出了用DQN强化学习打只狼的代码。 众所周知，监督学习只能学习到我们所提供的数据集的相关技能，但是利用强化学习，我们将看到一个完全不 ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 10.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 3,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:22:50.796798"
+    },
+    {
+      "url": "https://github.com/topics/pytorch-nlp?o=desc",
+      "title": "pytorch-nlp · GitHub Topics",
+      "snippet": "PyTorch 官方中文教程包含 60 分钟快速入门教程，强化教程，计算机视觉，自然语言处理，生成对抗网络，强化学习。欢迎 Star，Fork！ pytorch pytorch-tutorial pytorch ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 10.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 4,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:22:50.796808"
+    },
+    {
+      "url": "https://github.com/volcengine/verl",
+      "title": "volcengine/verl: verl: Volcano Engine Reinforcement Learning for LLMs - GitHub",
+      "snippet": "veMLP x verl ：玩转强化学习训练 · 使用 verl 进行 GRPO 分布式强化学习训练最佳实践 · HybridFlow verl 原文浅析 · 最高提升 20 倍吞吐量！豆包大模型团队发布全新 RLHF ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 9.0,
+      "query": "强化学习 python 实现教程",
+      "found_at_step": 2,
+      "metadata": {
+        "position": 5,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:22:50.796818"
+    }
+  ]
+}

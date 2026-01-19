@@ -1,0 +1,10 @@
+{
+  "task": "蛋白质变异",
+  "error": "ScoutAgent._prepare_final_result() takes 2 positional arguments but 4 were given",
+  "execution_time": 28.9,
+  "is_completed": false,
+  "timestamp": "2026-01-15 11:36:48",
+  "clues_count": 0,
+  "subtasks_count": 0,
+  "success_rate": 0
+}

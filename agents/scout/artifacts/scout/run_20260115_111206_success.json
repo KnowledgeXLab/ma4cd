@@ -1,0 +1,73 @@
+{
+  "task": "蛋白质变异",
+  "clues_count": 40,
+  "subtasks_count": 4,
+  "successful_searches": 4,
+  "success_rate": 1.0,
+  "execution_time": 53.06,
+  "is_completed": true,
+  "timestamp": "2026-01-15 11:12:06",
+  "subtasks_summary": [
+    {
+      "query": "蛋白质变异的基本概念",
+      "status": "success",
+      "tier": "tier1",
+      "clue_count": 10
+    },
+    {
+      "query": "蛋白质变异对疾病的影响",
+      "status": "success",
+      "tier": "tier2",
+      "clue_count": 10
+    },
+    {
+      "query": "蛋白质变异的检测方法",
+      "status": "success",
+      "tier": "tier2",
+      "clue_count": 10
+    },
+    {
+      "query": "蛋白质变异的最新研究进展",
+      "status": "success",
+      "tier": "tier3",
+      "clue_count": 10
+    }
+  ],
+  "sample_clues": [
+    {
+      "title": "标题",
+      "url": "https://www.nsfc.gov.cn/csc/20345/20348/pdf/2023/202304-537-551.pdf",
+      "source": "web_search",
+      "relevance": 7.0,
+      "query": "蛋白质变异的基本概念"
+    },
+    {
+      "title": "Microsoft Word - 7 Diversity.docx",
+      "url": "http://raolab.org/upfile/file/20200612164717_714163_19131.pdf",
+      "source": "web_search",
+      "relevance": 7.0,
+      "query": "蛋白质变异的基本概念"
+    },
+    {
+      "title": "Full text of \"Q 生物科学\"",
+      "url": "https://archive.org/stream/Q_swkx/Q5++生物化学/生物化学_djvu.txt",
+      "source": "web_search",
+      "relevance": 7.0,
+      "query": "蛋白质变异的基本概念"
+    },
+    {
+      "title": "微波煮食与食物安全",
+      "url": "https://www.cfs.gov.hk/sc_chi/programme/programme_rafs/programme_rafs_ft_01_02_mcfs.html",
+      "source": "web_search",
+      "relevance": 7.0,
+      "query": "蛋白质变异的基本概念"
+    },
+    {
+      "title": "FMD | 精彩荐读：靶向去泛素化酶OTUB1通过调控PDGFRβ...",
+      "url": "https://paper.sciencenet.cn/htmlpaper/2026/1/2026113153055911145305.shtm",
+      "source": "web_search",
+      "relevance": 5.0,
+      "query": "蛋白质变异的基本概念"
+    }
+  ]
+}

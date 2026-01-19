@@ -1,0 +1,67 @@
+{
+  "task": "挖掘固态电池公开数据集",
+  "clues_count": 30,
+  "subtasks_count": 3,
+  "successful_searches": 3,
+  "success_rate": 1.0,
+  "execution_time": 20.96,
+  "is_completed": true,
+  "timestamp": "2026-01-14 19:15:39",
+  "subtasks_summary": [
+    {
+      "query": "固态电池 数据集",
+      "status": "success",
+      "tier": "tier1",
+      "clue_count": 10
+    },
+    {
+      "query": "固态电池 研究数据集 2023",
+      "status": "success",
+      "tier": "tier2",
+      "clue_count": 10
+    },
+    {
+      "query": "固态电池 数据集 论文",
+      "status": "success",
+      "tier": "tier3",
+      "clue_count": 10
+    }
+  ],
+  "sample_clues": [
+    {
+      "title": "锂电池常用公开数据集链接_锂电池公开数据集-CSDN博客",
+      "url": "https://blog.csdn.net/weixin_70125213/article/details/146189600",
+      "source": "web_search",
+      "relevance": 9.0,
+      "query": "固态电池 数据集"
+    },
+    {
+      "title": "固态电池器件数据集|固态电池数据集|电池技术数据集",
+      "url": "https://www.selectdataset.com/dataset/4fc439cf0e06bd17879954f46f1687a2",
+      "source": "web_search",
+      "relevance": 9.0,
+      "query": "固态电池 数据集"
+    },
+    {
+      "title": "精品数据分享 | 锂电池数据集（七）同济大学电池数据集_电池正负极片数据集-csdn博客",
+      "url": "https://blog.csdn.net/2402_85668383/article/details/155826747",
+      "source": "web_search",
+      "relevance": 9.0,
+      "query": "固态电池 数据集"
+    },
+    {
+      "title": "通过机器学习对固态电池进行数据驱动的多尺度模拟,Computational Materials Science - X-MOL",
+      "url": "https://www.x-mol.com/paper/1650615318594990080/t?adv",
+      "source": "web_search",
+      "relevance": 9.0,
+      "query": "固态电池 数据集"
+    },
+    {
+      "title": "固态电池性能指标数据集",
+      "url": "https://www.selectdataset.com/dataset/6a6a278d935ee225545bc8f8db280eff",
+      "source": "web_search",
+      "relevance": 9.0,
+      "query": "固态电池 数据集"
+    }
+  ]
+}

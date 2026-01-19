@@ -1,0 +1,67 @@
+{
+  "task": "蛋白质变异",
+  "clues_count": 27,
+  "subtasks_count": 3,
+  "successful_searches": 3,
+  "success_rate": 1.0,
+  "execution_time": 49.79,
+  "is_completed": true,
+  "timestamp": "2026-01-15 11:23:36",
+  "subtasks_summary": [
+    {
+      "query": "蛋白质变异 基本概念",
+      "status": "success",
+      "tier": "tier1",
+      "clue_count": 10
+    },
+    {
+      "query": "蛋白质变异 对生物体的影响",
+      "status": "success",
+      "tier": "tier2",
+      "clue_count": 10
+    },
+    {
+      "query": "蛋白质变异 研究论文",
+      "status": "success",
+      "tier": "tier3",
+      "clue_count": 7
+    }
+  ],
+  "sample_clues": [
+    {
+      "title": "蛋白质变异是什么意思 | 百度健康·医学科普",
+      "url": "https://health.baidu.com/m/detail/ar_6584203309296496338",
+      "source": "web_search",
+      "relevance": 8.0,
+      "query": "蛋白质变异 基本概念"
+    },
+    {
+      "title": "蛋白异构体 - 维基百科，自由的百科全书",
+      "url": "https://zh.wikipedia.org/wiki/蛋白异构体",
+      "source": "web_search",
+      "relevance": 7.0,
+      "query": "蛋白质变异 基本概念"
+    },
+    {
+      "title": "变性 (生物化学) - 维基百科，自由的百科全书",
+      "url": "https://zh.wikipedia.org/zh-hans/变性_(生物化学)",
+      "source": "web_search",
+      "relevance": 7.0,
+      "query": "蛋白质变异 基本概念"
+    },
+    {
+      "title": "Full text of \"Q 生物科学\"",
+      "url": "https://archive.org/stream/Q_swkx/Q81++生物工程学/Q811++仿生学/生物信息学概论(王哲)_djvu.txt",
+      "source": "web_search",
+      "relevance": 7.0,
+      "query": "蛋白质变异 基本概念"
+    },
+    {
+      "title": "FMD | 精彩荐读：靶向去泛素化酶OTUB1通过调控PDGFRβ...",
+      "url": "https://paper.sciencenet.cn/htmlpaper/2026/1/2026113153055911145305.shtm",
+      "source": "web_search",
+      "relevance": 5.0,
+      "query": "蛋白质变异 基本概念"
+    }
+  ]
+}

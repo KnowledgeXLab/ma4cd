@@ -1,0 +1,437 @@
+{
+  "metadata": {
+    "start_url": "https://docs.github.com",
+    "crawl_time": "2026-01-16T17:55:39.249140",
+    "pages_crawled": 30,
+    "resources_found": {
+      "pages": 30,
+      "files": 33,
+      "apis": 0,
+      "feeds": 0,
+      "sitemaps": 0,
+      "assets": 0
+    }
+  },
+  "resources": {
+    "pages": [
+      {
+        "url": "https://docs.github.com",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:00.543627"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:02.296598"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/guides/using-graphql-clients",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:03.302542"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:05.636768"
+      },
+      {
+        "url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:06.281491"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/guides/managing-enterprise-accounts",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:08.439968"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/overview/public-schema",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:10.029668"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/guides",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:10.742254"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/reference/enums",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:13.602340"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/overview",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:14.128150"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/guides/migrating-from-rest-to-graphql",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:14.712014"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/overview/breaking-changes",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:16.459802"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/reference/input-objects",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:19.092471"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/guides/using-global-node-ids",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:19.885374"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/guides/using-pagination-in-the-graphql-api",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:20.455002"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/reference/objects",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:24.048223"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/reference/scalars",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:25.072479"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/overview/rate-limits-and-query-limits-for-the-graphql-api",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:27.027549"
+      },
+      {
+        "url": "https://docs.github.com/contributing",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:27.444782"
+      },
+      {
+        "url": "https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:27.972346"
+      },
+      {
+        "url": "https://docs.github.com/zh/graphql",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:28.635490"
+      },
+      {
+        "url": "https://docs.github.com/en",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:28.993054"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/reference/queries",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:29.912252"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/reference/mutations",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:31.744149"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/guides/forming-calls-with-graphql",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:32.676667"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/guides/migrating-graphql-global-node-ids",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:33.348783"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/reference/unions",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:34.004539"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/overview/about-the-graphql-api",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:35.589048"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/guides/introduction-to-graphql",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:37.592660"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/reference",
+        "title": "提取失败",
+        "timestamp": "2026-01-16T17:55:39.214674"
+      }
+    ],
+    "files": [
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/reference/scalars#int",
+        "filename": "scalars#int",
+        "extension": "download",
+        "type": "其他文件",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/en/graphql/reference/scalars#uri",
+        "filename": "scalars#uri",
+        "extension": "download",
+        "type": "其他文件",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/images/help/site-policy/github-privacy-statement(07.22.20)(fr).pdf",
+        "filename": "github-privacy-statement(07.22.20)(fr).pdf",
+        "extension": "pdf",
+        "type": "文档",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      },
+      {
+        "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+        "filename": "favicon.png",
+        "extension": "png",
+        "type": "图片",
+        "size": "未知"
+      }
+    ],
+    "apis": [],
+    "feeds": [],
+    "sitemaps": [],
+    "assets": []
+  },
+  "summary": {
+    "file_type_distribution": {
+      "图片": 30,
+      "其他文件": 2,
+      "文档": 1
+    },
+    "top_file_types": [
+      [
+        "图片",
+        30
+      ],
+      [
+        "其他文件",
+        2
+      ],
+      [
+        "文档",
+        1
+      ]
+    ],
+    "large_files": [
+      {
+        "filename": "github-privacy-statement(07.22.20)(fr).pdf",
+        "url": "https://docs.github.com/assets/images/help/site-policy/github-privacy-statement(07.22.20)(fr).pdf",
+        "type": "文档"
+      }
+    ],
+    "api_endpoints": [],
+    "content_feeds": [],
+    "sitemaps": []
+  }
+}

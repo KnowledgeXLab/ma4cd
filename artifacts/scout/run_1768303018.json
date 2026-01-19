@@ -1,0 +1,16 @@
+{
+  "task": "挖掘固态电池数据",
+  "clues_count": 0,
+  "clues": [],
+  "subtasks_count": 8,
+  "success_rate": 0.0,
+  "need_more_search": true,
+  "missing_aspects": [
+    "不同的国家和地区",
+    "多种数据形态（如文本、图像、音频）",
+    "特定领域（如科技、医疗、金融等）",
+    "不同的来源类型（如社交媒体、新闻网站、研究论文等）",
+    "多种语言"
+  ],
+  "execution_time": 162.31524085998535
+}

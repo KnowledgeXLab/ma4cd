@@ -1,0 +1,745 @@
+{
+  "metadata": {
+    "start_url": "https://docs.github.com",
+    "crawl_time": "2026-01-16T18:03:35.104331",
+    "pages_crawled": 30,
+    "successful_pages": 30,
+    "failed_pages": 0,
+    "resources_found": 47,
+    "resource_types": {
+      "图片": 21,
+      "数据": 1,
+      "文本": 1,
+      "其他文件": 23,
+      "文档": 1
+    }
+  },
+  "pages": [
+    {
+      "url": "https://docs.github.com",
+      "title": "GitHub Docs",
+      "status": "success",
+      "content_length": 80661,
+      "visited_at": "2026-01-16T18:02:36.981120",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets",
+      "title": "How-tos for securing secrets - GitHub Docs",
+      "status": "success",
+      "content_length": 462802,
+      "visited_at": "2026-01-16T18:02:39.446647",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/code-security/reference/code-scanning/codeql/codeql-cli-manual/pack-resolve-dependencies",
+      "title": "pack resolve-dependencies - GitHub Docs",
+      "status": "success",
+      "content_length": 495840,
+      "visited_at": "2026-01-16T18:02:41.711786",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/code-security/how-tos/scan-code-for-vulnerabilities/scan-from-vs-code/exploring-the-structure-of-your-source-code",
+      "title": "Exploring the structure of your source code - GitHub Docs",
+      "status": "success",
+      "content_length": 470142,
+      "visited_at": "2026-01-16T18:02:44.858334",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/code-security/concepts/secret-security/about-secret-scanning-for-partners",
+      "title": "About secret scanning for partners - GitHub Docs",
+      "status": "success",
+      "content_length": 473022,
+      "visited_at": "2026-01-16T18:02:47.443820",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/code-security/reference/code-scanning/codeql/codeql-cli-manual/database-analyze",
+      "title": "database analyze - GitHub Docs",
+      "status": "success",
+      "content_length": 556260,
+      "visited_at": "2026-01-16T18:02:49.331531",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/work-with-leak-prevention",
+      "title": "How-tos for push protection - GitHub Docs",
+      "status": "success",
+      "content_length": 458655,
+      "visited_at": "2026-01-16T18:02:50.996634",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/code-security/how-tos/scan-code-for-vulnerabilities/troubleshooting/troubleshooting-analysis-errors/out-of-disk-or-memory",
+      "title": "Error: \"Out of disk\" or Error: \"Out of memory\" - GitHub Docs",
+      "status": "success",
+      "content_length": 469684,
+      "visited_at": "2026-01-16T18:02:52.644496",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/code-security/concepts/security-at-scale/auditing-security-alerts",
+      "title": "Auditing security alerts - GitHub Docs",
+      "status": "success",
+      "content_length": 483648,
+      "visited_at": "2026-01-16T18:02:55.760605",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/code-security/reference/code-scanning/codeql/codeql-cli/extractor-options",
+      "title": "Extractor options - GitHub Docs",
+      "status": "success",
+      "content_length": 498556,
+      "visited_at": "2026-01-16T18:02:57.544422",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/code-security/reference/code-scanning/codeql/codeql-cli-manual/resolve-qlpacks",
+      "title": "resolve qlpacks - GitHub Docs",
+      "status": "success",
+      "content_length": 490047,
+      "visited_at": "2026-01-16T18:03:00.783868",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-secret-scanning-alerts/resolving-alerts",
+      "title": "Resolving alerts from secret scanning - GitHub Docs",
+      "status": "success",
+      "content_length": 488929,
+      "visited_at": "2026-01-16T18:03:02.494421",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories",
+      "title": "Creating and managing repositories - GitHub Docs",
+      "status": "success",
+      "content_length": 166595,
+      "visited_at": "2026-01-16T18:03:04.068668",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template",
+      "title": "Creating a repository from a template - GitHub Docs",
+      "status": "success",
+      "content_length": 181248,
+      "visited_at": "2026-01-16T18:03:05.299475",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches",
+      "title": "Managing the automatic deletion of branches - GitHub Docs",
+      "status": "success",
+      "content_length": 176997,
+      "visited_at": "2026-01-16T18:03:06.774292",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository",
+      "title": "Adding a file to a repository - GitHub Docs",
+      "status": "success",
+      "content_length": 193931,
+      "visited_at": "2026-01-16T18:03:07.998454",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/repositories/working-with-files/managing-large-files/removing-files-from-git-large-file-storage",
+      "title": "Removing files from Git Large File Storage - GitHub Docs",
+      "status": "success",
+      "content_length": 179356,
+      "visited_at": "2026-01-16T18:03:09.639678",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/repositories/releasing-projects-on-github/automation-for-release-forms-with-query-parameters",
+      "title": "Automation for release forms with query parameters - GitHub Docs",
+      "status": "success",
+      "content_length": 173389,
+      "visited_at": "2026-01-16T18:03:11.532913",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files",
+      "title": "Working with non-code files - GitHub Docs",
+      "status": "success",
+      "content_length": 238744,
+      "visited_at": "2026-01-16T18:03:12.767219",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/repositories",
+      "title": "Repositories documentation - GitHub Docs",
+      "status": "success",
+      "content_length": 243504,
+      "visited_at": "2026-01-16T18:03:13.991950",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository",
+      "title": "Inviting collaborators to a personal repository - GitHub Docs",
+      "status": "success",
+      "content_length": 182308,
+      "visited_at": "2026-01-16T18:03:15.215932",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement",
+      "title": "GitHub General Privacy Statement - GitHub Docs",
+      "status": "success",
+      "content_length": 221309,
+      "visited_at": "2026-01-16T18:03:16.492290",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/contributing",
+      "title": "Contributing to GitHub Docs documentation - GitHub Docs",
+      "status": "success",
+      "content_length": 122174,
+      "visited_at": "2026-01-16T18:03:17.759683",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/tutorials/customization-library",
+      "title": "Customization library - GitHub Docs",
+      "status": "success",
+      "content_length": 396614,
+      "visited_at": "2026-01-16T18:03:18.997891",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/how-tos/set-up/set-up-a-dedicated-enterprise-for-copilot-business",
+      "title": "Setting up a dedicated enterprise for GitHub Copilot Business - GitHub Docs",
+      "status": "success",
+      "content_length": 363714,
+      "visited_at": "2026-01-16T18:03:21.980198",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/concepts/completions/text-completion",
+      "title": "GitHub Copilot text completion - GitHub Docs",
+      "status": "success",
+      "content_length": 344373,
+      "visited_at": "2026-01-16T18:03:24.878881",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/reference/mcp-allowlist-enforcement",
+      "title": "MCP allowlist enforcement - GitHub Docs",
+      "status": "success",
+      "content_length": 344572,
+      "visited_at": "2026-01-16T18:03:27.743486",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/tutorials/copilot-chat-cookbook/refactor-code/refactor-for-optimization",
+      "title": "Refactoring for performance optimization - GitHub Docs",
+      "status": "success",
+      "content_length": 369023,
+      "visited_at": "2026-01-16T18:03:30.759647",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/how-tos/chat-with-copilot/chat-in-mobile",
+      "title": "Asking GitHub Copilot questions in GitHub Mobile - GitHub Docs",
+      "status": "success",
+      "content_length": 413293,
+      "visited_at": "2026-01-16T18:03:31.993502",
+      "error": ""
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/integrate-coding-agent-with-teams",
+      "title": "Integrating Copilot coding agent with Teams - GitHub Docs",
+      "status": "success",
+      "content_length": 357681,
+      "visited_at": "2026-01-16T18:03:35.071839",
+      "error": ""
+    }
+  ],
+  "resources": [
+    {
+      "url": "https://docs.github.com/assets/cb-345/images/site/favicon.png",
+      "filename": "favicon.png",
+      "extension": "png",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:29.239138"
+    },
+    {
+      "url": "https://docs.github.com/manifest.json",
+      "filename": "manifest.json",
+      "extension": "json",
+      "file_type": "数据",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:29.240890"
+    },
+    {
+      "url": "https://docs.github.com/robots.txt",
+      "filename": "robots.txt",
+      "extension": "txt",
+      "file_type": "文本",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:29.293035"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/css/c972efba2f580ba8.css",
+      "filename": "c972efba2f580ba8.css",
+      "extension": "css",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.681323"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/css/8d38c9e0f803b0fa.css",
+      "filename": "8d38c9e0f803b0fa.css",
+      "extension": "css",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.681549"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/css/5c0fe2e48e661691.css",
+      "filename": "5c0fe2e48e661691.css",
+      "extension": "css",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.681744"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/webpack-8cdb04efb40b20bf.js",
+      "filename": "webpack-8cdb04efb40b20bf.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.681923"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/framework-a676db37b243fc59.js",
+      "filename": "framework-a676db37b243fc59.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.682107"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/main-394332d53039f14a.js",
+      "filename": "main-394332d53039f14a.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.682275"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/pages/_app-1be79f1871e30a2f.js",
+      "filename": "_app-1be79f1871e30a2f.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.682445"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/2911edaa-cad977915af7279e.js",
+      "filename": "2911edaa-cad977915af7279e.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.682626"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/3576-5b46ee669d37c0c7.js",
+      "filename": "3576-5b46ee669d37c0c7.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.682803"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/356-f7a3aea71a0849ee.js",
+      "filename": "356-f7a3aea71a0849ee.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.682969"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/7859-e7550a73147c6884.js",
+      "filename": "7859-e7550a73147c6884.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.683146"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/9736-cf075495f91b121c.js",
+      "filename": "9736-cf075495f91b121c.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.683314"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/pages/index-fbfb78e2f1bbbfb8.js",
+      "filename": "index-fbfb78e2f1bbbfb8.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.683475"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/8cvlkjscnLreyavjIFhjy/_buildManifest.js",
+      "filename": "_buildManifest.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.683621"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/8cvlkjscnLreyavjIFhjy/_ssgManifest.js",
+      "filename": "_ssgManifest.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.683767"
+    },
+    {
+      "url": "https://docs.github.com/assets/images/banner-images/hero-home.webp",
+      "filename": "hero-home.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:35.826054"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/2857-311d7761dc6243bb.js",
+      "filename": "2857-311d7761dc6243bb.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:36.001550"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/2826-4eb5b4d12f17c621.js",
+      "filename": "2826-4eb5b4d12f17c621.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:36.001748"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/9296-419275fec1f57047.js",
+      "filename": "9296-419275fec1f57047.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:36.001904"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/7791-60bc4ead79817be2.js",
+      "filename": "7791-60bc4ead79817be2.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:36.002057"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/pages/%5BversionId%5D/%5BproductId%5D-a38601d03111822b.js",
+      "filename": "%5BproductId%5D-a38601d03111822b.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:36.002184"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/chunks/pages/%5BversionId%5D/%5BproductId%5D/%5B...restPage%5D-4ba5242920387769.js",
+      "filename": "%5B...restPage%5D-4ba5242920387769.js",
+      "extension": "js",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com",
+      "discovered_at": "2026-01-16T18:02:36.002314"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/css/9850d51f53a72573.css",
+      "filename": "9850d51f53a72573.css",
+      "extension": "css",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets",
+      "discovered_at": "2026-01-16T18:02:38.292055"
+    },
+    {
+      "url": "https://docs.github.com/_next/static/css/73a529ce89e0432b.css",
+      "filename": "73a529ce89e0432b.css",
+      "extension": "css",
+      "file_type": "其他文件",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets",
+      "discovered_at": "2026-01-16T18:02:38.292258"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-17801/mw-1440/images/help/repository/security-tab.webp",
+      "filename": "security-tab.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-secret-scanning-alerts/resolving-alerts",
+      "discovered_at": "2026-01-16T18:03:01.333327"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-322123/mw-1440/images/help/repository/secret-scanning-dismiss-alert-web-ui-link-partner-documentation.webp",
+      "filename": "secret-scanning-dismiss-alert-web-ui-link-partner-documentation.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-secret-scanning-alerts/resolving-alerts",
+      "discovered_at": "2026-01-16T18:03:01.333469"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-76823/mw-1440/images/help/repository/use-this-template-button.webp",
+      "filename": "use-this-template-button.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template",
+      "discovered_at": "2026-01-16T18:03:04.186471"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-80933/mw-1440/images/help/repository/create-repository-owner.webp",
+      "filename": "create-repository-owner.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template",
+      "discovered_at": "2026-01-16T18:03:04.186626"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-89988/mw-1440/images/help/repository/create-repository-name.webp",
+      "filename": "create-repository-name.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template",
+      "discovered_at": "2026-01-16T18:03:04.186770"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-28260/mw-1440/images/help/repository/repo-actions-settings.webp",
+      "filename": "repo-actions-settings.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches",
+      "discovered_at": "2026-01-16T18:03:05.657764"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-54037/mw-1440/images/help/repository/upload-files-button.webp",
+      "filename": "upload-files-button.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository",
+      "discovered_at": "2026-01-16T18:03:06.877657"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-27122/mw-1440/images/help/repository/choose-commit-branch.webp",
+      "filename": "choose-commit-branch.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository",
+      "discovered_at": "2026-01-16T18:03:06.877951"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-352008/mw-1440/images/help/repository/images-2up-view.webp",
+      "filename": "images-2up-view.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files",
+      "discovered_at": "2026-01-16T18:03:11.645836"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-676784/mw-1440/images/help/repository/images-swipe-view.webp",
+      "filename": "images-swipe-view.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files",
+      "discovered_at": "2026-01-16T18:03:11.645934"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-28294/mw-1440/images/help/repository/rendered-csv.webp",
+      "filename": "rendered-csv.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files",
+      "discovered_at": "2026-01-16T18:03:11.646022"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-39868/mw-1440/images/help/repository/csv-render-error.webp",
+      "filename": "csv-render-error.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files",
+      "discovered_at": "2026-01-16T18:03:11.646107"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-35937/mw-1440/images/help/repository/rendered-prose-diff.webp",
+      "filename": "rendered-prose-diff.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files",
+      "discovered_at": "2026-01-16T18:03:11.646228"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-29563/mw-1440/images/help/repository/rendered-prose-changes.webp",
+      "filename": "rendered-prose-changes.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files",
+      "discovered_at": "2026-01-16T18:03:11.646323"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-11496/mw-1440/images/help/writing/display-markdown-as-source-global-nav-update.webp",
+      "filename": "display-markdown-as-source-global-nav-update.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files",
+      "discovered_at": "2026-01-16T18:03:11.646408"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-36583/mw-1440/images/help/repository/prose-diff-attributes.webp",
+      "filename": "prose-diff-attributes.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files",
+      "discovered_at": "2026-01-16T18:03:11.646489"
+    },
+    {
+      "url": "https://docs.github.com/assets/cb-19340/mw-1440/images/help/repository/mermaid-file-diagram.webp",
+      "filename": "mermaid-file-diagram.webp",
+      "extension": "webp",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files",
+      "discovered_at": "2026-01-16T18:03:11.646571"
+    },
+    {
+      "url": "https://docs.github.com/assets/images/help/site-policy/github-privacy-statement(07.22.20)(fr).pdf",
+      "filename": "github-privacy-statement(07.22.20)(fr).pdf",
+      "extension": "pdf",
+      "file_type": "文档",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement",
+      "discovered_at": "2026-01-16T18:03:16.481009"
+    },
+    {
+      "url": "https://docs.github.com/assets/images/copilot-landing/generating_unit_tests.png",
+      "filename": "generating_unit_tests.png",
+      "extension": "png",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/copilot/tutorials/customization-library",
+      "discovered_at": "2026-01-16T18:03:17.861647"
+    },
+    {
+      "url": "https://docs.github.com/assets/images/copilot-landing/improving_code_readability.png",
+      "filename": "improving_code_readability.png",
+      "extension": "png",
+      "file_type": "图片",
+      "size": "未知",
+      "source_page": "https://docs.github.com/en/copilot/tutorials/customization-library",
+      "discovered_at": "2026-01-16T18:03:17.861738"
+    }
+  ],
+  "summary": {
+    "top_resource_types": [
+      [
+        "其他文件",
+        23
+      ],
+      [
+        "图片",
+        21
+      ],
+      [
+        "数据",
+        1
+      ],
+      [
+        "文本",
+        1
+      ],
+      [
+        "文档",
+        1
+      ]
+    ],
+    "unique_files": 47,
+    "largest_categories": [
+      {
+        "category": "代码文件",
+        "count": 23
+      },
+      {
+        "category": "图片",
+        "count": 21
+      },
+      {
+        "category": "数据文件",
+        "count": 1
+      },
+      {
+        "category": "其他文件",
+        "count": 1
+      },
+      {
+        "category": "办公文档",
+        "count": 1
+      }
+    ],
+    "interesting_finds": [
+      {
+        "type": "数据文件",
+        "filename": "manifest.json",
+        "url": "https://docs.github.com/manifest.json",
+        "file_type": "数据"
+      },
+      {
+        "type": "大文件",
+        "filename": "github-privacy-statement(07.22.20)(fr).pdf",
+        "url": "https://docs.github.com/assets/images/help/site-policy/github-privacy-statement(07.22.20)(fr).pdf",
+        "file_type": "文档"
+      }
+    ]
+  }
+}

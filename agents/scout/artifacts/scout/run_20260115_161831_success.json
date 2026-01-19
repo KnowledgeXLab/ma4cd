@@ -1,0 +1,715 @@
+{
+  "task": "强化学习",
+  "clues_count": 40,
+  "subtasks_count": 4,
+  "successful_searches": 4,
+  "success_rate": 1.0,
+  "execution_time": 45.19,
+  "is_completed": true,
+  "timestamp": "2026-01-15 16:18:31",
+  "subtasks_summary": [
+    {
+      "query": "强化学习的基本概念",
+      "status": "success",
+      "tier": "tier1",
+      "clue_count": 10
+    },
+    {
+      "query": "强化学习的主要算法",
+      "status": "success",
+      "tier": "tier2",
+      "clue_count": 10
+    },
+    {
+      "query": "强化学习在实际应用中的案例",
+      "status": "success",
+      "tier": "tier2",
+      "clue_count": 10
+    },
+    {
+      "query": "强化学习的最新研究进展",
+      "status": "success",
+      "tier": "tier3",
+      "clue_count": 10
+    }
+  ],
+  "all_clues": [
+    {
+      "url": "https://zglg.work/reinforcement-learning-zero/1",
+      "title": "1 强化学习导论：强化学习的基本概念和历史",
+      "snippet": "🔗1 强化学习导论： 强化学习的基本概念 和历史 · 🔗2 强化学习导论之强化学习与监督学习的区别 · 🔗3 强化学习导论之强化学习的应用领域 · 🔗4 Markov决策过程（MDP）的定义与基本要素 · 🔗5 Markov决策过程之状态、动作和奖励 ·",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 9.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 1,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658742"
+    },
+    {
+      "url": "http://zuzhiang.cn/2019/09/28/RL/",
+      "title": "强化学习（0）：强化学习的基本概念与马尔科夫决策过程 | zuzhiang",
+      "snippet": "October 19, 2019 - 学习和规划是序列决策中的两个基本问题。 · 探索（Exploration）：寻找关于环境的更多信息； · 开发（Exploitation）：根据已知信息去最大化奖励； · 开发就是在自己之前吃过的饭店里选一家最好吃的，而探索就是在没有吃过的饭店里不断尝试。 · ",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 8.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 2,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658755"
+    },
+    {
+      "url": "https://zh.wikipedia.org/zh-cn/强化学习",
+      "title": "强化学习 - 维基百科，自由的百科全书",
+      "snippet": "强化学习 （英语： Reinforcement learning，简称 RL）是 机器学习 中的一个领域，强调如何基于 环境 而行动，以取得最大化的预期利益 [1]。强化学习是除了 监督学习 和 非监督学习 之外的第三种基本的机器学习方法。与监督学习不同的是，强化学习不需要带标签的输入输出对，同时也",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 7.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 3,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658762"
+    },
+    {
+      "url": "https://zh.wikipedia.org/zh-hans/强化学习",
+      "title": "强化学习 - 维基百科，自由的百科全书",
+      "snippet": "2 weeks ago - 强化学习（英语：Reinforcement learning，简称RL）是机器学习中的一个领域，强调如何基于环境而行动，以取得最大化的预期利益。强化学习是除了监督学习和非监督学习之外的第三种基本的机器学习方法。与监督学习不同的是，强化学习不需要带标签的输入输出对，同时也无",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 7.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 4,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658768"
+    },
+    {
+      "url": "https://blog.csdn.net/weixin_45560318/article/details/112981006",
+      "title": "强化学习 (一)：简介——什么是强化学习？-csdn博客",
+      "snippet": "文章浏览阅读10w+次，点赞330次，收藏969次。本文详细介绍了强化学习的基本概念，包括其在无监督环境下与监督学习的区别，以及四个核心要素（策略、奖励、价值和环境）的作用。探讨了强化学习的架构、问题分类和探索利用策略，并强调了其在智能决策过程中的关键地位。",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 6.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 5,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658773"
+    },
+    {
+      "url": "https://cloud.tencent.com.cn/developer/article/2616940",
+      "title": "强化学习 | 优化策略 Roadmap 介绍-腾讯云开发者社区-腾讯云",
+      "snippet": "强化学习 （Reinforcement Learning）是大模型后训练的重要一环，其主要是研究 智能体 和环境的交互问题，其中涉及多种强化学习策略和优化方案。本节围绕强化学习，梳理主要策略的方式和它们之间的演进路线，主要包括： 1）强化学习的基本概念，组成和与环境的交互过程。 2）和监督学习sft",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 6.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 6,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658778"
+    },
+    {
+      "url": "https://baike.baidu.com/item/强化学习/2971075",
+      "title": "强化学习（学习方法）_百度百科",
+      "snippet": "强化学习（Reinforcement Learning，RL）是一种 机器学习 方法，强化学习的基础框架是 马尔可夫决策 过程，它允许 智能体 （Agent）能够在与环境（Environment）的交互中通过试错来学习最优策略。智能体在环境中执行行动（Action），并根据行动的结果接收反馈，即奖励",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 5.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 7,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658782"
+    },
+    {
+      "url": "https://blog.csdn.net/Ever_____/article/details/133362585",
+      "title": "【强化学习】强化学习基础教程：基本概念、强化学习的定义，要素，方法分类 以及 Rollout、episode回合、transition转移、trajectory轨迹的概念-CSDN博客",
+      "snippet": "December 24, 2024 - 强化学习起源于动物心理学的相关原理，模仿人类和动物学习的试错机制，是一种通过与环境交互，学习状态到行为的映射关系，以获得最大积累期望回报的方法。强化学习包含环境，动作和奖励三部分，其本质是 agent 通过与环境的交互，使得其作出的action所得到的决策得到",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 5.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 8,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658786"
+    },
+    {
+      "url": "https://zhuanlan.zhihu.com/p/1994176701576550088",
+      "title": "强化学习发展与学习指南 - 知乎 - 知乎专栏",
+      "snippet": "强化学习发展与学习指南目录强化学习基本定义核心概念主要算法分类重要论文领域发展历程著名学者及其贡献学习路线推荐资源强化学习基本定义 强化学习（Reinforcement Learning, RL） 是机器学习的一个重要分支，研…",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 5.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 9,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658790"
+    },
+    {
+      "url": "https://www.cnblogs.com/xfuture/p/18435171",
+      "title": "强化学习详解：理论基础与核心算法解析 - techlead_krischang - 博客园",
+      "snippet": "本文详细介绍了强化学习的基础知识和基本算法，包括动态规划、蒙特卡洛方法和时序差分学习，解析了其核心概念、算法步骤及实现细节。 关注作者，复旦AI博士，分享AI领域全维度知识与研究。拥有10+年AI领域研究经验、复旦机器人智能实验室成员，国家级大学生赛事评审专家，发表多篇SCI核心 ...",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 5.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 10,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658795"
+    },
+    {
+      "url": "https://doaj.org/article/15022e3d1bbc403490c34128a48e1b99",
+      "title": "Research progress of causal inference in reinforcement learning framework(强化学习框架中因果推断研究进展) - DOAJ",
+      "snippet": "... 强化学习方法论中重要的学术进展。基于此，首先，梳理了深度强化学习算法的背景和发展，介绍了基于值函数、基于策略梯度和基于模型的3类强化学习算法框架，以及与因果 ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 7.0,
+      "query": "强化学习的主要算法",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 1,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:09.663367"
+    },
+    {
+      "url": "https://spinningup.readthedocs.io/zh_CN/latest/spinningup/spinningup.html",
+      "title": "深度强化学习研究者的资料— Spinning Up 文档",
+      "snippet": "Oct 13, 2018 · 对于强化学习中的主要概念和术语很了解知道什么是状态、行动、轨迹、策略 ... 注重理解编写有效的强化学习代码需要对于算法有明确的理解，同时注重细节。",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习的主要算法",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 2,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:09.663391"
+    },
+    {
+      "url": "https://www.findshine.com/blog/reinforcement-learning.html",
+      "title": "深度强化学习系列笔记：强化学习| FindShine",
+      "snippet": "Mar 5, 2017 · 这是第二篇文章，主要梳理强化学习的理论框架和深度强化学习的常用方法 ... Bandit:一种简单而强大的在线学习算法 · 谈谈A/B测试 · Science上发表的 ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习的主要算法",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 3,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:09.663398"
+    },
+    {
+      "url": "https://www.guyuehome.com/wap/detail?id=1825474132716630018",
+      "title": "【强化学习】揭开PPO2算法的神秘面纱（二）",
+      "snippet": "主程序，先从trainer那里获取默认的超参数，然后设定跟训练集测试集相关的参数。ppo算法的是随机连续决策算法，根据openAI官方推荐，其模型输出的方差不是一个函数并且与环境 ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习的主要算法",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 4,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:09.663404"
+    },
+    {
+      "url": "https://github.com/scutan90/DeepLearning-500-questions/issues/250",
+      "title": "强化学习中对重要算法的描述？ · Issue #250 · scutan90/DeepLearning-500-questions",
+      "snippet": "Mar 25, 2019 · 描述主要算法如何工作？例如对DQN， DDQN， Dueling Network， DDPG， D4PG，PPO等的解释.",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习的主要算法",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 5,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:09.663410"
+    },
+    {
+      "url": "https://cloud.tencent.com/developer/article/1162702",
+      "title": "Coach 包含carla Env的强化学习框架-腾讯云开发者社区-腾讯云",
+      "snippet": "Coach 包含carla Env的强化学习框架 · Coach框架中的Carla环境有哪些特点？ · 如何在Coach框架中使用Carla进行强化学习训练？ · Coach框架支持哪些类型的强化学习算法与Carla ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习的主要算法",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 6,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:09.663421"
+    },
+    {
+      "url": "https://csruiliu.github.io/blog/page/6/",
+      "title": "A Libertine of Computer Science – - Rui Liu",
+      "snippet": "Feb 15, 2021 · Reinforcement Learning发展至今日已无法进行非常明确而清晰的分类，很多新方法也是博采众长。不过，为了更好的了解强化学习算法主要学习什么以及怎么学习 ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习的主要算法",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 7,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:09.663426"
+    },
+    {
+      "url": "https://link.springer.com/article/10.1631/FITEE.2300668",
+      "title": "Domain adaptation in reinforcement learning: a comprehensive and systematic study | Frontiers of Information Technology & Electronic Engineering",
+      "snippet": "Dec 27, 2024 · 本文对强化学习中的领域适应进行了全面系统的研究. 首先介绍强化学习中领域适应的基本概念和基本表述, 然后对其中现有的领域适应方法进行综述. 主要目的是 ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习的主要算法",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 8,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:09.663430"
+    },
+    {
+      "url": "https://www.guyuehome.com/wap/detail?id=1825484557701185537",
+      "title": "强化学习（八）价值函数的近似表示与Deep Q-Learning - 古月居",
+      "snippet": "Deep Q-Learning算法的基本思路来源于Q-Learning。但是和Q-Learning不同的地方在于，它的Q值的计算不是直接通过状态值s和动作来计算，而是通过上面讲到的Q网络来计算的。",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习的主要算法",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 9,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:09.663435"
+    },
+    {
+      "url": "https://chatpaper.com/zh-CN/paper/225981",
+      "title": "Provably Safe Reinforcement Learning using Entropy Regularizer - ChatPaper",
+      "snippet": "1 day ago · 为此，我们首先提出了一种基于不确定性下的乐观原则（OFU）的算法。在此基础上，我们提出了我们的主要算法，该算法利用熵正则化。我们研究了这两种算法的有限 ...",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习的主要算法",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 10,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:09.663441"
+    },
+    {
+      "url": "https://milvus.org.cn/ai-quick-reference/what-are-realworld-examples-of-rl-successes",
+      "title": "强化学习（RL）成功的真实案例有哪些？ - AI快速参考",
+      "snippet": "强化 学习 （RL）成功的真实 案例 有哪些？ 强化 学习 （RL）在一些 实际 应用 中 取得了显著的成功，尤其是在游戏、机器人和推荐系统领域。 这些 例子 突出了强化 学习 通过试错学习复杂策略的能力，通常超越了人类的表现或优化了动态环境中的流程。",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 7.0,
+      "query": "强化学习在实际应用中的案例",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 1,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:21.095195"
+    },
+    {
+      "url": "https://zhuanlan.zhihu.com/p/288013558",
+      "title": "强化学习的10个现实应用 - 知乎专栏",
+      "snippet": "在 强化 学习 中，我们使用奖惩机制来训练agents。 Agent做出正确的行为会得到奖励，做出错误的行为就会受到惩罚。 这样的话，agent就会试着将自己的错误行为最少化，将自己的正确行为最多化。 本文我们将会聚焦于 强化 学习 在 现实生活 中 的实际 应用 。",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习在实际应用中的案例",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 2,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:21.095203"
+    },
+    {
+      "url": "https://blog.csdn.net/l35633/article/details/149470799",
+      "title": "【强化学习解惑】强化学习可以应用在哪些领域？有哪些经典的应用案例...",
+      "snippet": "不同于监督 学习 需要标注数据，RL通过试错机制，根据获得 的 奖励（Reward）信号调整行为。 AlphaGo战胜人类棋手、自动驾驶决策、机器人控制等突破性进展，彰显了RL 在 序列决策问题 中的 强大潜力。",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习在实际应用中的案例",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 3,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:21.095208"
+    },
+    {
+      "url": "https://developer.baidu.com/article/detail.html?id=4091167",
+      "title": "强化学习应用全景：从理论到实践的深度解析-百度开发者中心",
+      "snippet": "Oct 13, 2025 · 本文系统梳理 强化 学习 在机器人控制、游戏AI、自动驾驶、工业优化及医疗决策等领域的核心应用，结合技术原理与 典型案例 ，解析算法选型、环境建模及训练优化策略，为开发者提供从理论到工程落地的全流程指导。",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习在实际应用中的案例",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 4,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:21.095212"
+    },
+    {
+      "url": "https://www.betteryeah.com/blog/reinforcement-learning-complete-guide-2025-enterpris",
+      "title": "2025年强化学习完全指南：算法原理、应用案例与企业级实战",
+      "snippet": "Sep 29, 2025 · 成功的 强化 学习 项目实施需要遵循一定的策略和最佳实践。 明确的业务目标是项目成功的基础，需要将技术能力与具体的业务价值紧密结合。 项目团队应该深入理解业务流程和痛点，确保技术方案能够真正解决实际问题。 渐进式实施是降低风险的有效策略。",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习在实际应用中的案例",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 5,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:21.095216"
+    },
+    {
+      "url": "https://cloud.tencent.com/developer/article/2309423",
+      "title": "强化学习的应用领域和案例-腾讯云开发者社区-腾讯云",
+      "snippet": "Aug 7, 2023 · 第一：游戏领域。 强化 学习 在游戏领域有很多 应用 ，如围棋、象棋、扑克等游戏的AI对战。 例如， AlphaGo 使用 强化 学习 技术，在围棋比赛中击败了人类世界冠军。 AlphaGo在对阵李世石的第二局中做出的传奇落子动作。 这手落子震惊了许多职业棋手。",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习在实际应用中的案例",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 6,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:21.095221"
+    },
+    {
+      "url": "https://zhuanlan.zhihu.com/p/632268392",
+      "title": "Reinforcement Learning | 强化学习十种应用场景及新手学习入门教程 -...",
+      "snippet": "强化 学习 的应用 非常广泛，例如在机器人控制、游戏玩法、自然语言处理等领域中都有广泛的应用。 常用的 强化 学习 算法包括 Q-learning 、 Deep Q-Network (DQN)、Policy Gradient等。 本文将分享 强化 学习 的一些 实际 应用 。 1.在自动驾驶汽车中的",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习在实际应用中的案例",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 7,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:21.095227"
+    },
+    {
+      "url": "https://www.betteryeah.com/blog/what-is-inverse-reinforcement-learning",
+      "title": "逆 强 化 学 习 入门：理论、技术与 应 用 全景解读 | BetterYeah AI智能体",
+      "snippet": "逆 强 化 学 习 入门：理论、技术与 应 用 全景解读什么是逆 强 化 学 习 逆 强 化 学 习 的 实 现方法与 应 用",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习在实际应用中的案例",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 8,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:21.095231"
+    },
+    {
+      "url": "https://www.cnblogs.com/yexiaochai/p/18699686",
+      "title": "火了整个春节 的 DeepSeek，他对AI...",
+      "snippet": "然而，尽管DeepSeek 在 技术上具备显著优势，其 在 实 际 工程 应 用 中 仍面临诸多挑战：此外，如何结合 强 化 学 习 和混合专家（MoE）架构 的 优势， 实 现多任务处理 的 高效性与准确性，尤其是 在 多领域联合任务处理时，确保系统 的 稳定性和性能，也是. 工程 应 用 中 的",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习在实际应用中的案例",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 9,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:21.095236"
+    },
+    {
+      "url": "https://blog.csdn.net/g310773517/article/details/137508324",
+      "title": "AI智慧医疗：探索机器 学 习 在 医疗保健 中 的 应 用 与进展-CSDN博客",
+      "snippet": "AI智慧医疗：探索机器 学 习 在 医疗保健 中 的 应 用 与进展. 1. 概述.这个示 例 展示了如何简单加载一个患者 的 X光图像，并使 用 之前训练好 的 AI模型pn_model进行预测。 在 实 际 应 用 中 ，模型会更复杂，并且需要经过高质量 的 数据集进行充分训练。",
+      "source": "web_search",
+      "tier": "tier2",
+      "relevance_score": 5.0,
+      "query": "强化学习在实际应用中的案例",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 10,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:21.095240"
+    },
+    {
+      "url": "https://www.bilibili.com/opus/1079656586709827585",
+      "title": "大语言模型与强化学习的最新研究进展 (2024年6月至今) - 哔哩哔哩",
+      "snippet": "这些工作既产出了新的SOTA成果，也为今后LLM+RL研究指明了方向：更高效的对齐方法、更强大的决策规划、更通用的自主智能体。 展望未来，我们有望见证大语言模型与 强化 学习 在更多领域深度融合，推动通用人工智能迈上新台阶。",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 8.0,
+      "query": "强化学习的最新研究进展",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 1,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:31.299103"
+    },
+    {
+      "url": "https://hub.baai.ac.cn/view/49567",
+      "title": "智源TALK｜强化学习最新进展114页，清华大学，如何将算力更高效地转化...",
+      "snippet": "Oct 17, 2025 · 该领域 进展 迅速，系统梳理当前成果、展望通向超级智能的未来路径显得尤为重要。 本报告将围绕我们 最新 发布的大模型推理能力 强化 学习 综述，详细阐述 RL for LRMs 的基础框架、前沿问题、训练资源与应用场景，以及未来面临的挑战。",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 7.0,
+      "query": "强化学习的最新研究进展",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 2,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:31.299112"
+    },
+    {
+      "url": "http://rlchina.org/topic/877",
+      "title": "前沿追踪 | 强化学习月度十大动态 2401 期：李飞飞、吴恩达开年对话，...",
+      "snippet": "Feb 10, 2024 · 十大动态 1. Google用自我博弈优化偏好进行人类反馈的 强化 学习 这篇论文介绍了一种名为Self-Play Preference Optimization（SPO）的算法，用于从人类反馈中进行 强化 学习 。 该方法的特点是简约，不需要训练奖励模型或进行不稳定的",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 7.0,
+      "query": "强化学习的最新研究进展",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 3,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:31.299117"
+    },
+    {
+      "url": "https://zhuanlan.zhihu.com/p/1910698610070382054",
+      "title": "2025年强化学习依然会是重点研究方向！登上《Nature》正刊！ - 知乎",
+      "snippet": "强化 学习 （RL）作为人工智能实现复杂决策的核心技术，正快速发展。 自动驾驶、机器人控制等领域对动态决策需求激增，传统规则化方法难应对环境不确定性，RL通过“试错-反馈-迭代”机制，成为解决序列决策问题的核心方案。",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 5.0,
+      "query": "强化学习的最新研究进展",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 4,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:31.299122"
+    },
+    {
+      "url": "https://cloud.tencent.com/developer/article/2596202",
+      "title": "1024层网络让强化学习性能飙升50倍，NeurIPS 2025最佳论文揭示深度sca...",
+      "snippet": "Nov 30, 2025 · 普林斯顿大学与OpenAI合作研究在NeurIPS 2025发表突破性论文，成功将 强化 学习 网络深度扩展至1024层，实现性能2-50倍提升。 研究发现深度scaling能触发智能体\"突现现象\"，在机器人操作、迷宫导航等任务中表现卓越。",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 5.0,
+      "query": "强化学习的最新研究进展",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 5,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:31.299127"
+    },
+    {
+      "url": "https://blog.csdn.net/Tulingjin/article/details/149832278",
+      "title": "2025年强化学习大放异彩的三个创新方向，赢麻了！_强化学习最新进展-C...",
+      "snippet": "Aug 2, 2025 · 创新点： 提出了JL-GAT框架，通过结合集中式和分散式接地动作转换（GAT） 的 优点，既考虑了智能体间 的 交互，又保持了可扩展性，有效平衡了复杂多智能体系统中 的 性能与效率。",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 5.0,
+      "query": "强化学习的最新研究进展",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 6,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:31.299132"
+    },
+    {
+      "url": "https://news.qq.com/rain/a/20251001A01MA100",
+      "title": "复旦、同济和港中文等重磅发布：强化学习在大语言模型全周期的全面综...",
+      "snippet": "Oct 1, 2025 · 对此，来自复旦大学、同济大学、兰卡斯特大学以及香港中文大学 MM Lab 等顶尖科研机构的研究者们全面总结了大语言模型全生命周期 的最新 强化 ...",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 5.0,
+      "query": "强化学习的最新研究进展",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 7,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:31.299136"
+    },
+    {
+      "url": "https://www.infoq.cn/article/MqXexb2vfeKJIyPc7sBc",
+      "title": "《 强 化 学 习 》：人工智能 的 未来_AI_Andrew Barto_InfoQ精选文章",
+      "snippet": "DeepMind 科 学 家： 强 化 学 习 足以满足通用 AI 需求. 强 化 学 习 技术发 展 如何？",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 5.0,
+      "query": "强化学习的最新研究进展",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 8,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:31.299141"
+    },
+    {
+      "url": "https://finance.sina.com.cn/tech/roll/2025-03-05/doc-inenrcym1757824.shtml",
+      "title": "刚刚，2024图灵奖颁给了 强 化 学 习 之父Richard Sutton与导师Andrew...",
+      "snippet": "强 化 学 习 先驱 Andrew Barto 与 Richard Sutton 获得今年 的 ACM 图灵奖。他们都是对 强 化 学 习 做出奠基性贡献 的 著名 研 究 者，Richard Sutton 更是有「 强 化 学 习 之父」 的 美誉。",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 5.0,
+      "query": "强化学习的最新研究进展",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 9,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:31.299145"
+    },
+    {
+      "url": "https://www.researchgate.net/profile/Zhentao-Tang/publication/324686165_Recent_progress_of_deep_reinforcement_learningfrom_AlphaGo_to_AlphaGo_Zero/links/5adc9332a6fdcc29358aaa2a/Recent-progress-of-deep-reinforcement-learningfrom-AlphaGo-to-AlphaGo-Zero.pdf",
+      "title": "A3C 及其扩 展 ( A3C and its extensions )",
+      "snippet": "关键词: 深度 强 化 学 习 ; AlphaGo Zero; 深度 学 习 ; 强 化 学 习 ; 人工智能. 中图分类号: TP273.3) 强 化 学 习 算法 的 收敛性. 强 化 学 习 的 不稳定性和难以收敛性一直是被 研 究 .",
+      "source": "web_search",
+      "tier": "tier3",
+      "relevance_score": 5.0,
+      "query": "强化学习的最新研究进展",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 10,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:18:31.299150"
+    }
+  ],
+  "sample_clues": [
+    {
+      "url": "https://zglg.work/reinforcement-learning-zero/1",
+      "title": "1 强化学习导论：强化学习的基本概念和历史",
+      "snippet": "🔗1 强化学习导论： 强化学习的基本概念 和历史 · 🔗2 强化学习导论之强化学习与监督学习的区别 · 🔗3 强化学习导论之强化学习的应用领域 · 🔗4 Markov决策过程（MDP）的定义与基本要素 · 🔗5 Markov决策过程之状态、动作和奖励 ·",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 9.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 1,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658742"
+    },
+    {
+      "url": "http://zuzhiang.cn/2019/09/28/RL/",
+      "title": "强化学习（0）：强化学习的基本概念与马尔科夫决策过程 | zuzhiang",
+      "snippet": "October 19, 2019 - 学习和规划是序列决策中的两个基本问题。 · 探索（Exploration）：寻找关于环境的更多信息； · 开发（Exploitation）：根据已知信息去最大化奖励； · 开发就是在自己之前吃过的饭店里选一家最好吃的，而探索就是在没有吃过的饭店里不断尝试。 · ",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 8.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 2,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658755"
+    },
+    {
+      "url": "https://zh.wikipedia.org/zh-cn/强化学习",
+      "title": "强化学习 - 维基百科，自由的百科全书",
+      "snippet": "强化学习 （英语： Reinforcement learning，简称 RL）是 机器学习 中的一个领域，强调如何基于 环境 而行动，以取得最大化的预期利益 [1]。强化学习是除了 监督学习 和 非监督学习 之外的第三种基本的机器学习方法。与监督学习不同的是，强化学习不需要带标签的输入输出对，同时也",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 7.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 3,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658762"
+    },
+    {
+      "url": "https://zh.wikipedia.org/zh-hans/强化学习",
+      "title": "强化学习 - 维基百科，自由的百科全书",
+      "snippet": "2 weeks ago - 强化学习（英语：Reinforcement learning，简称RL）是机器学习中的一个领域，强调如何基于环境而行动，以取得最大化的预期利益。强化学习是除了监督学习和非监督学习之外的第三种基本的机器学习方法。与监督学习不同的是，强化学习不需要带标签的输入输出对，同时也无",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 7.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 4,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658768"
+    },
+    {
+      "url": "https://blog.csdn.net/weixin_45560318/article/details/112981006",
+      "title": "强化学习 (一)：简介——什么是强化学习？-csdn博客",
+      "snippet": "文章浏览阅读10w+次，点赞330次，收藏969次。本文详细介绍了强化学习的基本概念，包括其在无监督环境下与监督学习的区别，以及四个核心要素（策略、奖励、价值和环境）的作用。探讨了强化学习的架构、问题分类和探索利用策略，并强调了其在智能决策过程中的关键地位。",
+      "source": "web_search",
+      "tier": "tier1",
+      "relevance_score": 6.0,
+      "query": "强化学习的基本概念",
+      "found_at_step": 1,
+      "metadata": {
+        "position": 5,
+        "engine": "duckduckgo"
+      },
+      "timestamp": "2026-01-15T16:17:58.658773"
+    }
+  ]
+}

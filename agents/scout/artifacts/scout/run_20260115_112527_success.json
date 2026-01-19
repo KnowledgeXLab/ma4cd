@@ -1,0 +1,73 @@
+{
+  "task": "蛋白质变异",
+  "clues_count": 37,
+  "subtasks_count": 4,
+  "successful_searches": 4,
+  "success_rate": 1.0,
+  "execution_time": 55.04,
+  "is_completed": true,
+  "timestamp": "2026-01-15 11:25:27",
+  "subtasks_summary": [
+    {
+      "query": "蛋白质变异 概念",
+      "status": "success",
+      "tier": "tier1",
+      "clue_count": 10
+    },
+    {
+      "query": "蛋白质变异 类型",
+      "status": "success",
+      "tier": "tier2",
+      "clue_count": 10
+    },
+    {
+      "query": "蛋白质变异 相关疾病",
+      "status": "success",
+      "tier": "tier2",
+      "clue_count": 10
+    },
+    {
+      "query": "蛋白质变异 研究论文",
+      "status": "success",
+      "tier": "tier3",
+      "clue_count": 7
+    }
+  ],
+  "sample_clues": [
+    {
+      "title": "蛋白质变异是什么意思 | 百度健康·医学科普",
+      "url": "https://health.baidu.com/m/detail/ar_6584203309296496338",
+      "source": "web_search",
+      "relevance": 9.0,
+      "query": "蛋白质变异 概念"
+    },
+    {
+      "title": "蛋白异构体 - 维基百科，自由的百科全书",
+      "url": "https://zh.wikipedia.org/wiki/蛋白异构体",
+      "source": "web_search",
+      "relevance": 7.0,
+      "query": "蛋白质变异 概念"
+    },
+    {
+      "title": "蛋白異構體 - 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/蛋白异构体",
+      "source": "web_search",
+      "relevance": 7.0,
+      "query": "蛋白质变异 概念"
+    },
+    {
+      "title": "(PDF) 基于遗传算法的 蛋 白 质 二级结构预测方法研究进展",
+      "url": "https://www.academia.edu/36447655/基于遗传算法的蛋白质二级结构预测方法研究进展",
+      "source": "web_search",
+      "relevance": 7.0,
+      "query": "蛋白质变异 概念"
+    },
+    {
+      "title": "蛋白质变体的功能作用,Biochimie - X-MOL",
+      "url": "https://www.x-mol.com/paper/1322268801348374528/t?adv",
+      "source": "web_search",
+      "relevance": 6.0,
+      "query": "蛋白质变异 概念"
+    }
+  ]
+}

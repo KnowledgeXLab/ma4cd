@@ -1,0 +1,813 @@
+2026-01-15 11:05:37.586 | INFO     | agents.scout.tools.web_search:__init__:85 - DuckDuckGo 客户端已初始化
+2026-01-15 11:05:37.586 | INFO     | agents.scout.tools.web_search:__init__:89 - arXiv 客户端已初始化
+2026-01-15 11:05:37.586 | INFO     | agents.scout.tools.web_search:__init__:105 - 广域侦察兵搜索工具初始化完成
+2026-01-15 11:05:37.586 | INFO     | agents.scout.agent:__init__:65 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 11:05:37.586 | INFO     | agents.scout.agent:run:81 - 🚀 开始执行任务: 蛋白质变异
+2026-01-15 11:05:37.586 | INFO     | agents.scout.agent:run:96 - 📋 阶段 1/2: 任务规划
+2026-01-15 11:05:37.586 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 蛋白质变异...
+2026-01-15 11:05:43.225 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 11:05:43.226 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 11:05:43.226 | INFO     | agents.scout.agent:run:102 - 📋 规划完成，生成 4 个子任务
+2026-01-15 11:05:43.226 | INFO     | agents.scout.agent:run:105 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 11:05:43.226 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 1/4: 蛋白质变异 基本概念
+2026-01-15 11:05:43.226 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异 基本概念 (tier1)
+2026-01-15 11:05:43.226 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异 基本概念 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:05:55.546 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 12.32s，找到 10 个线索
+2026-01-15 11:05:55.547 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:05:55.547 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:05:55.547 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:05:56.547 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 2/4: 蛋白质变异的类型
+2026-01-15 11:05:56.548 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异的类型 (tier2)
+2026-01-15 11:05:56.548 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异的类型 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:06:11.551 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 15.00s，找到 10 个线索
+2026-01-15 11:06:11.551 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:06:11.551 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:06:11.552 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:06:12.552 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 3/4: 蛋白质变异与疾病的关系
+2026-01-15 11:06:12.552 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异与疾病的关系 (tier2)
+2026-01-15 11:06:12.552 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异与疾病的关系 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:06:24.771 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 12.22s，找到 10 个线索
+2026-01-15 11:06:24.772 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:06:24.772 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:06:24.772 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:06:25.772 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 4/4: 蛋白质变异的检测方法
+2026-01-15 11:06:25.772 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异的检测方法 (tier3)
+2026-01-15 11:06:25.772 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异的检测方法 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:06:32.330 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 6.56s，找到 10 个线索
+2026-01-15 11:06:32.330 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:06:32.330 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:06:32.330 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:06:32.331 | INFO     | agents.scout.agent:_save_results:249 - 💾 结果保存到: artifacts/scout/run_20260115_110632_success.json
+2026-01-15 11:06:32.331 | INFO     | agents.scout.agent:run:156 - 🎉 任务完成! 找到 40 条线索，成功率: 100.0%
+2026-01-15 11:11:13.640 | INFO     | agents.scout.tools.web_search:__init__:85 - DuckDuckGo 客户端已初始化
+2026-01-15 11:11:13.640 | INFO     | agents.scout.tools.web_search:__init__:89 - arXiv 客户端已初始化
+2026-01-15 11:11:13.640 | INFO     | agents.scout.tools.web_search:__init__:105 - 广域侦察兵搜索工具初始化完成
+2026-01-15 11:11:13.640 | INFO     | agents.scout.agent:__init__:65 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 11:11:13.641 | INFO     | agents.scout.agent:run:81 - 🚀 开始执行任务: 蛋白质变异
+2026-01-15 11:11:13.641 | INFO     | agents.scout.agent:run:96 - 📋 阶段 1/2: 任务规划
+2026-01-15 11:11:13.641 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 蛋白质变异...
+2026-01-15 11:11:18.662 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 11:11:18.662 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 11:11:18.662 | INFO     | agents.scout.agent:run:102 - 📋 规划完成，生成 4 个子任务
+2026-01-15 11:11:18.662 | INFO     | agents.scout.agent:run:105 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 11:11:18.662 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 1/4: 蛋白质变异的基本概念
+2026-01-15 11:11:18.662 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异的基本概念 (tier1)
+2026-01-15 11:11:18.662 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异的基本概念 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:11:33.689 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 15.03s，找到 10 个线索
+2026-01-15 11:11:33.690 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:11:33.690 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:11:33.690 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:11:34.690 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 2/4: 蛋白质变异对疾病的影响
+2026-01-15 11:11:34.690 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异对疾病的影响 (tier2)
+2026-01-15 11:11:34.691 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异对疾病的影响 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:11:44.694 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 10.00s，找到 10 个线索
+2026-01-15 11:11:44.694 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:11:44.694 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:11:44.695 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:11:45.695 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 3/4: 蛋白质变异的检测方法
+2026-01-15 11:11:45.695 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异的检测方法 (tier2)
+2026-01-15 11:11:45.695 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异的检测方法 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:11:55.698 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 10.00s，找到 10 个线索
+2026-01-15 11:11:55.699 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:11:55.699 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:11:55.699 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:11:56.699 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 4/4: 蛋白质变异的最新研究进展
+2026-01-15 11:11:56.700 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异的最新研究进展 (tier3)
+2026-01-15 11:11:56.700 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异的最新研究进展 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:12:06.703 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 10.00s，找到 10 个线索
+2026-01-15 11:12:06.703 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:12:06.703 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:12:06.703 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:12:06.704 | INFO     | agents.scout.agent:_save_results:249 - 💾 结果保存到: artifacts/scout/run_20260115_111206_success.json
+2026-01-15 11:12:06.704 | INFO     | agents.scout.agent:run:156 - 🎉 任务完成! 找到 40 条线索，成功率: 100.0%
+2026-01-15 11:20:50.529 | INFO     | agents.scout.tools.web_search:__init__:85 - DuckDuckGo 客户端已初始化
+2026-01-15 11:20:50.529 | INFO     | agents.scout.tools.web_search:__init__:89 - arXiv 客户端已初始化
+2026-01-15 11:20:50.529 | INFO     | agents.scout.tools.web_search:__init__:105 - 广域侦察兵搜索工具初始化完成
+2026-01-15 11:20:50.529 | INFO     | agents.scout.agent:__init__:65 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 11:20:50.530 | INFO     | agents.scout.agent:run:81 - 🚀 开始执行任务: 科学与智能-地球科学-外层空间数据
+2026-01-15 11:20:50.530 | INFO     | agents.scout.agent:run:96 - 📋 阶段 1/2: 任务规划
+2026-01-15 11:20:50.530 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 科学与智能-地球科学-外层空间数据...
+2026-01-15 11:20:54.487 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 11:20:54.487 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 11:20:54.487 | INFO     | agents.scout.agent:run:102 - 📋 规划完成，生成 4 个子任务
+2026-01-15 11:20:54.487 | INFO     | agents.scout.agent:run:105 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 11:20:54.487 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 1/4: 外层空间数据的基本概念
+2026-01-15 11:20:54.487 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 外层空间数据的基本概念 (tier1)
+2026-01-15 11:20:54.487 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 外层空间数据的基本概念 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:21:04.511 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 10.02s，找到 7 个线索
+2026-01-15 11:21:04.511 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 7 条线索
+2026-01-15 11:21:04.511 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 7 条线索
+2026-01-15 11:21:04.512 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 7
+2026-01-15 11:21:05.512 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 2/4: 外层空间数据的主要来源和获取方式
+2026-01-15 11:21:05.512 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 外层空间数据的主要来源和获取方式 (tier2)
+2026-01-15 11:21:05.512 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 外层空间数据的主要来源和获取方式 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:21:21.290 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 15.78s，找到 10 个线索
+2026-01-15 11:21:21.290 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:21:21.290 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:21:21.290 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:21:22.290 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 3/4: 外层空间数据在地球科学中的应用案例
+2026-01-15 11:21:22.291 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 外层空间数据在地球科学中的应用案例 (tier2)
+2026-01-15 11:21:22.291 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 外层空间数据在地球科学中的应用案例 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:21:32.294 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 10.00s，找到 10 个线索
+2026-01-15 11:21:32.294 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:21:32.294 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:21:32.295 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:21:33.295 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 4/4: 外层空间数据的最新研究论文
+2026-01-15 11:21:33.295 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 外层空间数据的最新研究论文 (tier3)
+2026-01-15 11:21:33.295 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 外层空间数据的最新研究论文 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:21:43.297 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 10.00s，找到 10 个线索
+2026-01-15 11:21:43.297 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:21:43.297 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:21:43.298 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:21:43.299 | INFO     | agents.scout.agent:_save_results:249 - 💾 结果保存到: artifacts/scout/run_20260115_112143_success.json
+2026-01-15 11:21:43.299 | INFO     | agents.scout.agent:run:156 - 🎉 任务完成! 找到 37 条线索，成功率: 100.0%
+2026-01-15 11:22:46.434 | INFO     | agents.scout.tools.web_search:__init__:85 - DuckDuckGo 客户端已初始化
+2026-01-15 11:22:46.434 | INFO     | agents.scout.tools.web_search:__init__:89 - arXiv 客户端已初始化
+2026-01-15 11:22:46.434 | INFO     | agents.scout.tools.web_search:__init__:105 - 广域侦察兵搜索工具初始化完成
+2026-01-15 11:22:46.434 | INFO     | agents.scout.agent:__init__:65 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 11:22:46.434 | INFO     | agents.scout.agent:run:81 - 🚀 开始执行任务: 蛋白质变异
+2026-01-15 11:22:46.434 | INFO     | agents.scout.agent:run:96 - 📋 阶段 1/2: 任务规划
+2026-01-15 11:22:46.435 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 蛋白质变异...
+2026-01-15 11:22:49.284 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 3 个子任务
+2026-01-15 11:22:49.284 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 3 个子任务
+2026-01-15 11:22:49.284 | INFO     | agents.scout.agent:run:102 - 📋 规划完成，生成 3 个子任务
+2026-01-15 11:22:49.284 | INFO     | agents.scout.agent:run:105 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 11:22:49.284 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 1/3: 蛋白质变异 基本概念
+2026-01-15 11:22:49.284 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异 基本概念 (tier1)
+2026-01-15 11:22:49.284 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异 基本概念 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:23:06.356 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 17.07s，找到 10 个线索
+2026-01-15 11:23:06.357 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:23:06.357 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:23:06.357 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:23:07.357 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 2/3: 蛋白质变异 对生物体的影响
+2026-01-15 11:23:07.357 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异 对生物体的影响 (tier2)
+2026-01-15 11:23:07.358 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异 对生物体的影响 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:23:24.125 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 16.77s，找到 10 个线索
+2026-01-15 11:23:24.125 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:23:24.125 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:23:24.125 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:23:25.126 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 3/3: 蛋白质变异 研究论文
+2026-01-15 11:23:25.126 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异 研究论文 (tier3)
+2026-01-15 11:23:25.126 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异 研究论文 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:23:36.225 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 11.10s，找到 7 个线索
+2026-01-15 11:23:36.226 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 7 条线索
+2026-01-15 11:23:36.226 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 7 条线索
+2026-01-15 11:23:36.226 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 7
+2026-01-15 11:23:36.227 | INFO     | agents.scout.agent:_save_results:249 - 💾 结果保存到: artifacts/scout/run_20260115_112336_success.json
+2026-01-15 11:23:36.227 | INFO     | agents.scout.agent:run:156 - 🎉 任务完成! 找到 27 条线索，成功率: 100.0%
+2026-01-15 11:24:32.662 | INFO     | agents.scout.tools.web_search:__init__:85 - DuckDuckGo 客户端已初始化
+2026-01-15 11:24:32.662 | INFO     | agents.scout.tools.web_search:__init__:89 - arXiv 客户端已初始化
+2026-01-15 11:24:32.662 | INFO     | agents.scout.tools.web_search:__init__:105 - 广域侦察兵搜索工具初始化完成
+2026-01-15 11:24:32.662 | INFO     | agents.scout.agent:__init__:65 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 11:24:32.663 | INFO     | agents.scout.agent:run:81 - 🚀 开始执行任务: 蛋白质变异
+2026-01-15 11:24:32.663 | INFO     | agents.scout.agent:run:96 - 📋 阶段 1/2: 任务规划
+2026-01-15 11:24:32.663 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 蛋白质变异...
+2026-01-15 11:24:35.266 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 11:24:35.266 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 11:24:35.267 | INFO     | agents.scout.agent:run:102 - 📋 规划完成，生成 4 个子任务
+2026-01-15 11:24:35.267 | INFO     | agents.scout.agent:run:105 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 11:24:35.267 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 1/4: 蛋白质变异 概念
+2026-01-15 11:24:35.267 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异 概念 (tier1)
+2026-01-15 11:24:35.267 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异 概念 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:24:54.921 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 19.65s，找到 10 个线索
+2026-01-15 11:24:54.921 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:24:54.922 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:24:54.922 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:24:55.922 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 2/4: 蛋白质变异 类型
+2026-01-15 11:24:55.922 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异 类型 (tier2)
+2026-01-15 11:24:55.923 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异 类型 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:25:06.368 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 10.45s，找到 10 个线索
+2026-01-15 11:25:06.369 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:25:06.369 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:25:06.369 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:25:07.369 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 3/4: 蛋白质变异 相关疾病
+2026-01-15 11:25:07.369 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异 相关疾病 (tier2)
+2026-01-15 11:25:07.370 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异 相关疾病 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:25:16.121 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 8.75s，找到 10 个线索
+2026-01-15 11:25:16.122 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:25:16.122 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:25:16.122 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:25:17.122 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 4/4: 蛋白质变异 研究论文
+2026-01-15 11:25:17.122 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异 研究论文 (tier3)
+2026-01-15 11:25:17.123 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异 研究论文 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:25:27.706 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 10.58s，找到 7 个线索
+2026-01-15 11:25:27.706 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 7 条线索
+2026-01-15 11:25:27.706 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 7 条线索
+2026-01-15 11:25:27.706 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 7
+2026-01-15 11:25:27.707 | INFO     | agents.scout.agent:_save_results:249 - 💾 结果保存到: artifacts/scout/run_20260115_112527_success.json
+2026-01-15 11:25:27.707 | INFO     | agents.scout.agent:run:156 - 🎉 任务完成! 找到 37 条线索，成功率: 100.0%
+2026-01-15 11:28:14.329 | INFO     | agents.scout.tools.web_search:__init__:85 - DuckDuckGo 客户端已初始化
+2026-01-15 11:28:14.329 | INFO     | agents.scout.tools.web_search:__init__:89 - arXiv 客户端已初始化
+2026-01-15 11:28:14.329 | INFO     | agents.scout.tools.web_search:__init__:105 - 广域侦察兵搜索工具初始化完成
+2026-01-15 11:28:14.329 | INFO     | agents.scout.agent:__init__:65 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 11:28:14.329 | INFO     | agents.scout.agent:run:81 - 🚀 开始执行任务: 蛋白质变异
+2026-01-15 11:28:14.329 | INFO     | agents.scout.agent:run:96 - 📋 阶段 1/2: 任务规划
+2026-01-15 11:28:14.329 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 蛋白质变异...
+2026-01-15 11:28:16.660 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 11:28:16.661 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 11:28:16.661 | INFO     | agents.scout.agent:run:102 - 📋 规划完成，生成 4 个子任务
+2026-01-15 11:28:16.661 | INFO     | agents.scout.agent:run:105 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 11:28:16.661 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 1/4: 蛋白质变异 概念
+2026-01-15 11:28:16.661 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异 概念 (tier1)
+2026-01-15 11:28:16.661 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异 概念 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:28:30.955 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 14.29s，找到 10 个线索
+2026-01-15 11:28:30.956 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:28:30.956 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:28:30.956 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:28:31.956 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 2/4: 蛋白质变异 原因
+2026-01-15 11:28:31.957 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异 原因 (tier2)
+2026-01-15 11:28:31.957 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异 原因 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:28:42.365 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 10.41s，找到 10 个线索
+2026-01-15 11:28:42.366 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:28:42.366 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:28:42.366 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:28:43.366 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 3/4: 蛋白质变异 影响
+2026-01-15 11:28:43.366 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异 影响 (tier2)
+2026-01-15 11:28:43.366 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异 影响 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:28:47.313 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 3.95s，找到 10 个线索
+2026-01-15 11:28:47.313 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:28:47.313 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:28:47.314 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:28:48.314 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 4/4: 蛋白质变异 研究论文
+2026-01-15 11:28:48.314 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异 研究论文 (tier3)
+2026-01-15 11:28:48.314 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异 研究论文 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:28:52.334 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 4.02s，找到 10 个线索
+2026-01-15 11:28:52.334 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:28:52.334 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:28:52.335 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:28:52.335 | INFO     | agents.scout.agent:_save_results:249 - 💾 结果保存到: artifacts/scout/run_20260115_112852_success.json
+2026-01-15 11:28:52.335 | INFO     | agents.scout.agent:run:156 - 🎉 任务完成! 找到 40 条线索，成功率: 100.0%
+2026-01-15 11:32:10.475 | INFO     | agents.scout.tools.web_search:__init__:85 - DuckDuckGo 客户端已初始化
+2026-01-15 11:32:10.475 | INFO     | agents.scout.tools.web_search:__init__:89 - arXiv 客户端已初始化
+2026-01-15 11:32:10.475 | INFO     | agents.scout.tools.web_search:__init__:105 - 广域侦察兵搜索工具初始化完成
+2026-01-15 11:32:10.475 | INFO     | agents.scout.agent:__init__:65 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 11:32:10.475 | INFO     | agents.scout.agent:run:81 - 🚀 开始执行任务: 蛋白质变异
+2026-01-15 11:32:10.475 | INFO     | agents.scout.agent:run:96 - 📋 阶段 1/2: 任务规划
+2026-01-15 11:32:10.475 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 蛋白质变异...
+2026-01-15 11:32:15.951 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 11:32:15.951 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 11:32:15.951 | INFO     | agents.scout.agent:run:102 - 📋 规划完成，生成 4 个子任务
+2026-01-15 11:32:15.951 | INFO     | agents.scout.agent:run:105 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 11:32:15.951 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 1/4: 蛋白质变异的基本概念
+2026-01-15 11:32:15.951 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异的基本概念 (tier1)
+2026-01-15 11:32:15.951 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异的基本概念 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:32:25.973 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 10.02s，找到 10 个线索
+2026-01-15 11:32:25.973 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:32:25.973 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:32:25.973 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:32:26.973 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 2/4: 蛋白质变异的影响因素
+2026-01-15 11:32:26.974 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异的影响因素 (tier2)
+2026-01-15 11:32:26.974 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异的影响因素 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:32:37.771 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 10.80s，找到 10 个线索
+2026-01-15 11:32:37.771 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:32:37.772 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:32:37.772 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:32:38.772 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 3/4: 蛋白质变异与疾病的关系
+2026-01-15 11:32:38.772 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异与疾病的关系 (tier2)
+2026-01-15 11:32:38.773 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异与疾病的关系 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:32:43.189 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 4.42s，找到 10 个线索
+2026-01-15 11:32:43.190 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:32:43.190 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:32:43.190 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:32:44.190 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 4/4: 蛋白质变异的检测方法
+2026-01-15 11:32:44.190 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异的检测方法 (tier3)
+2026-01-15 11:32:44.190 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异的检测方法 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:32:47.696 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 3.51s，找到 10 个线索
+2026-01-15 11:32:47.696 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:32:47.696 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:32:47.696 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:32:47.697 | INFO     | agents.scout.agent:_save_results:249 - 💾 结果保存到: artifacts/scout/run_20260115_113247_success.json
+2026-01-15 11:32:47.697 | INFO     | agents.scout.agent:run:156 - 🎉 任务完成! 找到 40 条线索，成功率: 100.0%
+2026-01-15 11:36:19.944 | INFO     | agents.scout.tools.web_search:__init__:85 - DuckDuckGo 客户端已初始化
+2026-01-15 11:36:19.944 | INFO     | agents.scout.tools.web_search:__init__:89 - arXiv 客户端已初始化
+2026-01-15 11:36:19.945 | INFO     | agents.scout.tools.web_search:__init__:105 - 广域侦察兵搜索工具初始化完成
+2026-01-15 11:36:19.945 | INFO     | agents.scout.agent:__init__:65 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 11:36:19.945 | INFO     | agents.scout.agent:run:81 - 🚀 开始执行任务: 蛋白质变异
+2026-01-15 11:36:19.945 | INFO     | agents.scout.agent:run:96 - 📋 阶段 1/2: 任务规划
+2026-01-15 11:36:19.945 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 蛋白质变异...
+2026-01-15 11:36:23.165 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 11:36:23.165 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 11:36:23.165 | INFO     | agents.scout.agent:run:102 - 📋 规划完成，生成 4 个子任务
+2026-01-15 11:36:23.165 | INFO     | agents.scout.agent:run:105 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 11:36:23.165 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 1/4: 蛋白质变异的基本概念
+2026-01-15 11:36:23.165 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异的基本概念 (tier1)
+2026-01-15 11:36:23.165 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异的基本概念 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:36:36.025 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 12.86s，找到 10 个线索
+2026-01-15 11:36:36.025 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:36:36.026 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:36:36.026 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:36:37.026 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 2/4: 蛋白质变异对疾病的影响
+2026-01-15 11:36:37.026 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异对疾病的影响 (tier2)
+2026-01-15 11:36:37.027 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异对疾病的影响 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:36:41.209 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 4.18s，找到 10 个线索
+2026-01-15 11:36:41.209 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:36:41.209 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:36:41.209 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:36:42.209 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 3/4: 蛋白质变异的检测方法
+2026-01-15 11:36:42.210 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异的检测方法 (tier2)
+2026-01-15 11:36:42.210 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异的检测方法 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:36:45.826 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 3.62s，找到 10 个线索
+2026-01-15 11:36:45.826 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:36:45.826 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:36:45.827 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:36:46.827 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 4/4: 蛋白质变异相关的研究论文
+2026-01-15 11:36:46.828 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异相关的研究论文 (tier3)
+2026-01-15 11:36:46.828 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异相关的研究论文 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:36:48.844 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 2.02s，找到 10 个线索
+2026-01-15 11:36:48.844 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:36:48.844 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:36:48.844 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:36:48.844 | ERROR    | agents.scout.agent:run:161 - ❌ 任务执行失败: ScoutAgent._prepare_final_result() takes 2 positional arguments but 4 were given
+2026-01-15 11:36:48.846 | INFO     | agents.scout.agent:_save_results:292 - 💾 结果保存到: artifacts/scout/run_20260115_113648_error.json
+2026-01-15 11:45:05.428 | INFO     | agents.scout.tools.web_search:__init__:85 - DuckDuckGo 客户端已初始化
+2026-01-15 11:45:05.428 | INFO     | agents.scout.tools.web_search:__init__:89 - arXiv 客户端已初始化
+2026-01-15 11:45:05.428 | INFO     | agents.scout.tools.web_search:__init__:105 - 广域侦察兵搜索工具初始化完成
+2026-01-15 11:45:05.428 | INFO     | agents.scout.agent:__init__:65 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 11:45:05.429 | INFO     | agents.scout.agent:run:81 - 🚀 开始执行任务: 蛋白质变异
+2026-01-15 11:45:05.429 | INFO     | agents.scout.agent:run:96 - 📋 阶段 1/2: 任务规划
+2026-01-15 11:45:05.429 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 蛋白质变异...
+2026-01-15 11:45:14.934 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 11:45:14.935 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 11:45:14.935 | INFO     | agents.scout.agent:run:102 - 📋 规划完成，生成 4 个子任务
+2026-01-15 11:45:14.935 | INFO     | agents.scout.agent:run:105 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 11:45:14.935 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 1/4: 蛋白质变异的基本概念
+2026-01-15 11:45:14.935 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异的基本概念 (tier1)
+2026-01-15 11:45:14.935 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异的基本概念 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:45:32.472 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 17.54s，找到 7 个线索
+2026-01-15 11:45:32.472 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 7 条线索
+2026-01-15 11:45:32.472 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 7 条线索
+2026-01-15 11:45:32.472 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 7
+2026-01-15 11:45:33.472 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 2/4: 蛋白质变异的生物学影响
+2026-01-15 11:45:33.473 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异的生物学影响 (tier2)
+2026-01-15 11:45:33.473 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异的生物学影响 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:45:45.155 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 11.68s，找到 10 个线索
+2026-01-15 11:45:45.156 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:45:45.156 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:45:45.156 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:45:46.156 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 3/4: 蛋白质变异的检测方法
+2026-01-15 11:45:46.157 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异的检测方法 (tier2)
+2026-01-15 11:45:46.157 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异的检测方法 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:45:47.746 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 1.59s，找到 10 个线索
+2026-01-15 11:45:47.746 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:45:47.746 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:45:47.746 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:45:48.747 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 4/4: 蛋白质变异相关的最新研究论文
+2026-01-15 11:45:48.747 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 蛋白质变异相关的最新研究论文 (tier3)
+2026-01-15 11:45:48.747 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 蛋白质变异相关的最新研究论文 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:45:55.080 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 6.33s，找到 10 个线索
+2026-01-15 11:45:55.081 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:45:55.081 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:45:55.081 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:45:55.082 | ERROR    | agents.scout.agent:_save_results:334 - ❌ 保存结果失败: Object of type Clue is not JSON serializable
+2026-01-15 11:45:55.082 | INFO     | agents.scout.agent:run:156 - 🎉 任务完成! 找到 37 条线索，成功率: 100.0%
+2026-01-15 11:45:55.083 | ERROR    | __main__:main:238 - 任务运行失败: Expecting value: line 37 column 5 (char 718)
+2026-01-15 11:51:32.531 | INFO     | agents.scout.tools.web_search:__init__:85 - DuckDuckGo 客户端已初始化
+2026-01-15 11:51:32.531 | INFO     | agents.scout.tools.web_search:__init__:89 - arXiv 客户端已初始化
+2026-01-15 11:51:32.531 | INFO     | agents.scout.tools.web_search:__init__:105 - 广域侦察兵搜索工具初始化完成
+2026-01-15 11:51:32.531 | INFO     | agents.scout.agent:__init__:65 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 11:51:32.531 | INFO     | agents.scout.agent:run:81 - 🚀 开始执行任务: 挖掘固态电池公开数据集
+2026-01-15 11:51:32.531 | INFO     | agents.scout.agent:run:96 - 📋 阶段 1/2: 任务规划
+2026-01-15 11:51:32.531 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 挖掘固态电池公开数据集...
+2026-01-15 11:51:36.897 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 11:51:36.897 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 11:51:36.897 | INFO     | agents.scout.agent:run:102 - 📋 规划完成，生成 4 个子任务
+2026-01-15 11:51:36.897 | INFO     | agents.scout.agent:run:105 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 11:51:36.897 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 1/4: 固态电池 数据集
+2026-01-15 11:51:36.897 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 固态电池 数据集 (tier1)
+2026-01-15 11:51:36.897 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 固态电池 数据集 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:51:45.123 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 8.23s，找到 10 个线索
+2026-01-15 11:51:45.123 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:51:45.123 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:51:45.123 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:51:46.123 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 2/4: 固态电池 研究论文 数据集
+2026-01-15 11:51:46.124 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 固态电池 研究论文 数据集 (tier2)
+2026-01-15 11:51:46.124 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 固态电池 研究论文 数据集 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:51:48.749 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 2.62s，找到 10 个线索
+2026-01-15 11:51:48.749 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:51:48.749 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:51:48.749 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:51:49.749 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 3/4: 固态电池 数据集 下载
+2026-01-15 11:51:49.750 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 固态电池 数据集 下载 (tier2)
+2026-01-15 11:51:49.750 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 固态电池 数据集 下载 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:51:56.002 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 6.25s，找到 10 个线索
+2026-01-15 11:51:56.002 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:51:56.002 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:51:56.002 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:51:57.003 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 4/4: 固态电池 数据集 处理方法
+2026-01-15 11:51:57.003 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 固态电池 数据集 处理方法 (tier3)
+2026-01-15 11:51:57.003 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 固态电池 数据集 处理方法 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:52:01.474 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 4.47s，找到 10 个线索
+2026-01-15 11:52:01.474 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:52:01.474 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:52:01.475 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:52:01.475 | ERROR    | agents.scout.agent:_save_results:334 - ❌ 保存结果失败: Object of type Clue is not JSON serializable
+2026-01-15 11:52:01.475 | INFO     | agents.scout.agent:run:156 - 🎉 任务完成! 找到 40 条线索，成功率: 100.0%
+2026-01-15 11:52:01.475 | ERROR    | __main__:main:157 - 任务运行失败: 'Clue' object has no attribute 'get'
+2026-01-15 11:53:47.608 | INFO     | agents.scout.tools.web_search:__init__:85 - DuckDuckGo 客户端已初始化
+2026-01-15 11:53:47.608 | INFO     | agents.scout.tools.web_search:__init__:89 - arXiv 客户端已初始化
+2026-01-15 11:53:47.608 | INFO     | agents.scout.tools.web_search:__init__:105 - 广域侦察兵搜索工具初始化完成
+2026-01-15 11:53:47.609 | INFO     | agents.scout.agent:__init__:65 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 11:53:47.609 | INFO     | agents.scout.agent:run:81 - 🚀 开始执行任务: 挖掘固态电池公开数据集
+2026-01-15 11:53:47.609 | INFO     | agents.scout.agent:run:96 - 📋 阶段 1/2: 任务规划
+2026-01-15 11:53:47.609 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 挖掘固态电池公开数据集...
+2026-01-15 11:53:50.706 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 11:53:50.707 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 11:53:50.707 | INFO     | agents.scout.agent:run:102 - 📋 规划完成，生成 4 个子任务
+2026-01-15 11:53:50.707 | INFO     | agents.scout.agent:run:105 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 11:53:50.707 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 1/4: 固态电池 数据集
+2026-01-15 11:53:50.707 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 固态电池 数据集 (tier1)
+2026-01-15 11:53:50.707 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 固态电池 数据集 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:53:57.448 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 6.74s，找到 10 个线索
+2026-01-15 11:53:57.448 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:53:57.448 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:53:57.449 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:53:58.449 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 2/4: 固态电池 研究论文 数据集
+2026-01-15 11:53:58.449 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 固态电池 研究论文 数据集 (tier2)
+2026-01-15 11:53:58.449 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 固态电池 研究论文 数据集 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:54:07.574 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 9.12s，找到 10 个线索
+2026-01-15 11:54:07.574 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:54:07.574 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:54:07.574 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:54:08.574 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 3/4: 固态电池 数据集 开源
+2026-01-15 11:54:08.574 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 固态电池 数据集 开源 (tier2)
+2026-01-15 11:54:08.574 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 固态电池 数据集 开源 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:54:12.822 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 4.25s，找到 7 个线索
+2026-01-15 11:54:12.822 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 7 条线索
+2026-01-15 11:54:12.822 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 7 条线索
+2026-01-15 11:54:12.822 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 7
+2026-01-15 11:54:13.822 | INFO     | agents.scout.agent:run:112 - 🔍 执行子任务 4/4: 固态电池 数据集 统计分析
+2026-01-15 11:54:13.823 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 固态电池 数据集 统计分析 (tier3)
+2026-01-15 11:54:13.823 | INFO     | agents.scout.tools.web_search:__call__:129 - 执行搜索: 固态电池 数据集 统计分析 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 11:54:15.513 | INFO     | agents.scout.tools.web_search:__call__:159 - 搜索完成，用时 1.69s，找到 10 个线索
+2026-01-15 11:54:15.513 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 11:54:15.513 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 11:54:15.513 | INFO     | agents.scout.agent:run:134 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 11:54:15.513 | ERROR    | agents.scout.agent:_save_results:334 - ❌ 保存结果失败: Object of type Clue is not JSON serializable
+2026-01-15 11:54:15.513 | INFO     | agents.scout.agent:run:156 - 🎉 任务完成! 找到 37 条线索，成功率: 100.0%
+2026-01-15 14:40:43.307 | INFO     | agents.scout.tools.web_search:__init__:89 - DuckDuckGo 客户端已初始化
+2026-01-15 14:40:43.307 | INFO     | agents.scout.tools.web_search:__init__:93 - arXiv 客户端已初始化
+2026-01-15 14:40:43.308 | INFO     | agents.scout.tools.web_search:__init__:109 - 广域侦察兵搜索工具初始化完成
+2026-01-15 14:40:43.308 | INFO     | agents.scout.agent:__init__:66 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 14:40:43.308 | INFO     | agents.scout.agent:run:82 - 🚀 开始执行任务: 挖掘固态电池公开数据集
+2026-01-15 14:40:43.308 | INFO     | agents.scout.agent:run:97 - 📋 阶段 1/2: 任务规划
+2026-01-15 14:40:43.308 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 挖掘固态电池公开数据集...
+2026-01-15 14:40:47.174 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 14:40:47.174 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 14:40:47.174 | INFO     | agents.scout.agent:run:103 - 📋 规划完成，生成 4 个子任务
+2026-01-15 14:40:47.174 | INFO     | agents.scout.agent:run:106 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 14:40:47.174 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 1/4: 固态电池 数据集
+2026-01-15 14:40:47.174 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 固态电池 数据集 (tier1)
+2026-01-15 14:40:47.174 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 固态电池 数据集 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 14:40:53.498 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 6.32s，找到 10 个线索
+2026-01-15 14:40:53.498 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 14:40:53.498 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 14:40:53.498 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 14:40:54.498 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 2/4: 固态电池 研究论文 数据集
+2026-01-15 14:40:54.499 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 固态电池 研究论文 数据集 (tier2)
+2026-01-15 14:40:54.499 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 固态电池 研究论文 数据集 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 14:41:04.502 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 10.00s，找到 10 个线索
+2026-01-15 14:41:04.503 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 14:41:04.503 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 14:41:04.503 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 14:41:05.503 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 3/4: 固态电池 开源数据集 GitHub
+2026-01-15 14:41:05.504 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 固态电池 开源数据集 GitHub (tier2)
+2026-01-15 14:41:05.504 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 固态电池 开源数据集 GitHub | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 14:41:16.189 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 10.68s，找到 10 个线索
+2026-01-15 14:41:16.189 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 14:41:16.189 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 14:41:16.189 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 14:41:17.189 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 4/4: 固态电池 数据集 统计分析
+2026-01-15 14:41:17.189 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 固态电池 数据集 统计分析 (tier3)
+2026-01-15 14:41:17.190 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 固态电池 数据集 统计分析 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 14:41:28.410 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 11.22s，找到 10 个线索
+2026-01-15 14:41:28.410 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 14:41:28.410 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 14:41:28.411 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 14:41:28.415 | INFO     | agents.scout.agent:_save_results:344 - 💾 结果保存到: artifacts/scout/run_20260115_144128_success.json
+2026-01-15 14:41:28.415 | INFO     | agents.scout.agent:run:157 - 🎉 任务完成! 找到 40 条线索，成功率: 100.0%
+2026-01-15 14:42:39.466 | INFO     | agents.scout.tools.web_search:__init__:89 - DuckDuckGo 客户端已初始化
+2026-01-15 14:42:39.466 | INFO     | agents.scout.tools.web_search:__init__:93 - arXiv 客户端已初始化
+2026-01-15 14:42:39.466 | INFO     | agents.scout.tools.web_search:__init__:109 - 广域侦察兵搜索工具初始化完成
+2026-01-15 14:42:39.467 | INFO     | agents.scout.agent:__init__:66 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 14:42:39.467 | INFO     | agents.scout.agent:run:82 - 🚀 开始执行任务: 地球空间站
+2026-01-15 14:42:39.467 | INFO     | agents.scout.agent:run:97 - 📋 阶段 1/2: 任务规划
+2026-01-15 14:42:39.467 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 地球空间站...
+2026-01-15 14:42:42.530 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 14:42:42.530 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 14:42:42.530 | INFO     | agents.scout.agent:run:103 - 📋 规划完成，生成 4 个子任务
+2026-01-15 14:42:42.530 | INFO     | agents.scout.agent:run:106 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 14:42:42.530 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 1/4: 地球空间站的基本信息
+2026-01-15 14:42:42.530 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 地球空间站的基本信息 (tier1)
+2026-01-15 14:42:42.530 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 地球空间站的基本信息 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 14:42:55.763 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 13.23s，找到 10 个线索
+2026-01-15 14:42:55.763 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 14:42:55.763 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 14:42:55.763 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 14:42:56.763 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 2/4: 国际空间站的最新动态 2026
+2026-01-15 14:42:56.764 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 国际空间站的最新动态 2026 (tier2)
+2026-01-15 14:42:56.764 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 国际空间站的最新动态 2026 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 14:43:01.791 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 5.03s，找到 10 个线索
+2026-01-15 14:43:01.791 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 14:43:01.791 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 14:43:01.791 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 14:43:02.791 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 3/4: 国际空间站科学实验和研究项目
+2026-01-15 14:43:02.792 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 国际空间站科学实验和研究项目 (tier2)
+2026-01-15 14:43:02.792 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 国际空间站科学实验和研究项目 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 14:43:05.574 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 2.78s，找到 10 个线索
+2026-01-15 14:43:05.574 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 14:43:05.574 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 14:43:05.574 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 14:43:06.575 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 4/4: 国际空间站技术细节和设计
+2026-01-15 14:43:06.575 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 国际空间站技术细节和设计 (tier3)
+2026-01-15 14:43:06.575 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 国际空间站技术细节和设计 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 14:43:09.377 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 2.80s，找到 10 个线索
+2026-01-15 14:43:09.377 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 14:43:09.377 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 14:43:09.377 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 14:43:09.379 | INFO     | agents.scout.agent:_save_results:344 - 💾 结果保存到: artifacts/scout/run_20260115_144309_success.json
+2026-01-15 14:43:09.379 | INFO     | agents.scout.agent:run:157 - 🎉 任务完成! 找到 40 条线索，成功率: 100.0%
+2026-01-15 14:46:00.549 | INFO     | agents.scout.tools.web_search:__init__:89 - DuckDuckGo 客户端已初始化
+2026-01-15 14:46:00.549 | INFO     | agents.scout.tools.web_search:__init__:93 - arXiv 客户端已初始化
+2026-01-15 14:46:00.549 | INFO     | agents.scout.tools.web_search:__init__:109 - 广域侦察兵搜索工具初始化完成
+2026-01-15 14:46:00.549 | INFO     | agents.scout.agent:__init__:66 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 14:46:00.549 | INFO     | agents.scout.agent:run:82 - 🚀 开始执行任务: 君士坦丁堡陷落
+2026-01-15 14:46:00.549 | INFO     | agents.scout.agent:run:97 - 📋 阶段 1/2: 任务规划
+2026-01-15 14:46:00.549 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 君士坦丁堡陷落...
+2026-01-15 14:46:04.432 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 3 个子任务
+2026-01-15 14:46:04.432 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 3 个子任务
+2026-01-15 14:46:04.432 | INFO     | agents.scout.agent:run:103 - 📋 规划完成，生成 3 个子任务
+2026-01-15 14:46:04.432 | INFO     | agents.scout.agent:run:106 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 14:46:04.432 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 1/3: 君士坦丁堡陷落的历史背景
+2026-01-15 14:46:04.432 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 君士坦丁堡陷落的历史背景 (tier1)
+2026-01-15 14:46:04.432 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 君士坦丁堡陷落的历史背景 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 14:46:14.458 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 10.03s，找到 10 个线索
+2026-01-15 14:46:14.458 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 14:46:14.458 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 14:46:14.458 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 14:46:15.458 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 2/3: 君士坦丁堡陷落的影响
+2026-01-15 14:46:15.459 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 君士坦丁堡陷落的影响 (tier2)
+2026-01-15 14:46:15.459 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 君士坦丁堡陷落的影响 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 14:46:35.465 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 20.01s，找到 10 个线索
+2026-01-15 14:46:35.465 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 14:46:35.466 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 14:46:35.466 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 14:46:36.466 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 3/3: 君士坦丁堡陷落的战役细节
+2026-01-15 14:46:36.466 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 君士坦丁堡陷落的战役细节 (tier3)
+2026-01-15 14:46:36.467 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 君士坦丁堡陷落的战役细节 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 14:46:45.275 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 8.81s，找到 7 个线索
+2026-01-15 14:46:45.275 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 7 条线索
+2026-01-15 14:46:45.276 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 7 条线索
+2026-01-15 14:46:45.276 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 7
+2026-01-15 14:46:45.277 | INFO     | agents.scout.agent:_save_results:344 - 💾 结果保存到: artifacts/scout/run_20260115_144645_success.json
+2026-01-15 14:46:45.277 | INFO     | agents.scout.agent:run:157 - 🎉 任务完成! 找到 27 条线索，成功率: 100.0%
+2026-01-15 15:25:12.131 | INFO     | agents.scout.tools.web_search:__init__:89 - DuckDuckGo 客户端已初始化
+2026-01-15 15:25:12.132 | INFO     | agents.scout.tools.web_search:__init__:93 - arXiv 客户端已初始化
+2026-01-15 15:25:12.132 | INFO     | agents.scout.tools.web_search:__init__:109 - 广域侦察兵搜索工具初始化完成
+2026-01-15 15:25:12.132 | INFO     | agents.scout.agent:__init__:66 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 15:25:12.132 | INFO     | agents.scout.agent:run:82 - 🚀 开始执行任务: 现代控制理论
+2026-01-15 15:25:12.132 | INFO     | agents.scout.agent:run:97 - 📋 阶段 1/2: 任务规划
+2026-01-15 15:25:12.132 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 现代控制理论...
+2026-01-15 15:25:14.654 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 3 个子任务
+2026-01-15 15:25:14.654 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 3 个子任务
+2026-01-15 15:25:14.655 | INFO     | agents.scout.agent:run:103 - 📋 规划完成，生成 3 个子任务
+2026-01-15 15:25:14.655 | INFO     | agents.scout.agent:run:106 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 15:25:14.655 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 1/3: 现代控制理论 基本概念
+2026-01-15 15:25:14.655 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 现代控制理论 基本概念 (tier1)
+2026-01-15 15:25:14.655 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 现代控制理论 基本概念 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 15:25:24.682 | ERROR    | agents.scout.tools.web_search:_search_web:265 - 网页搜索失败: Request timed out: RuntimeError('error sending request for url (https://www.mojeek.com/search?q=%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA+%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5): operation timed out\n\nCaused by:\n    operation timed out')
+2026-01-15 15:25:24.683 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 10.03s，找到 0 个线索
+2026-01-15 15:25:24.683 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 0 条线索
+2026-01-15 15:25:24.683 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 0 条线索
+2026-01-15 15:25:24.683 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 0
+2026-01-15 15:25:25.684 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 2/3: 现代控制理论 应用实例
+2026-01-15 15:25:25.684 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 现代控制理论 应用实例 (tier2)
+2026-01-15 15:25:25.684 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 现代控制理论 应用实例 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 15:25:40.690 | ERROR    | agents.scout.tools.web_search:_search_web:265 - 网页搜索失败: Request timed out: RuntimeError('error sending request for url (https://search.yahoo.com/search;_ylt=dulrSAbN8nxu6SJVocKBnkbl;_ylu=yhXwkaW5wrBHyp3kIvTfpriKw3wqGRVjpyD-879J3E3F-QQ?p=%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA+%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B): operation timed out\n\nCaused by:\n    operation timed out')
+2026-01-15 15:25:40.691 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 15.01s，找到 0 个线索
+2026-01-15 15:25:40.691 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 0 条线索
+2026-01-15 15:25:40.691 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 0 条线索
+2026-01-15 15:25:40.691 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 0
+2026-01-15 15:25:41.691 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 3/3: 现代控制理论 研究进展 2023
+2026-01-15 15:25:41.692 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 现代控制理论 研究进展 2023 (tier3)
+2026-01-15 15:25:41.692 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 现代控制理论 研究进展 2023 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 15:25:53.162 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 11.47s，找到 10 个线索
+2026-01-15 15:25:53.162 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 15:25:53.162 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 15:25:53.163 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 15:25:53.164 | INFO     | agents.scout.agent:_save_results:344 - 💾 结果保存到: artifacts/scout/run_20260115_152553_success.json
+2026-01-15 15:25:53.164 | INFO     | agents.scout.agent:run:157 - 🎉 任务完成! 找到 10 条线索，成功率: 100.0%
+2026-01-15 15:33:26.234 | INFO     | agents.scout.tools.web_search:__init__:89 - DuckDuckGo 客户端已初始化
+2026-01-15 15:33:26.234 | INFO     | agents.scout.tools.web_search:__init__:93 - arXiv 客户端已初始化
+2026-01-15 15:33:26.234 | INFO     | agents.scout.tools.web_search:__init__:109 - 广域侦察兵搜索工具初始化完成
+2026-01-15 15:33:26.234 | INFO     | agents.scout.agent:__init__:66 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 15:33:26.234 | INFO     | agents.scout.agent:run:82 - 🚀 开始执行任务: 强化学习
+2026-01-15 15:33:26.234 | INFO     | agents.scout.agent:run:97 - 📋 阶段 1/2: 任务规划
+2026-01-15 15:33:26.234 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 强化学习...
+2026-01-15 15:33:32.050 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 15:33:32.050 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 15:33:32.050 | INFO     | agents.scout.agent:run:103 - 📋 规划完成，生成 4 个子任务
+2026-01-15 15:33:32.050 | INFO     | agents.scout.agent:run:106 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 15:33:32.050 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 1/4: 强化学习的基本概念和应用
+2026-01-15 15:33:32.050 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 强化学习的基本概念和应用 (tier1)
+2026-01-15 15:33:32.050 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 强化学习的基本概念和应用 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 15:33:49.122 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 17.07s，找到 10 个线索
+2026-01-15 15:33:49.122 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 15:33:49.122 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 15:33:49.122 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 15:33:50.122 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 2/4: 强化学习的主要算法
+2026-01-15 15:33:50.123 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 强化学习的主要算法 (tier2)
+2026-01-15 15:33:50.123 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 强化学习的主要算法 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 15:34:03.571 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 13.45s，找到 10 个线索
+2026-01-15 15:34:03.571 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 15:34:03.571 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 15:34:03.571 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 15:34:04.572 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 3/4: 强化学习在游戏中的应用案例
+2026-01-15 15:34:04.572 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 强化学习在游戏中的应用案例 (tier2)
+2026-01-15 15:34:04.572 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 强化学习在游戏中的应用案例 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 15:34:20.273 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 15.70s，找到 10 个线索
+2026-01-15 15:34:20.274 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 15:34:20.274 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 15:34:20.274 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 15:34:21.274 | INFO     | agents.scout.agent:run:113 - 🔍 执行子任务 4/4: 强化学习的最新研究进展
+2026-01-15 15:34:21.274 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 强化学习的最新研究进展 (tier3)
+2026-01-15 15:34:21.274 | INFO     | agents.scout.tools.web_search:__call__:133 - 执行搜索: 强化学习的最新研究进展 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 15:34:32.293 | ERROR    | agents.scout.tools.web_search:_search_web:265 - 网页搜索失败: Request timed out: RuntimeError('request or response body error: request or response body error: operation timed out\n\nCaused by:\n    0: request or response body error: operation timed out\n    1: operation timed out')
+2026-01-15 15:34:32.294 | INFO     | agents.scout.tools.web_search:__call__:163 - 搜索完成，用时 11.02s，找到 0 个线索
+2026-01-15 15:34:32.294 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 0 条线索
+2026-01-15 15:34:32.294 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 0 条线索
+2026-01-15 15:34:32.295 | INFO     | agents.scout.agent:run:135 -    ✅ 完成，状态: success, 线索: 0
+2026-01-15 15:34:32.297 | INFO     | agents.scout.agent:_save_results:344 - 💾 结果保存到: artifacts/scout/run_20260115_153432_success.json
+2026-01-15 15:34:32.297 | INFO     | agents.scout.agent:run:157 - 🎉 任务完成! 找到 30 条线索，成功率: 100.0%
+2026-01-15 16:17:46.067 | INFO     | agents.scout.tools.web_search:__init__:619 - GitHub API 已匿名初始化（限速）
+2026-01-15 16:17:46.067 | INFO     | agents.scout.tools.web_search:__init__:626 - arXiv API 已初始化
+2026-01-15 16:17:46.104 | INFO     | agents.scout.tools.web_search:__init__:631 - DuckDuckGo fallback 已启用
+2026-01-15 16:17:46.104 | INFO     | agents.scout.tools.web_search:__init__:643 - 广域侦察兵搜索工具初始化完成，优先引擎: ['github', 'arxiv', 'ddg']
+2026-01-15 16:17:46.104 | INFO     | agents.scout.agent:__init__:72 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 16:17:46.105 | INFO     | agents.scout.agent:run:88 - 🚀 开始执行任务: 强化学习
+2026-01-15 16:17:46.105 | INFO     | agents.scout.agent:run:103 - 📋 阶段 1/2: 任务规划
+2026-01-15 16:17:46.105 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 强化学习...
+2026-01-15 16:17:51.436 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 16:17:51.436 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 16:17:51.436 | INFO     | agents.scout.agent:run:109 - 📋 规划完成，生成 4 个子任务
+2026-01-15 16:17:51.436 | INFO     | agents.scout.agent:run:112 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 16:17:51.436 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 1/4: 强化学习的基本概念
+2026-01-15 16:17:51.436 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 强化学习的基本概念 (tier1)
+2026-01-15 16:17:51.436 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习的基本概念 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:17:58.658 | INFO     | agents.scout.tools.web_search:__call__:685 - 搜索完成，用时 7.22s，找到 10 个线索
+2026-01-15 16:17:58.658 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 16:17:58.658 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 16:17:58.659 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 16:17:59.659 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 2/4: 强化学习的主要算法
+2026-01-15 16:17:59.659 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 强化学习的主要算法 (tier2)
+2026-01-15 16:17:59.659 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习的主要算法 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:18:09.662 | INFO     | agents.scout.tools.web_search:__call__:685 - 搜索完成，用时 10.00s，找到 10 个线索
+2026-01-15 16:18:09.663 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 16:18:09.663 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 16:18:09.663 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 16:18:10.664 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 3/4: 强化学习在实际应用中的案例
+2026-01-15 16:18:10.664 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 强化学习在实际应用中的案例 (tier2)
+2026-01-15 16:18:10.664 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习在实际应用中的案例 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:18:21.094 | INFO     | agents.scout.tools.web_search:__call__:685 - 搜索完成，用时 10.43s，找到 10 个线索
+2026-01-15 16:18:21.095 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 16:18:21.095 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 16:18:21.095 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 16:18:22.095 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 4/4: 强化学习的最新研究进展
+2026-01-15 16:18:22.096 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 强化学习的最新研究进展 (tier3)
+2026-01-15 16:18:22.096 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习的最新研究进展 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:18:31.298 | INFO     | agents.scout.tools.web_search:__call__:685 - 搜索完成，用时 9.20s，找到 10 个线索
+2026-01-15 16:18:31.299 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 16:18:31.299 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 16:18:31.299 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 16:18:31.301 | INFO     | agents.scout.agent:_save_results:350 - 💾 结果保存到: artifacts/scout/run_20260115_161831_success.json
+2026-01-15 16:18:31.301 | INFO     | agents.scout.agent:run:163 - 🎉 任务完成! 找到 40 条线索，成功率: 100.0%
+2026-01-15 16:22:16.952 | INFO     | agents.scout.tools.web_search:__init__:619 - GitHub API 已匿名初始化（限速）
+2026-01-15 16:22:16.952 | INFO     | agents.scout.tools.web_search:__init__:626 - arXiv API 已初始化
+2026-01-15 16:22:16.990 | INFO     | agents.scout.tools.web_search:__init__:631 - DuckDuckGo fallback 已启用
+2026-01-15 16:22:16.990 | INFO     | agents.scout.tools.web_search:__init__:643 - 广域侦察兵搜索工具初始化完成，优先引擎: ['github', 'arxiv', 'ddg']
+2026-01-15 16:22:16.990 | INFO     | agents.scout.agent:__init__:72 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 16:22:16.990 | INFO     | agents.scout.agent:run:88 - 🚀 开始执行任务: 强化学习 python 代码 github
+2026-01-15 16:22:16.990 | INFO     | agents.scout.agent:run:103 - 📋 阶段 1/2: 任务规划
+2026-01-15 16:22:16.990 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 强化学习 python 代码 github...
+2026-01-15 16:22:19.419 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 3 个子任务
+2026-01-15 16:22:19.419 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 3 个子任务
+2026-01-15 16:22:19.419 | INFO     | agents.scout.agent:run:109 - 📋 规划完成，生成 3 个子任务
+2026-01-15 16:22:19.419 | INFO     | agents.scout.agent:run:112 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 16:22:19.419 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 1/3: 强化学习 python 代码 site:github.com
+2026-01-15 16:22:19.419 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 强化学习 python 代码 site:github.com (tier1)
+2026-01-15 16:22:19.419 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习 python 代码 site:github.com | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:22:23.257 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 0 条线索
+2026-01-15 16:22:23.257 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习 python 代码 site:github.com 数据集 site:github.com OR site:kaggle.com | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:22:24.014 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 2: 找到 0 条线索
+2026-01-15 16:22:24.015 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习 python 代码 site:github.com 研究 论文 最新进展 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:22:24.786 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 3: 找到 0 条线索
+2026-01-15 16:22:24.786 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习 python 代码 site:github.com 技术 发展 趋势 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:22:25.573 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 4: 找到 0 条线索
+2026-01-15 16:22:25.573 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习 python 代码 site:github.com 技术 发展 趋势 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:22:26.025 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 5: 找到 0 条线索
+2026-01-15 16:22:26.026 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习 python 代码 site:github.com 技术 发展 趋势 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:22:26.475 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 6: 找到 0 条线索
+2026-01-15 16:22:26.476 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习 python 代码 site:github.com 技术 发展 趋势 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:22:26.935 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 7: 找到 0 条线索
+2026-01-15 16:22:26.936 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习 python 代码 site:github.com 技术 发展 趋势 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:22:27.390 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 8: 找到 0 条线索
+2026-01-15 16:22:27.390 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 0 条线索
+2026-01-15 16:22:27.390 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 0
+2026-01-15 16:22:28.390 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 2/3: 强化学习 python 实现教程
+2026-01-15 16:22:28.391 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 强化学习 python 实现教程 (tier2)
+2026-01-15 16:22:28.391 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习 python 实现教程 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:22:29.321 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 0 条线索
+2026-01-15 16:22:29.321 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习 python 实现教程 数据集 site:github.com OR site:kaggle.com | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:22:50.796 | INFO     | agents.scout.tools.web_search:__call__:685 - 搜索完成，用时 21.47s，找到 10 个线索
+2026-01-15 16:22:50.796 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 2: 找到 10 条线索
+2026-01-15 16:22:50.797 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 16:22:50.797 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 16:22:51.797 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 3/3: 强化学习 python 代码示例
+2026-01-15 16:22:51.798 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 强化学习 python 代码示例 (tier3)
+2026-01-15 16:22:51.798 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习 python 代码示例 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:23:24.653 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 0 条线索
+2026-01-15 16:23:24.653 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 强化学习 python 代码示例 数据集 site:github.com OR site:kaggle.com | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:23:39.569 | INFO     | agents.scout.tools.web_search:__call__:685 - 搜索完成，用时 14.92s，找到 10 个线索
+2026-01-15 16:23:39.570 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 2: 找到 10 条线索
+2026-01-15 16:23:39.570 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 16:23:39.570 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 16:23:39.571 | INFO     | agents.scout.agent:_save_results:350 - 💾 结果保存到: artifacts/scout/run_20260115_162339_success.json
+2026-01-15 16:23:39.571 | INFO     | agents.scout.agent:run:163 - 🎉 任务完成! 找到 20 条线索，成功率: 100.0%
+2026-01-15 16:27:06.758 | INFO     | agents.scout.tools.web_search:__init__:619 - GitHub API 已匿名初始化（限速）
+2026-01-15 16:27:06.758 | INFO     | agents.scout.tools.web_search:__init__:626 - arXiv API 已初始化
+2026-01-15 16:27:06.796 | INFO     | agents.scout.tools.web_search:__init__:631 - DuckDuckGo fallback 已启用
+2026-01-15 16:27:06.796 | INFO     | agents.scout.tools.web_search:__init__:643 - 广域侦察兵搜索工具初始化完成，优先引擎: ['github', 'arxiv', 'ddg']
+2026-01-15 16:27:06.796 | INFO     | agents.scout.agent:__init__:72 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 16:27:06.796 | INFO     | agents.scout.agent:run:88 - 🚀 开始执行任务: 自然语言处理相关论文
+2026-01-15 16:27:06.796 | INFO     | agents.scout.agent:run:103 - 📋 阶段 1/2: 任务规划
+2026-01-15 16:27:06.796 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 自然语言处理相关论文...
+2026-01-15 16:27:10.056 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 3 个子任务
+2026-01-15 16:27:10.056 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 3 个子任务
+2026-01-15 16:27:10.056 | INFO     | agents.scout.agent:run:109 - 📋 规划完成，生成 3 个子任务
+2026-01-15 16:27:10.056 | INFO     | agents.scout.agent:run:112 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 16:27:10.056 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 1/3: 自然语言处理 论文 2023
+2026-01-15 16:27:10.056 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 自然语言处理 论文 2023 (tier1)
+2026-01-15 16:27:10.056 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 自然语言处理 论文 2023 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:27:25.080 | ERROR    | agents.scout.tools.web_search:_search_ddg:813 - DDG fallback 失败: Request timed out: RuntimeError('error sending request for url (https://yandex.com/search/site/?text=%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86+%E8%AE%BA%E6%96%87+2023&web=1&searchid=3313392): operation timed out\n\nCaused by:\n    operation timed out')
+2026-01-15 16:27:25.081 | INFO     | agents.scout.tools.web_search:__call__:685 - 搜索完成，用时 15.02s，找到 0 个线索
+2026-01-15 16:27:25.081 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 0 条线索
+2026-01-15 16:27:25.081 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 0 条线索
+2026-01-15 16:27:25.081 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 0
+2026-01-15 16:27:26.081 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 2/3: 自然语言处理 关键技术 论文
+2026-01-15 16:27:26.082 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 自然语言处理 关键技术 论文 (tier2)
+2026-01-15 16:27:26.082 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 自然语言处理 关键技术 论文 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:27:46.087 | ERROR    | agents.scout.tools.web_search:_search_ddg:813 - DDG fallback 失败: Request timed out: RuntimeError('error sending request for url (https://www.google.com/search?q=%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86+%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF+%E8%AE%BA%E6%96%87&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS): operation timed out\n\nCaused by:\n    operation timed out')
+2026-01-15 16:27:46.087 | INFO     | agents.scout.tools.web_search:__call__:685 - 搜索完成，用时 20.01s，找到 0 个线索
+2026-01-15 16:27:46.087 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 0 条线索
+2026-01-15 16:27:46.087 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 0 条线索
+2026-01-15 16:27:46.087 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 0
+2026-01-15 16:27:47.088 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 3/3: 自然语言处理 最新研究 综述 论文
+2026-01-15 16:27:47.088 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 自然语言处理 最新研究 综述 论文 (tier3)
+2026-01-15 16:27:47.088 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 自然语言处理 最新研究 综述 论文 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:28:00.373 | INFO     | agents.scout.tools.web_search:__call__:685 - 搜索完成，用时 13.28s，找到 10 个线索
+2026-01-15 16:28:00.374 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 16:28:00.374 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 16:28:00.374 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 16:28:00.375 | INFO     | agents.scout.agent:_save_results:350 - 💾 结果保存到: artifacts/scout/run_20260115_162800_success.json
+2026-01-15 16:28:00.375 | INFO     | agents.scout.agent:run:163 - 🎉 任务完成! 找到 10 条线索，成功率: 100.0%
+2026-01-15 16:31:37.247 | INFO     | agents.scout.tools.web_search:__init__:619 - GitHub API 已匿名初始化（限速）
+2026-01-15 16:31:37.247 | INFO     | agents.scout.tools.web_search:__init__:626 - arXiv API 已初始化
+2026-01-15 16:31:37.284 | INFO     | agents.scout.tools.web_search:__init__:631 - DuckDuckGo fallback 已启用
+2026-01-15 16:31:37.284 | INFO     | agents.scout.tools.web_search:__init__:643 - 广域侦察兵搜索工具初始化完成，优先引擎: ['github', 'arxiv', 'ddg']
+2026-01-15 16:31:37.284 | INFO     | agents.scout.agent:__init__:72 - Scout Agent 初始化完成，输出目录: artifacts/scout
+2026-01-15 16:31:37.284 | INFO     | agents.scout.agent:run:88 - 🚀 开始执行任务: 君士坦丁堡陷落
+2026-01-15 16:31:37.284 | INFO     | agents.scout.agent:run:103 - 📋 阶段 1/2: 任务规划
+2026-01-15 16:31:37.284 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 开始规划任务: 君士坦丁堡陷落...
+2026-01-15 16:31:41.716 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 规划完成，生成 4 个子任务
+2026-01-15 16:31:41.716 | INFO     | agents.scout.nodes.base_node:log_info:34 - [PlanningNode] 状态更新完成，添加 4 个子任务
+2026-01-15 16:31:41.716 | INFO     | agents.scout.agent:run:109 - 📋 规划完成，生成 4 个子任务
+2026-01-15 16:31:41.716 | INFO     | agents.scout.agent:run:112 - 🔍 阶段 2/2: 搜索执行
+2026-01-15 16:31:41.716 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 1/4: 君士坦丁堡陷落的历史背景
+2026-01-15 16:31:41.716 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 君士坦丁堡陷落的历史背景 (tier1)
+2026-01-15 16:31:41.716 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 君士坦丁堡陷落的历史背景 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:31:52.255 | INFO     | agents.scout.tools.web_search:__call__:685 - 搜索完成，用时 10.54s，找到 10 个线索
+2026-01-15 16:31:52.255 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 16:31:52.255 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 16:31:52.255 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 16:31:53.256 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 2/4: 君士坦丁堡陷落的战役经过
+2026-01-15 16:31:53.256 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 君士坦丁堡陷落的战役经过 (tier2)
+2026-01-15 16:31:53.256 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 君士坦丁堡陷落的战役经过 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:31:58.468 | INFO     | agents.scout.tools.web_search:__call__:685 - 搜索完成，用时 5.21s，找到 10 个线索
+2026-01-15 16:31:58.468 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 16:31:58.468 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 16:31:58.468 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 16:31:59.468 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 3/4: 君士坦丁堡陷落的历史影响与后果
+2026-01-15 16:31:59.469 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 君士坦丁堡陷落的历史影响与后果 (tier2)
+2026-01-15 16:31:59.469 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 君士坦丁堡陷落的历史影响与后果 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:32:04.158 | INFO     | agents.scout.tools.web_search:__call__:685 - 搜索完成，用时 4.69s，找到 10 个线索
+2026-01-15 16:32:04.159 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 16:32:04.159 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 16:32:04.159 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 16:32:05.159 | INFO     | agents.scout.agent:run:119 - 🔍 执行子任务 4/4: 君士坦丁堡陷落的相关学术论文
+2026-01-15 16:32:05.159 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 开始执行搜索子任务: 君士坦丁堡陷落的相关学术论文 (tier3)
+2026-01-15 16:32:05.159 | INFO     | agents.scout.tools.web_search:__call__:651 - 执行搜索: 君士坦丁堡陷落的相关学术论文 | 国家: us | Tier: tier1 | 任务: general
+2026-01-15 16:32:12.578 | INFO     | agents.scout.tools.web_search:__call__:685 - 搜索完成，用时 7.42s，找到 10 个线索
+2026-01-15 16:32:12.578 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 步骤 1: 找到 10 条线索
+2026-01-15 16:32:12.579 | INFO     | agents.scout.nodes.base_node:log_info:34 - [SearchNode] 搜索完成，共找到 10 条线索
+2026-01-15 16:32:12.579 | INFO     | agents.scout.agent:run:141 -    ✅ 完成，状态: success, 线索: 10
+2026-01-15 16:32:12.580 | INFO     | agents.scout.agent:_save_results:350 - 💾 结果保存到: artifacts/scout/run_20260115_163212_success.json
+2026-01-15 16:32:12.581 | INFO     | agents.scout.agent:run:163 - 🎉 任务完成! 找到 40 条线索，成功率: 100.0%
