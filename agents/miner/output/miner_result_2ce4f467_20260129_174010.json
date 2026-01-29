@@ -1,0 +1,506 @@
+{
+  "metadata": {
+    "run_id": "2ce4f467",
+    "url": "https://unidata.pro/datasets/",
+    "duration": "51.50s",
+    "quality_score": 0.75,
+    "generation": 14
+  },
+  "evolution_applied": {},
+  "l3_discovery": [
+    {
+      "url": "https://unidata.pro/datasets/",
+      "title": "Datasets",
+      "confidence": 0.9,
+      "reason": "Independent database entry for datasets."
+    },
+    {
+      "url": "https://unidata.pro/data-annotation/",
+      "title": "Data Annotation",
+      "confidence": 0.9,
+      "reason": "Independent tool for data annotation."
+    },
+    {
+      "url": "https://unidata.pro/data-collection/",
+      "title": "Data Collection Services",
+      "confidence": 0.9,
+      "reason": "Independent service for data collection."
+    },
+    {
+      "url": "https://unidata.pro/sentiment-analysis/",
+      "title": "Sentiment Analysis",
+      "confidence": 0.9,
+      "reason": "Independent tool for sentiment analysis."
+    },
+    {
+      "url": "https://unidata.pro/named-entity-recognition-services/",
+      "title": "NER",
+      "confidence": 0.9,
+      "reason": "Independent service for named entity recognition."
+    },
+    {
+      "url": "https://unidata.pro/ai-model-testing-services/",
+      "title": "AI Model Check",
+      "confidence": 0.9,
+      "reason": "Independent service for AI model testing."
+    }
+  ],
+  "final_records": [
+    {
+      "title": "Biometric",
+      "url": "https://unidata.pro/datasets/dataset-type/biometrics/",
+      "description": "Category  Healthcare Hair Loss Medical Imaging iBeta Datasets Language Others Smart City Transport Clear View Results Data Type Audio DICOM Image Speech Text Video",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/",
+      "record_id": "49f3d28a5723"
+    },
+    {
+      "title": "Healthcare",
+      "url": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "description": "Hair Loss Medical Imaging",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/",
+      "record_id": "3f24fa0e0f77"
+    },
+    {
+      "title": "Audio",
+      "url": "https://unidata.pro/datasets/data-format/audio/",
+      "description": "Data Type  DICOM Image Speech Text Video",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/",
+      "record_id": "c13b8655fda9"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/ibeta-level-1-video-attacks/",
+      "description": "iBeta Level 1 Dataset 35, 800  Videos 100%  iBeta Level 1 Completion 8  Type of Attacks Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/",
+      "record_id": "0975a03ffdd1"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/ibeta-level-2-video-attacks/",
+      "description": "iBeta Level 2 Dataset 32,300  Videos 100%  iBeta Level 2 Completion 6  Types of Attacks Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/",
+      "record_id": "98155b97073e"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/ibeta-kids/",
+      "description": "iBeta Kids Dataset 45 600 Videos 60 People Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/",
+      "record_id": "74fda5751564"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/selfie-with-id/",
+      "description": "Selfie with ID Dataset 69,435 Files 4,629 People 85 Countries Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/",
+      "record_id": "05bb3bca5128"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/phone-and-webcam-video/",
+      "description": "Phone and Webcam Video Dataset 30,952 files 3869  people Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/",
+      "record_id": "efe803d06383"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/face-anti-spoofing/",
+      "description": "Anti-Spoofing Real Videos Dataset 87,340 Files 179 Countries 43,670  People Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/",
+      "record_id": "df993feffc4c"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/anti-spoofing-replay-pc-videos/",
+      "description": "Anti-Spoofing Replay PC Videos Dataset 4,714 Videos 4,714 People Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/",
+      "record_id": "0153599a075c"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/anti-spoofing-replay-phone-videos/",
+      "description": "Anti-Spoofing Replay Phone Videos Dataset 38,029 Videos 20,018 Sets Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/",
+      "record_id": "b9ad2608a4de"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/kids-anti-spoofing/",
+      "description": "Kids Anti-Spoofing Dataset 6 000 Images 300 people Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/",
+      "record_id": "81cdad254151"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/kids-teens-aging/",
+      "description": "Kids & Teens Aging Dataset (Ages 7-15) 9,000   Photos 1000  People Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/",
+      "record_id": "a79fa861c911"
+    },
+    {
+      "title": "https://unidata.pro/wp-content/uploads/2024/11/data-annotation_vp8.webm",
+      "url": "https://unidata.pro/wp-content/uploads/2024/11/data-annotation_vp8.webm",
+      "description": "Video Player  00:00 00:00 00:00 Use Up/Down Arrow keys to increase or decrease volume. Data Annotation What is Data Annotation in ML? Data annotation in ML training services refers to the process of attaching descriptive labels, tags, or metadata to raw data, making it interpretable and usable for m",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/data-annotation/",
+      "record_id": "67feb8f23240"
+    },
+    {
+      "title": "Learn more",
+      "url": "https://unidata.pro/cases/digital-tree-passport-annotation-for-forest-mapping/",
+      "description": "Data Annotation Cases Digital Tree Passport Annotation for Forest Mapping Forestry Monitoring & GIS 200,000 trees, 10 species classes 2 months  License Plate Annotation for Vehicle Recognition System 100,000 images with detailed license plate markup (bounding boxes, digits, regional symbols) 2 weeks",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/data-annotation/",
+      "record_id": "4c3fb2316bac"
+    },
+    {
+      "title": "Learn more",
+      "url": "https://unidata.pro/cases/sentiment-annotation-for-brand-monitoring/",
+      "description": "Sentiment Annotation for Brand Monitoring Marketing & Consumer Insights 12,000 text samples, 3 sentiment classes (positive, negative, neutral) 3 weeks",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/data-annotation/",
+      "record_id": "40dda489784f"
+    },
+    {
+      "title": "Learn more",
+      "url": "https://unidata.pro/cases/surveillance-video-annotation-for-entrance-monitoring/",
+      "description": "Surveillance Video Annotation for Entrance Monitoring Surveillance & Security 90 minutes of video from three cameras, approximately 50-60 thousand frames 2 week",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/data-annotation/",
+      "record_id": "6313d69d2613"
+    },
+    {
+      "title": "Learn more",
+      "url": "https://unidata.pro/cases/image-data-collection-for-hair-loss-classification-task/",
+      "description": "Image Data Collection for Hair Loss Classification Task Medicine 200 annotated sets 1.5 months",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/data-collection/",
+      "record_id": "418278f24e2d"
+    },
+    {
+      "title": "Learn more",
+      "url": "https://unidata.pro/cases/video-data-collection-for-street-weapon-detection/",
+      "description": "Video Data Collection for Street Weapon Detection Video Systems and Video Analysis 100 hours of video for annotation 28 days",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/data-collection/",
+      "record_id": "7fbe0a7408b1"
+    },
+    {
+      "title": "CommercialMedicineComputer VisionMachine LearningClassificationData Labeling",
+      "url": "https://unidata.pro/datasets/brain-mri-image-dicom/",
+      "description": "Commercial Medicine Computer Vision Machine Learning Classification Data Labeling Brain MRI Dataset Brain MRI Dataset contains MRI scans of human brains with radiologists’ reports (descriptions, conclusions, and recommendations), offering detailed structural imaging with ~30 slices per scan at 1 mm ",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/ai-model-testing-services/",
+      "record_id": "8dd7626dc0e5"
+    },
+    {
+      "title": "Learn more",
+      "url": "https://unidata.pro/cases/image-annotation-for-strawberry-ripeness-detection/",
+      "description": "Image Annotation for Strawberry Ripeness Detection Agriculture 5,000 strawberry images 1 month",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/industries/",
+      "record_id": "29d377cc2ff4"
+    },
+    {
+      "title": "Audio Annotation",
+      "url": "https://unidata.pro/case-category/audio-annotation/",
+      "description": "Categories  Audio Transcription Content Moderation Data Collection Geospatial Annotation services Image Annotation NLP Annotation services Text Labeling Video Annotation",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/cases/",
+      "record_id": "2a84532fbc5c"
+    },
+    {
+      "title": "Lean more",
+      "url": "https://unidata.pro/cases/arabic-language-data-annotation-for-llm-evaluation/",
+      "description": "NLP Annotation services Conversational AI Arabic Language Data Annotation for LLM Evaluation We didn’t just annotate Arabic. We built a controllable system for working with one of the most fragmented and demanding […] Timeline 3 months",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/cases/",
+      "record_id": "14cca849cf45"
+    },
+    {
+      "title": "Lean more",
+      "url": "https://unidata.pro/cases/fabric-mask-dataset-for-biometric-testing/",
+      "description": "Data Collection Biometrics & Facial Recognition Fabric Mask Dataset for Biometric Testing Testing biometrics with frontal-only masks hides real weaknesses. We developed fabric mask samples for true multi-angle evaluation. Data Multiple fabric mask samples, including hyper-realistic 3D-printed varian",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/cases/",
+      "record_id": "cd589187ef8b"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/chest-x-ray-image-dicom/",
+      "description": "Chest X-Ray Dataset 443  Files 150  Medical Studies 13  Data tags Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "cbd1e07fd3ec"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/spine-mri-image-dicom/",
+      "description": "Spine MRI Dataset 2,400,000+  Medical Studies 67+  Pathologies Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "b5494eba573f"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/chest-ct/",
+      "description": "Chest CT Segmentation Dataset 1,000+  medical studies 7  pathologies 8  anatomical region Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "0affc75fcff7"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/mammography-segmentation/",
+      "description": "Mammography Segmentation Dataset 3,000+  studies 14+  pathologies Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "db1de3c75c11"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/brain-ct/",
+      "description": "Brain CT Segmentation Dataset 1,000+ medical studies 10  pathologies Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "1c5ae210020e"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/ct-scan-chest/",
+      "description": "CT Scan Chest Dataset 50,000+  studies with protocol 100,000+  studies without protocol 24  pathologies Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "373bf80d9124"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/ct-scans-of-brain/",
+      "description": "CT Scans of Brain 20,000+  studies with protocol 50,000+  studies without protocol 5  pathologies Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "4fe508130d1c"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/mammography-dataset/",
+      "description": "Mammography Dataset 100,000+  studies with protocol 500,000+  studies without protocol Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "2e30a4d6ee60"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/x-ray-of-upper-extremity-joints/",
+      "description": "X-ray of upper-extremity joints 200,000+  studies with protocol 1,000,000+  studies without protocol 13  pathologies Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "e76753ddd1f7"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/oct-retinal-images-dataset/",
+      "description": "OCT Retinal Dataset 1,000  Scans 100  B-scans per volume Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "26950de859d4"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/male-hair-loss-dataset/",
+      "description": "Male Hair Loss Dataset 2 260   Images 452    People Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "b71a22fdf092"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/hair-loss-in-women-segmentation-dataset/",
+      "description": "Women Hair Loss Segmentation Dataset 108  Images 54 People Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "43df2190ac68"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/hair-loss-in-men-segmentation-dataset/",
+      "description": "Men Hair Loss Segmentation Dataset 3 100  Images 775  People Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "d16ae118fcad"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/hair-loss-female-ludwig-scale/",
+      "description": "Female Hair Loss Dataset 552 Images 276 People Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/healthcare/",
+      "record_id": "3068a6dfacf0"
+    },
+    {
+      "title": "Get started",
+      "url": "https://unidata.pro/datasets/dataset-type/transport/",
+      "description": "Transport ML data related to public and private transportation.",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "9190bfbf4853"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/car-license-plates-ocr-image/",
+      "description": "Car License Plate Detection Dataset 3 809 704 images 93 Countries Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "c528e0b61f6d"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/cars-object-tracking/",
+      "description": "Cars Object Tracking Dataset 10,000+ videos Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "21498bedeb23"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/real-time-traffic-and-environmental-video-dataset/",
+      "description": "Real-Time Traffic Video Dataset 500  Videos Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "ae547f974327"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/poland-license-plate-detection-dataset/",
+      "description": "Poland License Plate Detection Dataset 196 664  images Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "aee05c92bdcb"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/united-kingdom-license-plate-detection-dataset/",
+      "description": "United Kingdom License Plate Detection Dataset 118 798  images Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "29c4cf08a9bf"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/france-license-plate-detection-dataset/",
+      "description": "France License Plate Detection Dataset 195 445 images Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "57db184bec10"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/hungary-license-plate-detection-dataset/",
+      "description": "Hungary License Plate Detection Dataset 96 518  images Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "5814f33f4613"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/spain-license-plate-detection-dataset/",
+      "description": "Spain License Plate Detection Dataset 116 237  images Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "b48a35dcb6e9"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/usa-license-plate-detection-dataset/",
+      "description": "USA License Plate Detection Dataset 89 986 images Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "b90d579d89a9"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/netherlands-license-plate-detection-dataset/",
+      "description": "Netherlands License Plate Detection Dataset 88 753  images Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "1160547060e7"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/italy-license-plate-detection-dataset/",
+      "description": "Italy License Plate Detection Dataset 62 666 images Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "1175f620f90c"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/belgium-license-plate-detection-dataset/",
+      "description": "Belgium License Plate Detection Dataset 58 229 images Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "fcc375526a4e"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/germany-license-plate-detection-dataset/",
+      "description": "Germany License Plate Detection Dataset 177 827 images Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/dataset-type/transport/",
+      "record_id": "4eabfffcfb12"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/speech-emotion-recognition/",
+      "description": "Speech Emotion Recognition Dataset 30,000+ audio 4 emotions Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/data-format/audio/",
+      "record_id": "21136d6cba34"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/audio-dataset-various-music-genres/",
+      "description": "Audio Dataset: Various Music Genres 500,000  Audio Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/data-format/audio/",
+      "record_id": "805744356522"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/sound-effects-dataset/",
+      "description": "Sound Effects Dataset 500,000  Audio Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/data-format/audio/",
+      "record_id": "9dcb276db665"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/ai-avatar/",
+      "description": "AI Avatar Dataset 45  people 1 215  videos 405  audios Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/data-format/audio/",
+      "record_id": "a1a61bd1a55a"
+    },
+    {
+      "title": "Commercial",
+      "url": "https://unidata.pro/datasets/real-vs-fake-human-voice-deepfake-audio/",
+      "description": "Real vs Fake Human Voice – Deepfake Audio Dataset 5,000 Audio Fast view",
+      "is_l3_hint": false,
+      "source_page": "https://unidata.pro/datasets/data-format/audio/",
+      "record_id": "d8b8454e3185"
+    }
+  ]
+}

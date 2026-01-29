@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "run_id": "7e455da3",
+    "url": "https://materialsproject.org/",
+    "duration": "11.24s",
+    "quality_score": 0.0,
+    "generation": 13
+  },
+  "evolution_applied": {
+    "structure_node": {
+      "add_focus_patterns": [
+        "database",
+        "repository",
+        "archive",
+        "dataset",
+        "download",
+        "query"
+      ],
+      "add_ignore_patterns": [
+        "terms-of-service",
+        "privacy-policy",
+        "news-release",
+        "career"
+      ],
+      "scoring_bias": {}
+    }
+  },
+  "l3_discovery": [],
+  "final_records": []
+}
