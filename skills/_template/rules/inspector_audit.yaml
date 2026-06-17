@@ -1,0 +1,85 @@
+# Inspector LLM 审计补充规则 — protein research skill
+version: 1
+
+gate_thresholds:
+  min_score: 0.55
+  strict_default: false
+  trusted_domain_bypass_alignment: true
+  min_alignment_for_untrusted: 0.7
+
+trusted_path_signals:
+  - /download
+  - /downloads
+  - /ftp
+  - /api
+  - /api-docs
+  - /help/download
+  - /help/uniprotkb
+  - /docs/downloads
+  - martview
+  - biomart
+  - /cgi/download
+  - /datasets
+  - /data-download
+  - registry.opendata.aws
+
+soft_ignore_path_patterns:
+  - /train/
+  - /tutorial
+  - /learn/
+  - pdb101\.rcsb\.org
+  - /education/
+  - /webinar
+
+l3_trusted_host_patterns:
+  - uniprot\.org
+  - rcsb\.org
+  - pdbj\.org
+  - wwpdb\.org
+  - pdbe\.org
+  - ebi\.ac\.uk
+  - ncbi\.nlm\.nih\.gov
+  - ensembl\.org
+  - string-db\.org
+  - pfam\.xfam\.org
+  - interpro\.ebi\.ac\.uk
+  - massive\.ucsd\.edu
+  - iprox\.cn
+  - cncb\.ac\.cn
+  - alphafold\.ebi\.ac\.uk
+  - expasy\.org
+  - proteomecentral\.proteomexchange\.org
+  - pride\.ebi\.ac\.uk
+
+audit_protocol_append: |
+  #### DOMAIN-SPECIFIC: PROTEIN RESEARCH DATA (Skill Override)
+
+  For this mission, the following pages on institutional protein/bioinformatics domains are **high-value KEEP candidates**, not NOISE:
+
+  1. **Database access entry points (L3)** — KEEP when the URL is clearly how users obtain data:
+     - Bulk download pages, FTP directory listings, API documentation, BioMart/MartView portals
+     - Dataset catalog pages with persistent identifiers (e.g. registry entries, accession browsers)
+     - Examples: `uniprot.org/help/download`, `ftp.uniprot.org`, `rcsb.org/downloads`, `alphafold.ebi.ac.uk/download`, STRING/BioGRID download pages
+
+  2. **Clarification on "file download page" rule**:
+     - The generic rule "reject file download pages" does **NOT** apply to **institutional database bulk-download/API gateways**.
+     - Only reject one-off PDF/article/paper downloads or unrelated file attachments.
+
+  3. **Tutorial / education pages (SOFT_IGNORE, not KEEP)**:
+     - Training guides without direct data access (e.g. PDB101 tutorials, general help overviews) → `SOFT_IGNORE`, level `NOISE`
+     - Do NOT HARD_BLACKLIST the domain.
+
+  4. **Mission relevance for protein research**:
+     - Strong KEEP signals: protein, proteome, proteomics, structure, PDB, UniProt, interaction, annotation, sequence, AlphaFold, PRIDE, MassIVE
+     - On trusted hosts (UniProt, RCSB, EBI, NCBI, Ensembl, STRING, Pfam, InterPro, iProX), prefer KEEP for download/API/catalog paths even if title is generic.
+
+  5. **L3 evidence on trusted hosts**:
+     - If host is a known protein database and path contains download/ftp/api/dataset/catalog/mart → set `is_database_entry_link: true` unless clearly a news/blog page.
+
+four_dimensional_defaults:
+  domain: "Biology / Proteomics"
+  data_morphology_hints:
+    - "Structured Database"
+    - "Bulk Download Index"
+    - "API Hub"
+    - "Sequence/Structure Repository"

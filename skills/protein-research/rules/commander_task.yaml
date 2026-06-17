@@ -1,0 +1,100 @@
+# Commander 任务模板 — protein research skill
+version: 1
+
+core_intent_template: "发现蛋白质研究相关的数据源容器、数据库入口与可获取数据集线索"
+
+task_profile:
+  goal: "识别全球蛋白质研究数据库、数据门户、FTP/API 下载入口与互作/注释资源"
+  scope: global
+  constraints:
+    - "优先可持续数据容器，而非单篇论文或新闻"
+    - "覆盖序列注释、结构、互作、质谱与综合门户"
+    - "允许灰区页面进入下游评分，不在 Commander 阶段硬杀"
+
+scoring_rubric:
+  positive_signals:
+    - institutional_authority
+    - data_container_structure
+    - queryable_or_indexed_assets
+    - mission_relevance
+    - bulk_download_or_api_access
+  negative_signals:
+    - single_content_page
+    - marketing_or_news_noise
+    - pure_auth_or_cart_flow
+    - non_actionable_utility_page
+    - tutorial_only_without_data_access
+  weights:
+    source_authority: 0.28
+    container_structure: 0.32
+    mission_relevance: 0.28
+    noise_risk_penalty: 0.12
+
+scout_config:
+  max_concurrent: 8
+  results_per_query: 8
+  max_seed_urls: 50
+  search_depth: 3
+  enable_translation: false
+  country_code: global
+  task_type: database_and_archive
+
+sub_discipline_hints:
+  - "序列与注释：UniProt, GenBank, Ensembl, RefSeq"
+  - "三维结构：RCSB PDB, wwPDB, PDBe, PDBj, AlphaFold DB, EMDB"
+  - "结构域与家族：InterPro, Pfam, CATH, SCOP"
+  - "蛋白互作：STRING, BioGRID, IntAct, DIP"
+  - "质谱与组学：PRIDE, MassIVE, ProteomeXchange, iProX"
+  - "综合门户：NCBI Protein, EBI, Expasy"
+
+planning_guidance: |
+  ### 蛋白质研究领域战术指引
+  1. **容器优先**：搜索词应锁定数据库门户、下载页、FTP 索引、API 文档、数据仓库注册页，而非教程或新闻。
+  2. **权威域定向**：适当使用 site: 约束（如 site:uniprot.org, site:rcsb.org, site:ebi.ac.uk, site:ncbi.nlm.nih.gov）。
+  3. **层级均衡**：至少 2 条 L1/L2 门户、4 条 L3 专科库、2 条 L4 线下/申请制资产线索。
+  4. **避免学术噪音**：少用泛泛的 "protein research paper" 类查询；多用 "database OR repository OR download OR ftp OR api"。
+  5. **多语补充**：除英语外，可对中日欧核心库增加 1-2 条本地语查询（如 PDBj 日语门户）。
+
+seed_query_examples:
+  - search_query: '("protein database" OR "proteomics repository" OR UniProt OR "Protein Data Bank") (download OR ftp OR api OR portal)'
+    tier: L3_Database
+    language: en
+    description: "广域蛋白质数据库与下载入口"
+    score_hint:
+      expected_recall: 0.85
+      expected_precision: 0.55
+  - search_query: 'site:rcsb.org OR site:wwpdb.org OR site:pdbj.org ("download" OR "data" OR "API")'
+    tier: L3_Database
+    language: en
+    description: "PDB 体系结构与下载入口"
+    score_hint:
+      expected_recall: 0.8
+      expected_precision: 0.65
+  - search_query: 'site:uniprot.org OR site:ebi.ac.uk (proteome OR uniprot OR "bulk download" OR biomart)'
+    tier: L3_Database
+    language: en
+    description: "UniProt/EBI 蛋白质注释与批量获取"
+    score_hint:
+      expected_recall: 0.8
+      expected_precision: 0.6
+  - search_query: '("protein interaction" OR STRING OR BioGRID OR IntAct) (database OR download OR dataset)'
+    tier: L3_Database
+    language: en
+    description: "蛋白互作数据库"
+    score_hint:
+      expected_recall: 0.75
+      expected_precision: 0.5
+  - search_query: '(AlphaFold OR "structural proteomics" OR PRIDE OR MassIVE) (database OR repository OR download)'
+    tier: L3_Database
+    language: en
+    description: "结构预测与质谱蛋白质组学数据"
+    score_hint:
+      expected_recall: 0.75
+      expected_precision: 0.5
+  - search_query: '("protein archive" OR "specimen collection" OR biobank OR "physical collection") (catalog OR inventory OR finding aid)'
+    tier: L4_Physical_Archive
+    language: en
+    description: "线下标本/生物样本库目录线索"
+    score_hint:
+      expected_recall: 0.5
+      expected_precision: 0.4

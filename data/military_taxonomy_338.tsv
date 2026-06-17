@@ -1,0 +1,338 @@
+一级分类	一级分类英文	二级分类	二级分类英文	三级关键词	英文关键词
+军事装备与武器系统	Military Equipment and Weapon Systems	陆战装备	Ground Combat Equipment	主战坦克	main battle tank (MBT)
+				轻型坦克	light tank
+				两栖突击车	amphibious assault vehicle
+				步兵战车	infantry fighting vehicle (IFV)
+				装甲侦察车	armored reconnaissance vehicle
+				装甲指挥车	armored command vehicle
+				装甲输送车	armored personnel carrier (APC)
+				防地雷反伏击车	mine-resistant ambush-protected (MRAP)
+				自行榴弹炮	self-propelled howitzer
+				自行迫击炮	self-propelled mortar
+				自行火箭炮	self-propelled rocket launcher
+				牵引火炮	towed artillery
+				反坦克导弹	anti-tank guided missile (ATGM)
+				反坦克火箭筒	rocket-propelled grenade (RPG)
+				反坦克地雷	anti-tank mine
+				地空导弹系统	surface-to-air missile system
+				近程防空系统	short-range air defense (SHORAD)
+				单兵便携式防空导弹	man-portable air-defense system (MANPADS)
+				反无人机系统	counter-UAV system
+				军用工程车辆	military engineering vehicle
+				舟桥装备	pontoon bridge system
+				扫雷/布雷系统	mine clearing/laying system
+				军用推土机/挖掘机	military bulldozer/excavator
+		海战装备	Naval Combat Equipment	航空母舰	aircraft carrier
+				两栖攻击舰	amphibious assault ship
+				直升机驱逐舰	helicopter destroyer
+				驱逐舰	destroyer
+				护卫舰	frigate
+				濒海战斗舰	littoral combat ship (LCS)
+				轻型护卫舰	corvette
+				导弹艇	missile boat
+				扫雷舰/猎雷舰	mine countermeasure vessel
+				登陆舰/艇	landing ship/craft
+				常规潜艇	conventional submarine
+				核攻击潜艇	nuclear attack submarine (SSN)
+				战略核潜艇	ballistic missile submarine (SSBN)
+				补给舰	supply ship
+				医院船	hospital ship
+				电子侦察船	electronic reconnaissance ship
+				测量船	ocean surveillance ship
+				破冰船	icebreaker
+				无人水面艇	unmanned surface vessel (USV)
+				无人潜航器	unmanned underwater vehicle (UUV)
+				舰载雷达	shipborne radar
+				舰载声呐	shipborne sonar
+				舰载电子战系统	shipborne electronic warfare system
+				舰炮	naval gun
+				垂直发射系统	vertical launching system (VLS)
+		空战装备	Air Combat Equipment	战斗机	fighter aircraft
+				多用途战斗机	multi-role fighter
+				隐身战斗机	stealth fighter
+				轰炸机	bomber
+				隐身轰炸机	stealth bomber
+				攻击机	attack aircraft
+				预警机	airborne early warning and control (AEW&C)
+				电子战飞机	electronic warfare aircraft
+				空中加油机	aerial refueling tanker
+				运输机	transport aircraft
+				教练机	trainer aircraft
+				武装直升机	attack helicopter
+				运输直升机	transport helicopter
+				侦察直升机	reconnaissance helicopter
+				倾转旋翼机	tiltrotor aircraft
+				高空长航时无人机	high-altitude long-endurance UAV (HALE)
+				中空长航时无人机	medium-altitude long-endurance UAV (MALE)
+				隐身无人机	stealth UAV
+				无人侦察机	reconnaissance UAV
+		导弹与精确制导	Missiles and Precision Guidance	弹道导弹	ballistic missile
+				洲际弹道导弹	intercontinental ballistic missile (ICBM)
+				中程弹道导弹	intermediate-range ballistic missile (IRBM)
+				短程弹道导弹	short-range ballistic missile (SRBM)
+				潜射弹道导弹	submarine-launched ballistic missile (SLBM)
+				巡航导弹	cruise missile
+				空射巡航导弹	air-launched cruise missile (ALCM)
+				高超音速导弹	hypersonic missile
+				反舰导弹	anti-ship missile
+				反舰弹道导弹	anti-ship ballistic missile (ASBM)
+				空地导弹	air-to-ground missile
+				反辐射导弹	anti-radiation missile (ARM)
+				制导炸弹/滑翔弹	guided glide bomb
+				巡飞弹	loitering munition
+				防空导弹	air defense missile
+				反导拦截弹	anti-ballistic missile (ABM)
+				末段高空区域防御	Terminal High Altitude Area Defense (THAAD)
+				爱国者防空系统	Patriot air defense system
+				制导火箭弹	guided rocket
+		太空装备	Space-Based Equipment	光学侦察卫星	optical reconnaissance satellite
+				雷达成像卫星	radar imaging satellite
+				电子侦察卫星	electronic intelligence (ELINT) satellite
+				导弹预警卫星	missile early warning satellite
+				导航卫星	navigation satellite
+				军用通信卫星	military communications satellite
+				空间站/军用实验舱	space station/military module
+				反卫星武器	anti-satellite (ASAT) weapon
+				空间态势感知	space situational awareness (SSA)
+				可重复使用航天器	reusable spacecraft
+				太空快速响应系统	operationally responsive space
+		核生化武器与防护	NBC Weapons and Protection	核弹头	nuclear warhead
+				战术核武器	tactical nuclear weapon
+				核动力装置	nuclear propulsion
+				化学武器	chemical weapon
+				生物武器	biological weapon
+				核防护装备	nuclear protection equipment
+				化学侦察与洗消	chemical detection and decontamination
+		电子战	Electronic Warfare	电子干扰系统	electronic jamming system
+				电子对抗训练	electronic countermeasure training
+				雷达干扰/欺骗	radar jamming/deception
+				通信对抗	communication countermeasures
+				信号情报系统	signals intelligence (SIGINT)
+		网络战	Cyber Warfare	网络攻击武器	cyber attack tool
+				网络防御系统	cyber defense system
+				信息作战	information operations
+				军用人工智能网络防御	AI-based military cyber defense
+		无人系统	Unmanned Systems	察打一体无人机	armed reconnaissance UAV
+				无人侦察机	unmanned reconnaissance aircraft
+				无人作战飞机	unmanned combat aerial vehicle (UCAV)
+				小型/微型无人机	micro/mini UAV
+				巡飞弹	loitering munition
+				无人地面战车	unmanned ground vehicle (UGV)
+				无人水面艇	unmanned surface vessel (USV)
+				无人潜航器	unmanned underwater vehicle (UUV)
+		单兵装备	Individual Equipment	步枪/突击步枪	assault rifle
+				狙击步枪	sniper rifle
+				冲锋枪	submachine gun
+				机枪	machine gun
+				手枪	military pistol
+				枪挂榴弹发射器	under-barrel grenade launcher
+				手榴弹	hand grenade
+				步兵反装甲武器	infantry anti-armor weapon
+				便携式防空导弹	man-portable air-defense system (MANPADS)
+				单兵作战系统	individual soldier system
+				防护装具/防弹衣	body armor
+				军用头盔	military helmet
+				夜视仪/热成像	night vision/thermal sight
+				军用瞄准镜	combat optic sight
+				单兵外骨骼	exoskeleton suit
+				军用通信设备	military radio/handset
+		新兴与颠覆性技术	Emerging and Disruptive Technologies (EDT)	定向能武器/激光	directed energy / laser weapon
+				高功率微波武器	high-power microwave weapon
+				电磁轨道炮	electromagnetic railgun
+				人工智能武器系统	AI-enabled weapon system
+				高超音速技术	hypersonic technology
+				量子技术军事应用	quantum military applications
+				生物交叉技术	bio-hybrid technology
+		支援与保障装备	Support and Sustainment Equipment	军用雷达	military radar
+				军用通信系统	military communication system
+				战场管理系统	battlefield management system
+				野战发电/供电设备	military power generator
+				军用车辆	military vehicle family
+				野战医疗方舱	field medical shelter
+				气象/地形测量装备	military meteorology/geospatial equipment
+军队组织与编制	Military Organization and Structure	军种/兵种	Services and Branches	陆军	army
+				海军	navy
+				空军	air force
+				火箭军/战略导弹部队	rocket force/strategic missile force
+				战略支援部队	strategic support force
+				太空军	space force
+				海军陆战队	marine corps
+				空降兵/伞兵	airborne/paratrooper force
+				特种作战部队	special operations forces (SOF)
+				网络部队	cyber force
+				信息支援部队	information support force
+				联合后勤部队	joint logistics force
+				宪兵/军事警察	military police
+		编制与力量	Organization and Strength	战区	theater command
+				集团军/军	combined arms army
+				合成旅	combined arms brigade
+				营级战斗队	battalion tactical group (BTG)
+				航母打击群	carrier strike group
+				两栖戒备群	amphibious ready group
+				远征打击群	expeditionary strike group
+				空降兵部队	airborne forces
+				岸防部队	coastal defense force
+				边防部队	border defense force
+				预备役部队	reserve force
+				国民警卫队/内卫	National Guard/interior troops
+		军事院校与训练	Military Academies and Training	国防大学	National Defense University
+				军事学院/军校	military academy
+				非战争军事训练	non-warfare military training
+				士兵训练基地	training base for recruits
+		人员标识	Identification of Personnel	军衔	military rank
+				勋章与奖励体系	military medals and honors
+				军服与徽章	military uniform and insignia
+军事行动与冲突	Military Operations and Conflicts	实战与冲突	Combat and Conflict	局部战争	local war
+				边境武装冲突	border armed clash
+				空袭与精确打击	airstrike and precision strike
+				海上对峙/拦截	maritime standoff/interdiction
+				登陆作战	amphibious/landing operation
+				城市战/巷战	urban warfare/street fighting
+				山地战/丛林战	mountain/jungle warfare
+				沙漠战	desert warfare
+				极地/寒区作战	arctic/cold region warfare
+				岛屿争夺战	island seizure/defense
+				特种作战	special operations raid/kill-or-capture
+				定点清除/斩首	decapitation strike
+				跨境打击/反恐	cross-border counterterrorism
+		演训活动	Exercises and Training Activities	联合军事演习	joint military exercise
+				实兵实弹演习	live-fire exercise
+				红蓝对抗/自由交战	red-blue force-on-force
+				核战争演习	nuclear warfare exercise
+				网络攻防演习	cyber defense exercise
+				太空战演习	space warfare exercise
+				舰机联合巡航	naval-air joint patrol
+				快速部署演练	rapid deployment drill
+		非战争行动	Military Operations Other Than War (MOOTW)	反恐维稳行动	counterterrorism and stability
+				撤侨行动	evacuation operation (NEO)
+				海上护航/反海盗	maritime escort/anti-piracy
+				国际维和行动	peacekeeping operation (PKO)
+				灾害救援与应急	military disaster relief
+				人道主义物资运送	humanitarian aid delivery
+军事战略与理论	Military Strategy and Theory	战略思想	Strategic Thought	核威慑理论	nuclear deterrence theory
+				常规威慑	conventional deterrence
+				反介入/区域拒止	anti-access/area denial (A2/AD)
+				一体化威慑	integrated deterrence
+				非对称作战	asymmetric warfare
+				混合战争	hybrid warfare
+				灰色地带冲突	grey-zone conflict
+				信息主导	information dominance
+		作战概念	Operational Concept	多域作战	multi-domain operations (MDO)
+				全域战	all-domain warfare
+				空海一体战	air-sea battle
+				网络中心战	network-centric warfare (NCW)
+				无人蜂群作战	drone swarm tactics
+				分布式杀伤	distributed lethality
+				远征前沿基地作战	expeditionary advanced base operations (EABO)
+				快速主宰战	rapid dominance (shock and awe)
+		军事学	Military Science	国防白皮书	defense white paper
+				国家安全战略	national security strategy
+				军事战略报告	military strategy report
+				联合出版物/条令	joint publication/doctrine
+				兵力规划	force structure plan
+国防工业与后勤	Defense Industry and Logistics	军工体系	Defense Industrial System	武器研发项目	weapon development program
+				武器采办程序	defense acquisition process
+				军民融合	military-civil fusion (MCF)
+				国际军火贸易	international arms trade
+				武器禁运与制裁	arms embargo and sanctions
+				武器转让/授权生产	technology transfer/licensed production
+		后勤保障	Logistics Support	油料保障	military fuel supply
+				弹药补给与预置	ammunition supply and prepositioning
+				维修保障	military maintenance and repair
+				运输与战略投送能力	strategic lift capability
+				医疗后勤	medical logistics
+				军需物资/被装	quartermaster supplies
+				战场仓储/预置库存	prepositioned stocks
+		基础设施	Military Infrastructure	军港	naval base/port
+				空军基地	air base
+				雷达站与传感器阵地	radar station and sensor site
+				地下/永备工事	underground/permanent fortification
+				训练靶场	training range
+				弹药库	ammunition depot
+				通信枢纽	communication hub
+军事地理与地缘	Military Geography and Geopolitics	全球战略通道	Global Strategic Corridors	马六甲海峡	Strait of Malacca
+				霍尔木兹海峡	Strait of Hormuz
+				苏伊士运河	Suez Canal
+				巴拿马运河	Panama Canal
+				土耳其海峡	Turkish Straits
+				巽他/龙目/望加锡海峡	Sunda/Lombok/Makassar straits
+				红海与曼德海峡	Red Sea / Bab el-Mandeb
+		热点地区	Flashpoints	印太地区	Indo-Pacific region
+				南海争议海域	South China Sea disputed
+				台海/第一岛链	Taiwan Strait/first island chain
+				东海/钓鱼岛	East China Sea / Diaoyu Islands
+				朝鲜半岛	Korean Peninsula
+				北极军事化	Arctic militarization
+				中东/波斯湾	Middle East / Persian Gulf
+				东欧/黑海	Eastern Europe / Black Sea
+		海外军事存在	Overseas Military Presence	海外军事基地	overseas military base
+				海外据点/临时部署点	forward operating site
+				军事巡逻区/禁航区	military patrol zone / no-sail zone
+		争议地区与冲突带	Disputed Areas and Conflict Zones	克什米尔/中印边境	Kashmir/China-India border
+				亚美尼亚-阿塞拜疆	Nagorno-Karabakh
+				叙利亚内战战场	Syrian battlefields
+				也门战场	Yemen conflict
+				乌克兰战场	Ukraine battlefield
+军事历史	Military History	战争史	History of Warfare	古代经典战役	ancient classic battles
+				一战重大战役	World War I major battles
+				二战重大战役	World War II major battles
+				朝鲜战争	Korean War
+				越南战争	Vietnam War
+				中东战争	Arab-Israeli wars
+				两伊战争	Iran-Iraq War
+				马岛战争	Falklands War
+				海湾战争	Gulf War
+				科索沃战争	Kosovo War
+				阿富汗战争	War in Afghanistan
+				伊拉克战争	Iraq War
+				车臣战争	Chechen Wars
+				俄乌战争	Russo-Ukrainian war
+		技术发展史	History of Technological Development	坦克进化史	evolution of tanks
+				航空母舰发展史	history of aircraft carriers
+				精确制导武器发展	precision-guided munitions history
+				无人机发展史	history of drones
+军事人物	Military Figures	指挥与决策	Command and Decision	国家元首/最高统帅	head of state/commander-in-chief
+				国防部长	defense minister
+				军种参谋长	chief of service staff
+				战区司令	theater commander
+				航母打击群司令	carrier strike group commander
+		前线与事务	Frontline and Affairs	特战部队指挥官	special forces commander
+				战斗机王牌/飞行员	fighter ace/pilot
+		情报与分析师	Intelligence and Analysts	军事情报首脑	military intelligence chief
+				知名军事分析家	renowned military analyst
+国际军事关系	International Military Relations	军事同盟/伙伴	Military Alliances and Partnerships	北约(NATO)	NATO
+				美日同盟	U.S.-Japan alliance
+				美韩同盟	U.S.-ROK alliance
+				澳英美联盟(AUKUS)	AUKUS
+				四方安全对话(QUAD)	Quad
+				集体安全条约组织(CSTO)	CSTO
+				上合组织防务合作	SCO defense cooperation
+				双边防务协议	bilateral defense agreement
+		军备控制与裁军	Arms Control and Disarmament	战略武器削减条约	strategic arms reduction treaty (New START)
+				《中导条约》	Intermediate-Range Nuclear Forces Treaty (INF)
+				《禁止核武器条约》	Treaty on the Prohibition of Nuclear Weapons (TPNW)
+				军备控制核查技术	arms control verification technology
+				太空军备控制	space arms control
+				人工智能武器管制	AI weapon regulation
+		军事交流与互信	Military Exchanges and Mutual Trust	军事热线	defense hotline
+				联合训练与军事教育交流	joint training and education exchange
+				空中相遇准则	aircraft intercept code
+				高层防务对话	high-level defense dialogue
+		军售与军事援助	Arms Sales and Military Assistance	主要武器出口国	top arms exporters
+				对台军售	arms sales to Taiwan
+				军事融资与赠款	foreign military financing and grants
+				对外军事培训	train and equip program
+		地区安全机制	Regional Security Mechanism	欧洲安全与合作组织军事交流	OSCE military dimension
+				东盟防长会/东盟+安全	ADMM/ADMM-Plus
+军事法律与伦理	Military Law and Ethics	武装冲突法	Law of Armed Conflict (LOAC)	交战规则	rules of engagement (ROE)
+				日内瓦公约	Geneva Conventions
+				战争罪	war crimes
+				军事必要与比例性	military necessity and proportionality
+				民用目标保护	protection of civilians
+		军事司法	Military Justice	军事法庭	military court/martial
+				军法/军事刑法	military criminal law
+		新兴领域法律	Law of Emerging Domains	网络战国际法	international law in cyberspace
+				太空战法律框架	space warfare legal framework
+				自主武器系统法律审查	legal review of autonomous weapons
+		军事占领与过渡管理	Military Occupation and Transition Management	军事占领法	law of military occupation
+				战后过渡行政	military transitional administration

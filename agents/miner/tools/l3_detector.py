@@ -1,299 +1,134 @@
-# miner/tools/l3_detector.py
 """
-L3数据集检测器 - 使用启发式规则判断是否为L3数据集
+L3 数据集检测器 (LLM 驱动版)
+专注于通过大模型验证目标页面是否真正包含可获取的【数字形式数据集】或【在线查询系统】。
 """
 
-import aiohttp
-import re
+import sys
+import os
 from bs4 import BeautifulSoup
-from typing import Dict, List, Optional
+from typing import Dict, Any, Optional
 from loguru import logger
-from urllib.parse import urljoin, urlparse
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(current_dir, "../../../"))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
+try:
+    from agents.miner.llms.miner_llm import MinerLLMClient as MinerLLM
+    from agents.miner.tools.browse_page import BrowsePageTool
+except ImportError as e:
+    logger.warning(f"未能导入依赖: {e}，请确保 LLM 和抓取工具可用。")
+    MinerLLM = None
+    BrowsePageTool = None
 
 class L3DatasetDetector:
-    """L3数据集检测器"""
+    """基于大模型的 L3 数字数据集确诊器"""
     
     def __init__(self):
-        self.session: Optional[aiohttp.ClientSession] = None
+        self.llm = MinerLLM() if MinerLLM else None
+        # 🚀 弃用裸奔的 aiohttp，引入带有隐身衣和 JS 渲染能力的 BrowsePageTool
+        self.browser = BrowsePageTool(headless=True, max_retries=1)
         
-        # 下载指示器
-        self.download_indicators = [
-            "download", "export", "save as", "get data", "download dataset", 
-            "export data", "bulk download", "download file", "download link",
-            "download now", "free download", "download here"
-        ]
+        self.system_prompt = """
+        你是一个严谨的数据资产审计员。你的唯一任务是判断目标网页是否是一个真实的【L3 级独立子库/数字数据集】。
         
-        # 文件格式指示器
-        self.file_indicators = [
-            ".csv", ".xlsx", ".xls", ".tsv", ".json", ".xml", ".zip", 
-            ".tar.gz", ".rar", ".7z", ".fasta", ".fastq", ".bam", 
-            ".vcf", ".bed", ".gff", ".gtf", ".sam", ".cram"
-        ]
+        【判断准则】（必须满足其一）：
+        1. 是数字文件库：页面提供可以直接下载的数字文件（如 CSV, JSON, ZIP, 数据集压缩包等）或 API 获取指南。
+        2. 是在线检索系统：页面提供了一个【专门针对特定数据集合】的在线查询/搜索界面（Interactive Database/Search Form），允许用户通过检索词在线筛选并查看结构化数据。
         
-        # UI元素指示器
-        self.ui_indicators = [
-            "download button", "export button", "data access", "file download",
-            "bulk export", "api endpoint", "download icon", "save icon"
-        ]
+        【排除准则】（绝不能判定为 L3）：
+        1. 拒绝物理线索 (L4)：如果该页面仅仅是一张物理档案、博物馆藏品的信息登记页，且【必须线下访问或发邮件申请】，没有任何附带的数字资料，请判定为非 L3。
+        2. 拒绝普通文章/聚合页：如果这是一个普通的维基百科文章、新闻报道，或是罗列了无数个不同网站的纯导航目录，请判定为非 L3。
+
+        输出格式必须为原生 JSON 对象：
+        {
+            "is_l3": true 或 false,
+            "level": "L3" (如果是) 或 "Junk" (如果不是),
+            "confidence": 0.0到1.0的浮点数,
+            "evidence": ["列出页面中证实或证伪其为数字数据集/在线查询系统的关键原话或元素"],
+            "reason": "详细解释你为何做出这个判定"
+        }
+        """
+
+    async def detect(self, url: str, html_content: str = None) -> Dict[str, Any]:
+        """
+        通过大模型检测是否为真实的 L3 数字数据集
+        """
+        content_text = ""
         
-        # 数据库特征词
-        self.database_keywords = [
-            "database", "repository", "archive", "collection", "catalog",
-            "registry", "portal", "platform", "resource", "service",
-            "dataset", "data", "records", "entries", "samples"
-        ]
-        
-        # 生物医学特征词
-        self.biomedical_keywords = [
-            "genome", "genomic", "genetic", "gene", "dna", "rna", "protein",
-            "sequence", "mutation", "variant", "clinical", "patient", "disease",
-            "rare disease", "disorder", "phenotype", "genotype"
-        ]
-    
-    async def detect_l3_dataset(self, url: str) -> Dict:
-        """检测是否为L3数据集"""
-        
-        if not self.session:
-            self.session = aiohttp.ClientSession()
-        
+        # 1. 提取内容 (优先使用传入的 html，否则使用强大的浏览器抓取)
+        if html_content:
+            content_text = self._extract_text_from_html(html_content)
+        else:
+            try:
+                # 🚀 使用 BrowsePageTool，自带防 403 和 JS 等待
+                browse_res = await self.browser.browse_resilient(url=url, use_js=True)
+                if not browse_res.get("success"):
+                    # 🔴 核心修复 1：明确抛出 error 字段，触发上层的免杀跳过，绝不无脑拉黑！
+                    return {"error": f"抓取失败: {browse_res.get('error')}", "url": url}
+                
+                html_content = browse_res.get("html", "")
+                content_text = self._extract_text_from_html(html_content)
+            except Exception as e:
+                # 🔴 核心修复：网络级崩溃也要走免杀通道
+                return {"error": f"抓取异常: {str(e)}", "url": url}
+
+        if not content_text:
+             # 如果页面真的空空如也，这确实是垃圾，正常返回
+            return self._fallback_junk_response(url, "页面无可用文本内容")
+
+        # 2. 请求大模型审计 (截取文本以适应窗口)
+        truncated_content = content_text[:12000]
+        prompt = f"请验证以下网页内容是否属于可数字获取的 L3 数据集或在线查询系统：\nURL: {url}\n\n内容:\n{truncated_content}\n\n请输出 JSON。"
+
         try:
-            async with self.session.get(url, timeout=15) as response:
-                if response.status >= 400:
-                    return {
-                        "url": url,
-                        "is_l3": False,
-                        "confidence": 0.0,
-                        "error": f"HTTP {response.status}"
-                    }
-                
-                content = await response.text()
-                soup = BeautifulSoup(content, 'html.parser')
-                
-                return await self._analyze_content(url, content, soup)
-                
+            # 调用 MinerLLMClient 封装好的 ainvoke_json
+            result = await self.llm.ainvoke_json(
+                system_prompt=self.system_prompt,
+                user_prompt=prompt
+            )
+            
+            # 🔴 核心修复 2：兼容 LLM 返回的 error，直接向上传递，触发免杀！
+            if "error" in result:
+                return {"error": f"LLM 响应异常: {result.get('error')}", "url": url}
+            
+            # 数据格式补全，对齐 ma4cd agent 流转需要
+            result["url"] = url
+            result["is_valuable"] = result.get("is_l3", False)
+            result["details"] = {"llm_audit_passed": True}
+            
+            return result
+            
         except Exception as e:
-            logger.error(f"L3检测失败 {url}: {e}")
-            return {
-                "url": url,
-                "is_l3": False,
-                "confidence": 0.0,
-                "error": str(e)
-            }
-    
-    async def _analyze_content(self, url: str, content: str, soup: BeautifulSoup) -> Dict:
-        """分析页面内容"""
-        
-        score = 0
-        evidence = []
-        details = {}
-        
-        # 1. 检查下载指示器 (权重: 3)
-        download_score = self._check_download_indicators(content, soup)
-        score += download_score * 3
-        if download_score > 0:
-            evidence.append("has_download_links")
-            details["download_links"] = self._extract_download_links(soup)
-        
-        # 2. 检查文件格式指示器 (权重: 2)
-        file_score = self._check_file_indicators(content, url)
-        score += file_score * 2
-        if file_score > 0:
-            evidence.append("has_data_files")
-            details["file_formats"] = self._extract_file_formats(content)
-        
-        # 3. 检查数据库特征 (权重: 2)
-        db_score = self._check_database_features(content, soup)
-        score += db_score * 2
-        if db_score > 0:
-            evidence.append("has_database_features")
-        
-        # 4. 检查生物医学相关性 (权重: 1)
-        bio_score = self._check_biomedical_relevance(content)
-        score += bio_score * 1
-        if bio_score > 0:
-            evidence.append("biomedical_relevant")
-        
-        # 5. 检查表格数据 (权重: 2)
-        table_score = self._check_table_data(soup)
-        score += table_score * 2
-        if table_score > 0:
-            evidence.append("has_tabular_data")
-            details["table_count"] = len(soup.find_all('table'))
-        
-        # 6. 检查API端点 (权重: 1)
-        api_score = self._check_api_endpoints(content, soup)
-        score += api_score * 1
-        if api_score > 0:
-            evidence.append("has_api_access")
-        
-        # 计算最终置信度
-        max_possible_score = 11  # 3+2+2+1+2+1
-        confidence = min(score / max_possible_score, 1.0)
-        
-        # 判断阈值
-        is_l3 = confidence >= 0.3  # 可调整阈值
-        
+            logger.error(f"L3 大模型检测失败 {url}: {e}")
+            return {"error": f"LLM 调用抛出异常: {str(e)}", "url": url}
+
+    def _extract_text_from_html(self, html: str) -> str:
+        """从 HTML 中剥离脚本和样式，提取纯文本"""
+        try:
+            soup = BeautifulSoup(html, 'html.parser')
+            for script in soup(["script", "style", "noscript", "svg"]):
+                script.decompose()
+            return soup.get_text(separator=' ', strip=True)
+        except Exception:
+            return ""
+
+    def _fallback_junk_response(self, url: str, reason: str) -> Dict[str, Any]:
+        """只有在确认页面无价值时才返回的 Junk 判定 (不含 error)"""
         return {
             "url": url,
-            "is_l3": is_l3,
-            "confidence": round(confidence, 3),
-            "evidence": evidence,
-            "score_breakdown": {
-                "download_indicators": download_score,
-                "file_indicators": file_score,
-                "database_features": db_score,
-                "biomedical_relevance": bio_score,
-                "table_data": table_score,
-                "api_endpoints": api_score,
-                "total_score": score,
-                "max_score": max_possible_score
-            },
-            "details": details
+            "level": "Junk",
+            "is_valuable": False,
+            "is_l3": False,
+            "confidence": 0.0,
+            "reason": reason,
+            "evidence": []
         }
-    
-    def _check_download_indicators(self, content: str, soup: BeautifulSoup) -> float:
-        """检查下载指示器"""
-        content_lower = content.lower()
-        score = 0
-        
-        # 检查文本中的下载词汇
-        for indicator in self.download_indicators:
-            if indicator in content_lower:
-                score += 0.1
-        
-        # 检查下载链接
-        download_links = soup.find_all('a', href=True)
-        for link in download_links:
-            href = link.get('href', '').lower()
-            text = link.get_text().lower()
-            
-            if any(indicator in href or indicator in text for indicator in self.download_indicators):
-                score += 0.2
-        
-        return min(score, 1.0)
-    
-    def _check_file_indicators(self, content: str, url: str) -> float:
-        """检查文件格式指示器"""
-        content_lower = content.lower()
-        url_lower = url.lower()
-        score = 0
-        
-        # 检查内容中的文件格式
-        for indicator in self.file_indicators:
-            if indicator in content_lower:
-                score += 0.15
-            if indicator in url_lower:
-                score += 0.1
-        
-        return min(score, 1.0)
-    
-    def _check_database_features(self, content: str, soup: BeautifulSoup) -> float:
-        """检查数据库特征"""
-        content_lower = content.lower()
-        score = 0
-        
-        # 检查数据库关键词
-        for keyword in self.database_keywords:
-            if keyword in content_lower:
-                score += 0.1
-        
-        # 检查页面标题
-        title = soup.find('title')
-        if title:
-            title_text = title.get_text().lower()
-            for keyword in self.database_keywords:
-                if keyword in title_text:
-                    score += 0.2
-        
-        return min(score, 1.0)
-    
-    def _check_biomedical_relevance(self, content: str) -> float:
-        """检查生物医学相关性"""
-        content_lower = content.lower()
-        score = 0
-        
-        for keyword in self.biomedical_keywords:
-            if keyword in content_lower:
-                score += 0.1
-        
-        return min(score, 1.0)
-    
-    def _check_table_data(self, soup: BeautifulSoup) -> float:
-        """检查表格数据"""
-        tables = soup.find_all('table')
-        
-        if not tables:
-            return 0
-        
-        # 根据表格数量和复杂度评分
-        score = min(len(tables) * 0.2, 0.8)
-        
-        # 检查表格是否包含数据特征
-        for table in tables[:3]:  # 只检查前3个表格
-            rows = table.find_all('tr')
-            if len(rows) > 5:  # 有足够多的行
-                score += 0.1
-            
-            # 检查是否有数字数据
-            table_text = table.get_text()
-            if re.search(r'\d+\.\d+|\d+%|\d+,\d+', table_text):
-                score += 0.1
-        
-        return min(score, 1.0)
-    
-    def _check_api_endpoints(self, content: str, soup: BeautifulSoup) -> float:
-        """检查API端点"""
-        content_lower = content.lower()
-        score = 0
-        
-        api_indicators = ['api', 'rest', 'endpoint', 'json', 'xml', 'web service']
-        
-        for indicator in api_indicators:
-            if indicator in content_lower:
-                score += 0.15
-        
-        # 检查代码块中的API示例
-        code_blocks = soup.find_all(['code', 'pre'])
-        for block in code_blocks:
-            block_text = block.get_text().lower()
-            if 'http' in block_text and ('api' in block_text or 'json' in block_text):
-                score += 0.2
-        
-        return min(score, 1.0)
-    
-    def _extract_download_links(self, soup: BeautifulSoup) -> List[str]:
-        """提取下载链接"""
-        download_links = []
-        
-        links = soup.find_all('a', href=True)
-        for link in links:
-            href = link.get('href', '')
-            text = link.get_text().lower()
-            
-            if any(indicator in text for indicator in self.download_indicators):
-                download_links.append(href)
-            elif any(ext in href.lower() for ext in self.file_indicators):
-                download_links.append(href)
-        
-        return download_links[:10]  # 最多返回10个
-    
-    def _extract_file_formats(self, content: str) -> List[str]:
-        """提取文件格式"""
-        formats = []
-        content_upper = content.upper()
-        
-        format_patterns = [
-            'CSV', 'TSV', 'XLSX', 'XLS', 'JSON', 'XML', 'ZIP',
-            'FASTA', 'FASTQ', 'BAM', 'VCF', 'BED', 'GFF', 'GTF'
-        ]
-        
-        for fmt in format_patterns:
-            if fmt in content_upper:
-                formats.append(fmt)
-        
-        return list(set(formats))  # 去重
-    
+
     async def close(self):
-        """关闭会话"""
-        if self.session:
-            await self.session.close()
+        # BrowsePageTool 会自行管理生命周期，无需额外清理
+        pass
+
+# 单例导出
+l3_detector = L3DatasetDetector()

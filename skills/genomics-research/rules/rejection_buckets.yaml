@@ -1,0 +1,70 @@
+version: 1
+
+max_samples_per_bucket: 5
+
+# 拒绝原因分桶：按匹配优先级从上到下
+bucket_rules:
+  - id: prefilter
+    label: 预拦截/结构闸门
+    match_any:
+      - pre-filter
+      - pre filter
+      - 预拦截
+  - id: prefilter_noise
+    label: 噪声/UGC
+    match_any:
+      - 噪声
+      - ugc
+  - id: leaf_or_single_content
+    label: 叶子页/单篇内容
+    match_any:
+      - 叶子页
+      - /doi/
+      - /abs/
+      - single_content
+  - id: infra_or_rate_limit
+    label: 基础设施/限流
+    match_any:
+      - 基础设施异常
+      - "429"
+      - timeout
+      - 拥堵
+  - id: llm_action
+    label: LLM 动作拒绝
+    match_any:
+      - "LLM action="
+  - id: llm_status
+    label: LLM 状态拒绝
+    match_any:
+      - "LLM status="
+  - id: score_threshold
+    label: 分数低于阈值
+    match_any:
+      - 分数低于阈值
+      - 分数不足
+  - id: tier_hard_constraints
+    label: L 层级硬约束
+    match_any:
+      - 硬约束
+  - id: candidate_type_block
+    label: 候选类型拦截
+    match_any:
+      - exploration_target
+  - id: secondary_verification
+    label: 二次复核拦截
+    match_any:
+      - LLM复核拦截
+  - id: rule_gate
+    label: 规则/质量闸门
+    match_any:
+      - 规则拦截
+      - 闸门
+      - 质量闸门
+  - id: trusted_pass_override
+    label: 可信域例外（应保留）
+    match_any:
+      - trusted_host
+      - download gateway
+  - id: other
+    label: 其他
+    match_any: []

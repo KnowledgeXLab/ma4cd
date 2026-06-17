@@ -1,0 +1,56 @@
+version: 1
+
+# Miner 领域信号：用于站内关键词、L2/L3 识别与搜索增强
+
+domain_keywords:
+  - protein
+  - proteome
+  - proteomics
+  - sequence
+  - structure
+  - pdb
+  - alphafold
+  - uniprot
+  - interpro
+  - pfam
+  - string
+  - biogrid
+  - intact
+  - pride
+  - massive
+  - iprox
+  - proteomexchange
+
+dataset_access_tokens:
+  - download
+  - downloads
+  - ftp
+  - api
+  - bulk
+  - export
+  - dataset
+  - datasets
+  - catalog
+  - catalogue
+  - registry
+  - biomart
+  - martview
+
+negative_keywords:
+  - careers
+  - jobs
+  - press
+  - news
+  - blog
+  - webinar
+  - training
+  - login
+  - signup
+  - privacy
+  - terms
+
+search_templates:
+  # used for site-limited searching inside Miner tools
+  - '{kw} site:{domain} (download OR ftp OR api OR dataset)'
+  - '{kw} site:{domain} (bulk OR export OR "data access")'
+  - '{kw} site:{domain} (catalog OR registry OR biomart)'

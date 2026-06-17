@@ -1,0 +1,66 @@
+version: 1
+
+# Scout 领域化搜索策略（用于 query expansion & rewrite）
+
+site_preferences:
+  # prefer/boost these suffixes in expanded queries
+  tld_suffixes:
+    - .edu
+    - .ac.uk
+    - .gov
+    - .org
+  # prefer these known authoritative domains for protein research
+  domains:
+    - uniprot.org
+    - ebi.ac.uk
+    - ncbi.nlm.nih.gov
+    - rcsb.org
+    - wwpdb.org
+    - pdbj.org
+    - pdbe.org
+    - ensembl.org
+    - expasy.org
+    - string-db.org
+    - interpro.ebi.ac.uk
+    - pfam.xfam.org
+    - massive.ucsd.edu
+    - pride.ebi.ac.uk
+    - iprox.cn
+
+tier_distribution:
+  # expected counts in [8,15] query matrix; Scout should try to respect this mix
+  L1_L2_Hub: 2
+  L3_Database: 8
+  L4_Physical_Archive: 2
+
+language_strategy:
+  default: en
+  include:
+    - en
+    - zh
+    - ja
+
+noise_rewrite:
+  # when previous results are noisy, Scout can rewrite by adding these container tokens
+  container_tokens:
+    - database
+    - repository
+    - portal
+    - archive
+    - catalog
+    - dataset
+    - download
+    - ftp
+    - api
+  hard_noise_tokens:
+    - paper
+    - journal
+    - conference
+    - news
+
+prompt_append: |
+  ### 🧩 Skill 指引：Protein Research Scout 搜索策略
+  - **优先权威站点**：uniprot/ebi/ncbi/rcsb/wwpdb/pdbj/pdbe/ensembl/expasy/string/interpro/pfam/pride/massive。
+  - **优先容器入口**：download/ftp/api/dataset/catalog/biomart/martview。
+  - **避免噪音**：尽量不要生成“paper/journal/conference/news”导向的查询。
+  - **tier 配比目标**：L1/L2 ~2 条，L3 ~8 条，L4 ~2 条（总 8-15 条）。

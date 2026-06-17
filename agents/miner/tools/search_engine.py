@@ -29,26 +29,58 @@ class SearchEngine:
             'duckduckgo': 'https://api.duckduckgo.com/'
         }
         
-        # 生物医学专用搜索
-        self.biomedical_sites = [
-            'ncbi.nlm.nih.gov', 'ebi.ac.uk', 'ensembl.org', 'uniprot.org',
-            'omim.org', 'clinvar.nlm.nih.gov', 'orphanet.org', 'disgenet.org'
-        ]
+        # 权威站点（skill: search_discovery.yaml；无 skill 时为空列表）
+        self._refresh_site_config()
+
+    def _refresh_site_config(self) -> None:
+        try:
+            from utils.search_discovery import (
+                academic_sites,
+                authoritative_sites,
+                default_search_type,
+                get_search_discovery_config,
+            )
+            cfg = get_search_discovery_config()
+            self.authoritative_sites = authoritative_sites()
+            self.academic_sites = academic_sites()
+            self.default_search_type = default_search_type()
+            self._results_per_site = int(cfg.get("results_per_site", 2) or 2)
+            self._max_authoritative_sites = int(cfg.get("max_authoritative_sites", 5) or 5)
+            self._max_l3_results = int(cfg.get("max_l3_results", 20) or 20)
+        except Exception:
+            self.authoritative_sites = []
+            self.academic_sites = ["arxiv.org", "scholar.google.com"]
+            self.default_search_type = "general"
+            self._results_per_site = 2
+            self._max_authoritative_sites = 5
+            self._max_l3_results = 20
+
+    @property
+    def biomedical_sites(self) -> List[str]:
+        """Deprecated alias for authoritative_sites."""
+        return self.authoritative_sites
+
+    @biomedical_sites.setter
+    def biomedical_sites(self, value: List[str]) -> None:
+        self.authoritative_sites = value
     
-    async def search(self, query: str, search_type: str = "general", 
+    async def search(self, query: str, search_type: str = None, 
                     max_results: int = 10, site_filter: str = None) -> List[Dict]:
         """执行搜索"""
         
         if not self.session:
             self.session = aiohttp.ClientSession()
+
+        if not search_type:
+            search_type = getattr(self, "default_search_type", "general") or "general"
         
         results = []
         
         try:
             if search_type == "general":
                 results = await self._search_general(query, max_results, site_filter)
-            elif search_type == "biomedical":
-                results = await self._search_biomedical(query, max_results)
+            elif search_type in ("authoritative", "biomedical", "domain"):
+                results = await self._search_authoritative(query, max_results)
             elif search_type == "dataset":
                 results = await self._search_datasets(query, max_results)
             elif search_type == "academic":
@@ -68,6 +100,17 @@ class SearchEngine:
         search_query = query
         if site_filter:
             search_query += f" site:{site_filter}"
+
+        # Skill: add mild negative keyword filters to reduce obvious noise.
+        try:
+            from utils.miner_signals import negative_keywords
+            neg = [k for k in negative_keywords() if k]
+            if neg:
+                # Avoid generating overly long queries.
+                for k in neg[:6]:
+                    search_query += f" -{k}"
+        except Exception:
+            pass
         
         # 尝试Google搜索
         if self.google_api_key and self.google_cx:
@@ -82,15 +125,19 @@ class SearchEngine:
         
         return results[:max_results]
     
-    async def _search_biomedical(self, query: str, max_results: int) -> List[Dict]:
-        """生物医学专用搜索"""
+    async def _search_authoritative(self, query: str, max_results: int) -> List[Dict]:
+        """权威站点定向搜索（skill: search_discovery.authoritative_sites）"""
+        self._refresh_site_config()
+        if not self.authoritative_sites:
+            return await self._search_general(query, max_results)
+
         results = []
-        
-        # 为每个生物医学站点搜索
         tasks = []
-        for site in self.biomedical_sites[:5]:  # 限制并发数
+        per_site = int(getattr(self, "_results_per_site", 2) or 2)
+        max_sites = int(getattr(self, "_max_authoritative_sites", 5) or 5)
+        for site in self.authoritative_sites[:max_sites]:
             site_query = f"{query} site:{site}"
-            tasks.append(self._search_general(site_query, 2))  # 每个站点2个结果
+            tasks.append(self._search_general(site_query, per_site))
         
         site_results = await asyncio.gather(*tasks, return_exceptions=True)
         
@@ -102,17 +149,18 @@ class SearchEngine:
     
     async def _search_datasets(self, query: str, max_results: int) -> List[Dict]:
         """数据集专用搜索"""
-        
-        # 增强查询词
-        dataset_query = f"{query} (dataset OR database OR repository OR download OR export)"
-        
-        # 文件类型过滤
-        filetype_queries = [
-            f"{query} filetype:csv",
-            f"{query} filetype:xlsx", 
-            f"{query} filetype:json",
-            f"{query} filetype:xml"
-        ]
+        try:
+            from utils.search_discovery import dataset_search_boost, filetype_search_queries
+            dataset_query = dataset_search_boost(query)
+            filetype_queries = filetype_search_queries(query)
+        except Exception:
+            dataset_query = f"{query} (dataset OR database OR repository OR download OR export)"
+            filetype_queries = [
+                f"{query} filetype:csv",
+                f"{query} filetype:xlsx",
+                f"{query} filetype:json",
+                f"{query} filetype:xml",
+            ]
         
         results = []
         
@@ -131,19 +179,10 @@ class SearchEngine:
     
     async def _search_academic(self, query: str, max_results: int) -> List[Dict]:
         """学术搜索"""
-        
-        # 学术站点
-        academic_sites = [
-            'pubmed.ncbi.nlm.nih.gov',
-            'scholar.google.com',
-            'arxiv.org',
-            'biorxiv.org',
-            'medrxiv.org'
-        ]
-        
+        self._refresh_site_config()
         results = []
         
-        for site in academic_sites:
+        for site in getattr(self, "academic_sites", []):
             if len(results) >= max_results:
                 break
             
@@ -249,28 +288,50 @@ class SearchEngine:
         return unique_results
     
     async def search_for_l3_datasets(self, l2_url: str, keywords: List[str]) -> List[Dict]:
-        """为L2站点搜索L3数据集"""
+        """为L2站点搜索L3数据集（含 skill 权威站外扩）"""
         
         from urllib.parse import urlparse
+        try:
+            from utils.search_discovery import (
+                build_authoritative_l2_queries,
+                build_l3_site_queries,
+                get_search_discovery_config,
+            )
+            cfg = get_search_discovery_config()
+            max_results = int(cfg.get("max_l3_results", 20) or 20)
+        except Exception:
+            max_results = 20
+            build_l3_site_queries = None
+            build_authoritative_l2_queries = None
+
         domain = urlparse(l2_url).netloc
         
         results = []
+        queries: List[str] = []
         
         for keyword in keywords:
-            # 构建针对性搜索查询
-            queries = [
-                f"{keyword} site:{domain} (download OR export OR dataset)",
-                f"{keyword} site:{domain} filetype:csv",
-                f"{keyword} site:{domain} filetype:xlsx",
-                f"{keyword} site:{domain} (bulk OR api)"
-            ]
-            
-            for query in queries:
-                if len(results) >= 20:  # 限制结果数量
-                    break
-                
-                search_results = await self.search(query, "general", 3)
-                results.extend(search_results)
+            if build_l3_site_queries:
+                queries.extend(build_l3_site_queries(keyword, domain))
+            else:
+                queries.extend([
+                    f"{keyword} site:{domain} (download OR export OR dataset)",
+                    f"{keyword} site:{domain} filetype:csv",
+                    f"{keyword} site:{domain} filetype:xlsx",
+                    f"{keyword} site:{domain} (bulk OR api)",
+                ])
+
+        if build_authoritative_l2_queries:
+            queries.extend(build_authoritative_l2_queries(keywords, domain))
+
+        seen_q = set()
+        for query in queries:
+            if query in seen_q:
+                continue
+            seen_q.add(query)
+            if len(results) >= max_results:
+                break
+            search_results = await self.search(query, "general", 3)
+            results.extend(search_results)
         
         return self._deduplicate_results(results)
     

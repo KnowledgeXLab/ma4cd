@@ -1,0 +1,59 @@
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Runtime artifacts
+reports/*
+!reports/.gitkeep
+memory_data/sessions/*
+!memory_data/sessions/.gitkeep
+memory_data/reflections/*
+!memory_data/reflections/.gitkeep
+memory_data/chroma_db/
+memory_data/*.json
+memory_data/*.db
+logs/*
+!logs/.gitkeep
+output/*
+!output/.gitkeep
+inspector_state.json
+
+# ChromaDB / vector stores
+data_memory_center/l1_db/
+data_memory_center/l2_db/
+data_memory_center/l3_db/
+data_memory_center/l4_db/
+data_memory_center/blacklist_db/
+data_memory_center/inspector_internal_db/
+data_memory_center/miner_memory/
+
+# Local test / scratch
+artifacts/
+.kilo/
+*.log
+agents/scout/logs/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~

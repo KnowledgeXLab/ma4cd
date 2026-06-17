@@ -1,0 +1,37 @@
+version: 1
+
+core_intent_template: "发现基因组与组学相关的数据源容器、数据库入口与可获取数据集线索"
+
+task_profile:
+  goal: "识别全球基因组/转录组/变异组数据库、GEO/SRA/ENA 等仓库与 FTP/API 下载入口"
+  scope: global
+  constraints:
+    - "优先可持续数据容器，而非单篇论文"
+    - "覆盖序列、表达、变异、注释与综合门户"
+
+scout_config:
+  max_concurrent: 8
+  results_per_query: 8
+  max_seed_urls: 50
+  search_depth: 3
+  enable_translation: false
+  country_code: global
+  task_type: database_and_archive
+
+sub_discipline_hints:
+  - "序列与注释：NCBI GenBank, Ensembl, RefSeq"
+  - "表达与样本：GEO, ArrayExpress, SRA"
+  - "变异与临床：dbSNP, ClinVar, gnomAD"
+  - "单细胞与多组学：EGA, HCA, cellxgene"
+
+planning_guidance: |
+  ### 基因组学领域战术指引
+  1. 容器优先：database / repository / FTP / API / bulk download
+  2. 权威域：site:ncbi.nlm.nih.gov, site:ebi.ac.uk, site:ensembl.org
+  3. 避免 paper / news / tutorial 导向查询
+
+seed_query_examples:
+  - search_query: '("genomics database" OR "genome repository" OR GEO OR SRA) (download OR ftp OR api)'
+    tier: L3_Database
+    language: en
+    description: "广域基因组与组学数据库入口"

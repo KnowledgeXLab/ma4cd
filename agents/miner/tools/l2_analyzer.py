@@ -29,12 +29,20 @@ class L2SiteAnalyzer:
             'entries', 'samples', 'datasets', 'download', 'export'
         ]
         
-        # 生物医学数据库特征
-        self.biomedical_indicators = [
-            'genome', 'gene', 'protein', 'sequence', 'clinical', 'patient',
-            'disease', 'mutation', 'variant', 'phenotype', 'genotype',
-            'biobank', 'specimen', 'sample', 'assay', 'experiment'
+        # 领域信号（通用底座 + skill miner_signals.domain_keywords 注入）
+        self.domain_indicators = [
+            "database", "repository", "archive", "dataset", "catalog",
+            "metadata", "registry", "collection", "records",
         ]
+        try:
+            from utils.miner_signals import domain_keywords
+            extra = [k for k in domain_keywords() if k and k not in self.domain_indicators]
+            if extra:
+                self.domain_indicators.extend(extra[:30])
+        except Exception:
+            pass
+        # Backward-compatible alias
+        self.biomedical_indicators = self.domain_indicators
         
         # 导航菜单关键词
         self.navigation_keywords = [
@@ -491,35 +499,12 @@ class L2SiteAnalyzer:
         return list(keywords)[:10]  # 限制关键词数量
     
     async def _search_for_l3_datasets(self, l2_url: str, keywords: List[str]) -> List[Dict]:
-        """搜索L3数据集"""
-        
-        # 这里需要集成搜索引擎
+        """搜索L3数据集（skill: search_discovery 查询模板）"""
         from .search_engine import SearchEngine
-        
+
         search_engine = SearchEngine()
-        domain = urlparse(l2_url).netloc
-        
-        all_results = []
-        
         try:
-            for keyword in keywords:
-                # 构建搜索查询
-                queries = [
-                    f"{keyword} site:{domain} (download OR export OR dataset)",
-                    f"{keyword} site:{domain} filetype:csv",
-                    f"{keyword} site:{domain} filetype:xlsx",
-                    f"{keyword} site:{domain} (api OR bulk)"
-                ]
-                
-                for query in queries:
-                    if len(all_results) >= 50:  # 限制结果数量
-                        break
-                    
-                    results = await search_engine.search(query, "general", 3)
-                    all_results.extend(results)
-            
-            return all_results
-            
+            return await search_engine.search_for_l3_datasets(l2_url, keywords)
         except Exception as e:
             logger.error(f"搜索L3数据集失败: {e}")
             return []

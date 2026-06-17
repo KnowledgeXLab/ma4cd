@@ -1,0 +1,30 @@
+version: 1
+
+default_search_type: authoritative
+merge_scout_site_preferences: true
+
+authoritative_sites:
+  - ncbi.nlm.nih.gov
+  - ebi.ac.uk
+  - ensembl.org
+  - genome.ucsc.edu
+  - ncbi.nlm.nih.gov/geo
+  - trace.ncbi.nlm.nih.gov
+  - www.ebi.ac.uk/ena
+  - www.ebi.ac.uk/arrayexpress
+
+search_limits:
+  max_authoritative_sites: 6
+  results_per_site: 2
+  max_l3_results: 20
+  max_l3_queries_per_keyword: 4
+
+site_l3_query_templates:
+  - '{keyword} site:{domain} (download OR ftp OR api OR dataset)'
+  - '{keyword} site:{domain} (bulk OR export OR "sequence archive")'
+
+l2_discovery:
+  include_authoritative_site_queries: true
+  max_authoritative_site_queries: 4
+  authoritative_query_templates:
+    - '{keyword} site:{site} (download OR ftp OR api OR GEO OR SRA)'

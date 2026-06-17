@@ -1,0 +1,18 @@
+version: 1
+
+priority_sites:
+  - ncbi.nlm.nih.gov
+  - ebi.ac.uk
+  - ensembl.org
+  - genome.ucsc.edu
+
+gap_query_seeds:
+  - 'site:ncbi.nlm.nih.gov (GEO OR SRA OR "bulk download" OR ftp)'
+  - 'site:ebi.ac.uk (ENA OR ArrayExpress OR download OR ftp)'
+  - 'site:ensembl.org (download OR biomart OR api)'
+
+scout_prompt_append: |
+  ### Skill：Curator 战术补搜（基因组学）
+  优先 NCBI/EBI/Ensembl/UCSC 的数据库与下载/FTP/API 入口，不要论文或新闻。
+
+rank_priority_sites_first: true

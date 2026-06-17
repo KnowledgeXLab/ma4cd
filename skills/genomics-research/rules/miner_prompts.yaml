@@ -1,0 +1,24 @@
+version: 1
+
+structure_append: |
+  ### 🧩 Skill 指引：Protein Research 拓扑挖掘
+  在本任务中，以下 URL/链接模式应视为**高潜结构**（勿因主题无关而丢弃，交给 Inspector 判相关性）：
+  - 批量获取入口：`download`, `downloads`, `ftp`, `api`, `bulk`, `export`, `biomart`, `martview`
+  - 数据库门户：`/database/`, `/datasets/`, `/archive/`, `/registry/`, `/catalogue/`
+  - 权威蛋白库子路径：UniProt/InterPro/Pfam、RCSB/PDB/wwPDB、STRING/BioGRID、PRIDE/MassIVE/ProteomeXchange
+  - 列表/分页：标准表格、accession 列表、分页导航（非无限日历陷阱）
+  以下模式优先降权（非绝对剔除）：`/news/`, `/blog/`, `/careers/`, `/training/`, `/webinar/`, 单篇 `/doi/` 或 `/abs/` 论文页。
+
+extract_planning_append: |
+  ### 🧩 Skill 指引：Protein Research 链接规划
+  优先识别并下钻：
+  - 蛋白质序列/注释库（UniProt, Ensembl, InterPro, Pfam, Expasy）
+  - 三维结构与预测（RCSB PDB, wwPDB, AlphaFold DB, EMDB）
+  - 互作网络（STRING, BioGRID, IntAct）
+  - 质谱蛋白质组学（PRIDE, MassIVE, ProteomeXchange, iProX）
+  导航关键词：`Download`, `FTP`, `API`, `Data access`, `Bulk`, `Export`, `Mart`, `Registry`.
+
+reflection_append: |
+  ### 🧩 Skill 指引：Protein Research 反思
+  - 在权威生物信息学域名上，正常的 download/API 目录页属于 Healthy，勿因页面标题平淡而 stop。
+  - 无限翻页的文献检索结果页可判 InfiniteLoop；单次 404 或独立格式说明页多为 DeadEnd。

@@ -1,0 +1,93 @@
+version: 1
+
+# Inspector 五维报告分类码本（基因组学）
+
+dimensions:
+  domain:
+    label: 领域维度
+    options:
+      - 科学与智能
+      - 医学与健康
+      - 生物信息学与基因组学
+      - 经济与产业
+      - 人文与社会
+      - 未知
+  format:
+    label: 数据形态维度
+    options:
+      - Structured
+      - Textual
+      - Multimedia
+      - Model/Code
+      - Knowledge
+      - 未知
+  source:
+    label: 渠道来源维度
+    options:
+      - 政府机构
+      - 国际组织
+      - 研究机构
+      - 垂直领域公司
+      - 行业媒体
+      - 数据服务公司
+      - 咨询公司
+      - 行业组织
+      - 开源/社交平台
+      - 未知
+  region:
+    label: 国家和地区维度
+    options:
+      - 第一梯队
+      - 第二梯队
+      - 第三梯队
+      - 未知
+  level:
+    label: L1~L4线索分级维度
+    options:
+      - L1/L2
+      - L3
+      - L4
+      - 未知
+
+host_classification_hints:
+  - match_hosts:
+      - ncbi.nlm.nih.gov
+      - ebi.ac.uk
+      - ensembl.org
+      - genome.ucsc.edu
+    domain_dim: 生物信息学与基因组学
+    source_dim: 研究机构
+  - match_hosts:
+      - ncbi.nlm.nih.gov/geo
+      - trace.ncbi.nlm.nih.gov
+      - www.ebi.ac.uk/arrayexpress
+      - www.ebi.ac.uk/ena
+    domain_dim: 生物信息学与基因组学
+    source_dim: 研究机构
+  - match_hosts:
+      - gnomad.broadinstitute.org
+      - clinvar.ncbi.nlm.nih.gov
+    domain_dim: 医学与健康
+    source_dim: 研究机构
+  - match_hosts:
+      - nih.gov
+      - genome.gov
+    domain_dim: 医学与健康
+    source_dim: 政府机构
+
+enforce_host_hints: true
+
+path_format_hints:
+  - match_path_tokens: [api, download, ftp, bulk, dataset, martview, biomart]
+    format_dim: Structured
+  - match_path_tokens: [markdown, guide, help, documentation, docs]
+    format_dim: Textual
+  - match_path_tokens: [github.com, notebook, py-, api-client]
+    format_dim: Model/Code
+
+classification_examples: |
+  3. 严禁胡乱归类！基因组学任务参考：
+  - ncbi.nlm.nih.gov / ebi.ac.uk / ensembl.org / genome.ucsc.edu → 生物信息学与基因组学 + 研究机构
+  - GEO / SRA / ENA / ArrayExpress → 生物信息学与基因组学 + 研究机构
+  - gnomAD / ClinVar → 医学与健康 + 研究机构
+  - nih.gov / genome.gov → 医学与健康 + 政府机构

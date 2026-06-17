@@ -496,65 +496,52 @@ def get_global_search_tool(config: Dict[str, Any] = None) -> ScoutWebSearchTool:
 WebSearchTool = ScoutWebSearchTool
 '''
 
-"""
-广域侦察兵搜索工具 - 官方 API 版（Google, GitHub, ArXiv + DDG fallback）
-专为 MA4CD Scout 设计的策略化搜索工具 - 最终版
-"""
-
 import os
 import sys
 import time
-import json
-import hashlib
-from typing import Dict, List, Any, Optional, Tuple
-from dataclasses import dataclass, asdict
+import requests
+from typing import Dict, List, Any
+from dataclasses import dataclass
 from datetime import datetime
-import urllib.parse
+from urllib.parse import urlparse
 from loguru import logger
 
-# 项目根路径
+try:
+    from agents.miner.memory.backends.redis_aux import _MISS, get_scout_search_cache
+except ImportError:
+    _MISS = object()
+    get_scout_search_cache = lambda: None  # type: ignore
+
+# 项目根路径处理
 current_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.dirname(os.path.dirname(current_dir))
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
 if project_root not in sys.path:
     sys.path.append(project_root)
 
-# 搜索引擎客户端
-# 1. DuckDuckGo (fallback)
+# -----------------------------------------------------------------------------
+# 依赖库动态加载
+# -----------------------------------------------------------------------------
 try:
-    from ddgs import DDGS
+    from tavily import TavilyClient
+    HAS_TAVILY = True
+except ImportError:
+    HAS_TAVILY = False
+
+try:
+    from duckduckgo_search import DDGS
     HAS_DDG = True
 except ImportError:
     HAS_DDG = False
-    logger.warning("ddgs 未安装，DuckDuckGo fallback 不可用")
 
-# 2. Google Custom Search JSON API
 try:
-    from googleapiclient.discovery import build
-    from googleapiclient.errors import HttpError
-    HAS_GOOGLE = True
+    import chromadb
+    HAS_CHROMA = True
 except ImportError:
-    HAS_GOOGLE = False
-    logger.warning("google-api-python-client 未安装，Google Search API 不可用")
-
-# 3. GitHub API
-try:
-    from github import Github, GithubException
-    HAS_GITHUB = True
-except ImportError:
-    HAS_GITHUB = False
-    logger.warning("PyGithub 未安装，GitHub API 不可用")
-
-# 4. arXiv API
-try:
-    import arxiv
-    HAS_ARXIV = True
-except ImportError:
-    HAS_ARXIV = False
-    logger.info("arxiv 未安装，学术搜索不可用")
+    HAS_CHROMA = False
 
 @dataclass
 class SearchResult:
-    """搜索结果 - 适配 Scout 的 Clue 格式"""
+    """搜索结果标准对象"""
     url: str
     title: str = ""
     snippet: str = ""
@@ -567,7 +554,7 @@ class SearchResult:
         return {
             "url": self.url,
             "title": self.title,
-            "snippet": self.snippet[:300],
+            "snippet": self.snippet[:500],
             "source": self.source,
             "relevance_score": self.relevance_score,
             "tier": self.tier,
@@ -578,325 +565,158 @@ class SearchResult:
             }
         }
 
-    def to_dict(self):
-        return asdict(self)
-
 class ScoutWebSearchTool:
-    """
-    广域侦察兵搜索工具 - 支持 Google, GitHub, ArXiv API + DDG fallback
-    """
     def __init__(self, config: Dict[str, Any] = None):
         self.config = config or {}
+        self.tavily_key = os.getenv("TAVILY_API_KEY") or "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"
+        self.scrapingdog_key = os.getenv("SCRAPINGDOG_API_KEY") or "6940b6ae850c994adefd4780"
         
-        # API 配置（环境变量优先）
-        self.google_api_key = os.getenv("GOOGLE_API_KEY") or self.config.get("google_api_key")
-        self.google_cx = os.getenv("GOOGLE_CX") or self.config.get("google_cx")
-        self.github_token = os.getenv("GITHUB_TOKEN") or self.config.get("github_token")
-        
-        self.max_results = self.config.get("max_results", 10)
-        self.enable_cache = self.config.get("enable_cache", True)
-        self.enable_ddg_fallback = self.config.get("enable_ddg_fallback", True)
-
-        # 初始化客户端
         self.clients = {}
-
-        # Google Custom Search
-        if HAS_GOOGLE and self.google_api_key and self.google_cx:
+        if HAS_TAVILY and self.tavily_key:
             try:
-                self.clients['google'] = build("customsearch", "v1", developerKey=self.google_api_key)
-                logger.info("Google Custom Search API 已初始化")
+                self.clients['tavily'] = TavilyClient(api_key=self.tavily_key)
+                logger.success("✅ Tavily Search API 已激活 (主引擎)")
             except Exception as e:
-                logger.error(f"Google API 初始化失败: {str(e)}")
-
-        # GitHub
-        if HAS_GITHUB:
-            try:
-                if self.github_token:
-                    self.clients['github'] = Github(self.github_token)
-                    logger.info("GitHub API 已使用 token 初始化")
-                else:
-                    self.clients['github'] = Github()  # 匿名模式（限速）
-                    logger.info("GitHub API 已匿名初始化（限速）")
-            except Exception as e:
-                logger.error(f"GitHub API 初始化失败: {str(e)}")
-
-        # arXiv
-        if HAS_ARXIV:
-            self.clients['arxiv'] = arxiv.Client()
-            logger.info("arXiv API 已初始化")
-
-        # DDG fallback
-        if HAS_DDG and self.enable_ddg_fallback:
-            self.clients['ddg'] = DDGS()
-            logger.info("DuckDuckGo fallback 已启用")
-
-        # 缓存
-        self.cache = {}
-
-        # Tier 分类（不变）
-        self.tier_classification = {
-            'tier1': ['us', 'de', 'jp', 'uk', 'fr', 'ca', 'au', 'kr', 'sg', 'tw'],
-            'tier2': ['vn', 'sa', 'ru', 'cn', 'in', 'br', 'mx', 'id', 'th', 'my'],
-            'tier3': ['la', 'kh', 'mm', 'ke', 'ng', 'gh', 'et', 'tz', 'ug', 'zm', 'fj', 'vu', 'ws', 'to', 'sb']
-        }
-
-        logger.info(f"广域侦察兵搜索工具初始化完成，优先引擎: {list(self.clients.keys())}")
+                logger.error(f"❌ Tavily 初始化失败: {e}")
 
     def __call__(self, query: str, num_results: int = 10, **kwargs) -> List[Dict[str, Any]]:
+        """执行搜索。默认仅 Tavily API 真实返回，不混用 ScrapingDog/DDG 等。"""
         start_time = time.time()
-        country_code = kwargs.get('country_code', 'us').lower()
-        task_type = kwargs.get('task_type', 'general')
-        tier = self._get_tier_by_country(country_code)
+        tavily_only = kwargs.get("tavily_only", True)
+        if isinstance(tavily_only, str):
+            tavily_only = tavily_only.lower() not in ("0", "false", "no")
+        session_id = kwargs.get("session_id")
 
-        logger.info(f"执行搜索: {query} | 国家: {country_code} | Tier: {tier} | 任务: {task_type}")
+        scout_cache = get_scout_search_cache()
+        if scout_cache and tavily_only:
+            cached = scout_cache.get_search(query, num_results, tavily_only=tavily_only)
+            if cached is not _MISS:
+                logger.info(f"♻️ [Scout] Tavily 缓存命中: '{query}' ({len(cached)} 条)")
+                for item in cached:
+                    if isinstance(item, dict) and item.get("url") and session_id:
+                        scout_cache.add_session_url(session_id, item["url"])
+                return cached
 
-        optimized_query = self._apply_tier_strategy(query, tier, task_type)
+        logger.info(f"🔎 [Scout] Tavily 搜索: '{query}'")
 
-        results = []
+        if "tavily" not in self.clients:
+            logger.error("❌ Tavily 未配置或初始化失败，Scout 不返回非 Tavily 结果")
+            return []
 
-        # 优先级顺序：Google > GitHub > ArXiv > DDG fallback
-        # 1. Google Custom Search API
-        if 'google' in self.clients:
-            google_results = self._search_google(query, num_results, tier)
-            results.extend(google_results)
+        t_res = self._search_tavily(query, max_results=num_results)
+        # 仅保留 Tavily 源
+        t_res = [r for r in t_res if r.source == "tavily" and r.url]
 
-        # 2. GitHub API（技术/代码相关查询）
-        if 'github' in self.clients and self._is_technical_query(query):
-            github_results = self._search_github(query, num_results // 3)
-            results.extend(github_results)
+        if tavily_only:
+            final_clues = [r.to_clue_format() for r in t_res[:num_results]]
+            if scout_cache:
+                scout_cache.set_search(query, num_results, final_clues, tavily_only=tavily_only)
+                if session_id:
+                    for item in final_clues:
+                        if item.get("url"):
+                            scout_cache.add_session_url(session_id, item["url"])
+            elapsed = time.time() - start_time
+            logger.success(
+                f"✅ Scout Tavily: 用时 {elapsed:.2f}s | 捕获线索: {len(final_clues)}"
+            )
+            return final_clues
 
-        # 3. ArXiv API（学术/论文相关查询）
-        if 'arxiv' in self.clients and self._is_research_query(query, task_type):
-            arxiv_results = self._search_arxiv(query, num_results // 3)
-            results.extend(arxiv_results)
-
-        # 4. DDG fallback（如果结果不足）
-        if len(results) < num_results and 'ddg' in self.clients:
-            ddg_results = self._search_ddg(query, num_results - len(results), tier, task_type)
-            results.extend(ddg_results)
-
-        # 去重和排序
-        final_results = self._deduplicate_and_sort(results)[:num_results]
-
-        # 转换为 Clue 格式
-        clues = [r.to_clue_format() for r in final_results]
-
+        # 非 strict 模式（保留旧行为，需显式 tavily_only=False）
+        results = list(t_res)
+        if len(results) < num_results and self.scrapingdog_key:
+            results.extend(self._search_scrapingdog(query, num_results=10))
+        final_results = self._deduplicate_and_filter(results)
+        final_clues = [r.to_clue_format() for r in final_results[:num_results]]
         elapsed = time.time() - start_time
-        logger.info(f"搜索完成，用时 {elapsed:.2f}s，找到 {len(clues)} 个线索")
+        logger.success(f"✅ Scout 完成: 用时 {elapsed:.2f}s | 捕获线索: {len(final_clues)}")
+        return final_clues
 
-        return clues
+    def _identify_level_heuristic(self, url: str) -> str:
+        """根据 URL 结构特征识别线索层级"""
+        u = url.lower().rstrip('/')
+        path = urlparse(u).path
+        
+        # L1/L2: 根域名或极短路径 (无虚拟目录)
+        if not path or path in ["", "/"]:
+            return "L1_L2"
+        # L4: 物理资产 (直接指向文件)
+        if any(u.endswith(ext) for ext in ['.pdf', '.csv', '.xlsx', '.json', '.zip']):
+            return "L4"
+        # L3: 含有专属数据库名称的路径
+        db_keywords = ['dataset', 'database', 'record', 'genbank', 'archive', 'repository', 'projects']
+        if any(kw in path for kw in db_keywords):
+            return "L3"
+        return "OTHER"
 
-    # Google Custom Search
-    def _search_google(self, query: str, num_results: int, tier: str) -> List[SearchResult]:
-        results = []
-        try:
-            request = self.clients['google'].cse().list(
-                q=query,
-                cx=self.google_cx,
-                num=min(num_results, 10)
-            )
-            response = request.execute()
-            items = response.get("items", [])
-            for idx, item in enumerate(items, 1):
-                result = SearchResult(
-                    url=item.get("link", ""),
-                    title=item.get("title", "无标题"),
-                    snippet=item.get("snippet", ""),
-                    source="google_search",
-                    relevance_score=8.0 + (10 - idx) * 0.5,  # 排名越高分数越高
-                    tier=tier,
-                    metadata={
-                        'engine': 'google',
-                        'position': idx,
-                        'display_link': item.get("displayLink", "")
-                    }
-                )
-                results.append(result)
-        except HttpError as e:
-            logger.error(f"Google Search API 错误: {str(e)}")
-        return results
-
-    # GitHub API
-    def _search_github(self, query: str, num_results: int) -> List[SearchResult]:
-        results = []
-        try:
-            repos = self.clients['github'].search_repositories(query=query, sort="stars", order="desc")
-            for repo in repos[:num_results]:
-                result = SearchResult(
-                    url=repo.html_url,
-                    title=repo.full_name,
-                    snippet=repo.description or "无描述",
-                    source="github",
-                    relevance_score=min(10.0, 5.0 + repo.stargazers_count / 1000),
-                    tier="tier1",  # GitHub 资源通常高质量
-                    metadata={
-                        'engine': 'github',
-                        'stars': repo.stargazers_count,
-                        'forks': repo.forks_count,
-                        'language': repo.language,
-                        'updated_at': str(repo.updated_at)
-                    }
-                )
-                results.append(result)
-        except GithubException as e:
-            logger.error(f"GitHub API 错误: {str(e)}")
-        return results
-
-    # ArXiv API
-    def _search_arxiv(self, query: str, num_results: int) -> List[SearchResult]:
-        results = []
-        try:
-            search = arxiv.Search(
-                query=query,
-                max_results=num_results,
-                sort_by=arxiv.SortCriterion.Relevance
-            )
-            for paper in self.clients['arxiv'].results(search):
-                result = SearchResult(
-                    url=paper.entry_id,
-                    title=paper.title,
-                    snippet=paper.summary[:200],
-                    source="arxiv",
-                    relevance_score=9.0,
-                    tier="tier1",
-                    metadata={
-                        'engine': 'arxiv',
-                        'authors': [str(author) for author in paper.authors],
-                        'published': str(paper.published),
-                        'pdf_url': paper.pdf_url,
-                        'categories': paper.categories
-                    }
-                )
-                results.append(result)
-        except Exception as e:
-            logger.error(f"arXiv API 错误: {str(e)}")
-        return results
-
-    # DDG fallback
-    def _search_ddg(self, query: str, num_results: int, tier: str, task_type: str) -> List[SearchResult]:
-        results = []
-        try:
-            cache_key = f"ddg:{query}:{num_results}:{tier}"
-            if self.enable_cache and cache_key in self.cache:
-                return self.cache[cache_key]
-
-            search_results = list(self.clients['ddg'].text(
-                query,
-                max_results=min(num_results * 2, 20),
-                safesearch='moderate'
-            ))
-
-            for item in search_results:
-                if not item.get('href') or not item.get('title'):
-                    continue
-                result = SearchResult(
-                    url=item.get('href', ''),
-                    title=item.get('title', '无标题'),
-                    snippet=item.get('body', '')[:150],
-                    source='duckduckgo',
-                    relevance_score=self._calculate_relevance(query, item),
-                    tier=tier,
-                    metadata={
-                        'engine': 'duckduckgo',
-                        'domain': self._extract_domain(item.get('href', '')),
-                        'raw_content_length': len(item.get('body', ''))
-                    }
-                )
-                if self._passes_tier_filter(result, tier, task_type):
-                    results.append(result)
-                if len(results) >= num_results:
-                    break
-
-            if self.enable_cache:
-                self.cache[cache_key] = results
-        except Exception as e:
-            logger.error(f"DDG fallback 失败: {str(e)}")
-        return results
-
-    # 其他方法保持不变
-    def _get_tier_by_country(self, country_code: str) -> str:
-        for tier, countries in self.tier_classification.items():
-            if country_code in countries:
-                return tier
-        return 'tier1'
-
-    def _apply_tier_strategy(self, query: str, tier: str, task_type: str) -> str:
-        original_query = query
-        if tier == 'tier1':
-            if task_type in ['data', 'api', 'documentation']:
-                if 'filetype:' not in query.lower():
-                    query = f"{query} (filetype:json OR filetype:csv OR filetype:xml)"
-                query = f"{query} site:data.gov OR site:api.gov OR site:github.io"
-        elif tier == 'tier2':
-            # 多语言支持（可扩展）
-            pass
-        elif tier == 'tier3':
-            if 'site:' not in query.lower() and task_type in ['data', 'economic', 'development']:
-                query = f"{query} site:worldbank.org OR site:adb.org OR site:undp.org OR site:un.org"
-        if query != original_query:
-            logger.debug(f"查询优化: {original_query} → {query}")
-        return query
-
-    def _calculate_relevance(self, query: str, item: Dict) -> float:
-        score = 5.0
-        title = item.get('title', '').lower()
-        body = item.get('body', item.get('snippet', '')).lower()
-        query_lower = query.lower()
-        for term in query_lower.split():
-            if term in title:
-                score += 3.0
-            if term in body:
-                score += 1.0
-        domain = self._extract_domain(item.get('href', item.get('link', '')))
-        if any(ext in domain for ext in ['.edu', '.gov', '.org', '.ac.']):
-            score += 2.0
-        return min(score, 10.0)
-
-    def _extract_domain(self, url: str) -> str:
-        try:
-            parsed = urllib.parse.urlparse(url)
-            return parsed.netloc.lower()
-        except:
-            return ""
-
-    def _is_research_query(self, query: str, task_type: str) -> bool:
-        research_keywords = ['research', 'paper', 'study', 'academic', 'scholar', 'thesis', 'arxiv']
-        query_lower = query.lower()
-        return task_type in ['research', 'academic'] or any(kw in query_lower for kw in research_keywords)
-
-    def _is_technical_query(self, query: str) -> bool:
-        tech_keywords = ['github', 'git', 'code', 'api', 'sdk', 'library', 'framework', 'python', 'java']
-        query_lower = query.lower()
-        return any(kw in query_lower for kw in tech_keywords)
-
-    def _passes_tier_filter(self, result: SearchResult, tier: str, task_type: str) -> bool:
-        domain = result.metadata.get('domain', '') if result.metadata else ''
-        spam_domains = ['ad.', 'click', 'banner', 'popup', 'ads.', 'track']
-        if any(spam in domain for spam in spam_domains):
-            return False
-        return True
-
-    def _deduplicate_and_sort(self, results: List[SearchResult]) -> List[SearchResult]:
+    def _deduplicate_and_filter(self, results: List[SearchResult]) -> List[SearchResult]:
+        """按层级分桶采样，确保 L3/L4 发现率"""
         seen_urls = set()
-        unique_results = []
-        for result in results:
-            if result.url and result.url not in seen_urls:
-                seen_urls.add(result.url)
-                unique_results.append(result)
-        unique_results.sort(key=lambda x: x.relevance_score, reverse=True)
-        return unique_results
+        buckets = {"L3": [], "L4": [], "L1_L2": [], "OTHER": []}
+        
+        # 学术论文大户排除项 (噪声排除)
+        junk_domains = [
+            "nature.com", "sciencedirect.com", "arxiv.org", "ieeexplore.ieee.org",
+            "researchgate.net", "frontiersin.org", "zhihu.com", "baidu.com"
+        ]
 
-    def clear_cache(self):
-        self.cache.clear()
-        logger.debug("搜索缓存已清除")
+        for r in results:
+            if not r.url or r.url in seen_urls: continue
+            if any(junk in r.url for junk in junk_domains): continue
+            
+            # 物理去重与层级入桶
+            level = self._identify_level_heuristic(r.url)
+            buckets[level].append(r)
+            seen_urls.add(r.url)
 
-# 兼容接口
-def create_search_tool(engine: str = "ddg", api_key: str = None, **kwargs) -> ScoutWebSearchTool:
-    config = {
-        'engine': engine,
-        'api_key': api_key,
-        **kwargs
-    }
-    return ScoutWebSearchTool(config)
+        # 多样性轮询采样：按 L3 -> L4 -> L1_L2 顺序抓取
+        final_list = []
+        for key in buckets:
+            buckets[key].sort(key=lambda x: x.relevance_score, reverse=True)
+        
+        idx = 0
+        while len(final_list) < len(seen_urls):
+            added = False
+            for b_key in ["L3", "L4", "L1_L2", "OTHER"]:
+                if idx < len(buckets[b_key]):
+                    final_list.append(buckets[b_key][idx])
+                    added = True
+            if not added: break
+            idx += 1
+        
+        logger.info(f"📊 发现层级分布: L3({len(buckets['L3'])}), L4({len(buckets['L4'])}), L1/L2({len(buckets['L1_L2'])})")
+        return final_list
 
-WebSearchTool = ScoutWebSearchTool
+    def _search_tavily(self, query: str, max_results: int) -> List[SearchResult]:
+        results = []
+        try:
+            response = self.clients['tavily'].search(
+                query=query, search_depth="advanced", max_results=max_results,
+                exclude_domains=["zhidao.baidu.com", "zhihu.com", "nature.com"]
+            )
+            for item in response.get('results', []):
+                results.append(SearchResult(
+                    url=item.get('url'), title=item.get('title'),
+                    snippet=item.get('content'), source="tavily", relevance_score=9.8
+                ))
+        except Exception as e:
+            logger.error(f"❌ Tavily 搜索异常: {e}")
+        return results
+
+    def _search_scrapingdog(self, query: str, num_results: int) -> List[SearchResult]:
+        results = []
+        endpoint = "https://api.scrapingdog.com/google_search"
+        params = {"api_key": self.scrapingdog_key, "query": query, "results": num_results}
+        try:
+            resp = requests.get(endpoint, params=params, timeout=30)
+            if resp.status_code == 200:
+                for item in resp.json().get('organic_results', []):
+                    results.append(SearchResult(
+                        url=item.get('link'), title=item.get('title'),
+                        snippet=item.get('snippet', ''), source="scrapingdog", relevance_score=9.0
+                    ))
+        except Exception as e:
+            logger.error(f"❌ ScrapingDog 搜索异常: {e}")
+        return results
+
+# 兼容导出
+ScoutWebSearchTool = ScoutWebSearchTool

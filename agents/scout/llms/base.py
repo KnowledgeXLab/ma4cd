@@ -8,6 +8,7 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, Optional, Generator, List
 from loguru import logger
+from utils.env import get_llm_api_key, get_llm_base_url, normalize_model_for_endpoint
 
 # 添加 utils 目录到路径
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -49,7 +50,7 @@ class LLMClient:
     def __init__(
         self,
         api_key: str,
-        model_name: str = "gpt-3.5-turbo",
+        model_name: str = "deepseek-chat",
         base_url: Optional[str] = None,
         timeout: float = 30.0,
         max_retries: int = 3
@@ -70,8 +71,9 @@ class LLMClient:
             raise ValueError("Model name is required.")
         
         self.api_key = api_key
-        self.model_name = model_name
-        self.base_url = base_url
+        self.base_url = get_llm_base_url(base_url)
+        resolved_model, fallback_reason = normalize_model_for_endpoint(model_name, self.base_url)
+        self.model_name = resolved_model
         self.timeout = timeout
         self.max_retries = max_retries
         
@@ -84,12 +86,14 @@ class LLMClient:
             "api_key": api_key,
             "max_retries": 0,  # 重试由装饰器处理
         }
-        if base_url:
-            client_kwargs["base_url"] = base_url
+        if self.base_url:
+            client_kwargs["base_url"] = self.base_url
         
         try:
             self.client = OpenAI(**client_kwargs)
-            logger.info(f"LLMClient 初始化成功: {model_name} @ {base_url or 'OpenAI'}")
+            if fallback_reason:
+                logger.warning(f"⚙️ [模型兼容] Scout 模型自动回退: {fallback_reason}")
+            logger.info(f"LLMClient 初始化成功: {self.model_name} @ {self.base_url or 'OpenAI'}")
         except Exception as e:
             logger.error(f"LLMClient 初始化失败: {e}")
             raise
@@ -430,7 +434,7 @@ class LLMClient:
 # 快速使用的工厂函数
 def create_llm_client(
     api_key: Optional[str] = None,
-    model_name: str = "gpt-3.5-turbo",
+    model_name: str = "deepseek-chat",
     base_url: Optional[str] = None
 ) -> LLMClient:
     """
@@ -446,13 +450,13 @@ def create_llm_client(
     """
     # 从环境变量获取 API key
     if api_key is None:
-        api_key = os.getenv("OPENAI_API_KEY")
-        if not api_key:
-            api_key = os.getenv("LLM_API_KEY")
+        api_key = get_llm_api_key()
+    if base_url is None:
+        base_url = get_llm_base_url()
     
     if not api_key:
         raise ValueError(
-            "API key 未提供。请提供 api_key 参数或设置 OPENAI_API_KEY 环境变量"
+            "API key 未提供。请提供 api_key 参数或设置 OPENAI_API_KEY / MA4CD_LLM_API_KEY 环境变量"
         )
     
     return LLMClient(
@@ -468,11 +472,11 @@ if __name__ == "__main__":
     print("=== LLMClient 测试 ===")
     
     # 1. 从环境变量获取 API key
-    api_key = os.getenv("OPENAI_API_KEY")
+    api_key = get_llm_api_key()
     
     if not api_key:
-        print("警告: 未设置 OPENAI_API_KEY 环境变量，跳过真实测试")
-        print("请设置环境变量: export OPENAI_API_KEY='your-key'")
+        print("警告: 未设置可用 API key 环境变量，跳过真实测试")
+        print("请设置环境变量: export OPENAI_API_KEY='your-key' 或 export MA4CD_LLM_API_KEY='your-key'")
         
         # 模拟测试
         class MockLLMClient:
@@ -486,7 +490,7 @@ if __name__ == "__main__":
     else:
         try:
             # 真实测试
-            client = LLMClient(api_key=api_key, model_name="gpt-3.5-turbo")
+            client = LLMClient(api_key=api_key, model_name="deepseek-chat")
             
             # 测试连接
             if client.test_connection():

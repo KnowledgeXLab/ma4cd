@@ -1,0 +1,75 @@
+# Miner DFS 启发式 — protein research skill
+version: 1
+
+invalid_path_suffixes:
+  - /home
+  - /index
+  - /index.html
+  - /index.php
+  - /en
+  - /zh
+  - /en-us
+  - /about
+  - /contact
+  - /search
+  - /login
+  - /register
+  - /news
+  - /press
+  - /blog
+  - /careers
+  - /privacy
+  - /terms
+
+link_noise_patterns:
+  - facebook\.com
+  - twitter\.com
+  - x\.com
+  - linkedin\.com
+  - youtube\.com
+  - vimeo\.com
+  - tiktok\.com
+  - reddit\.com
+  - medium\.com
+  - pinterest\.com
+  - wikipedia\.org
+  - instructables\.com
+  - /login
+  - /signup
+  - /register
+  - /cart
+  - /password
+  - /news/
+  - /press/
+  - /blog/
+  - /careers
+  - /videos?
+
+junk_file_extensions:
+  - png
+  - jpg
+  - jpeg
+  - gif
+  - css
+  - js
+  - mp4
+  - avi
+  - mp3
+  - wav
+  - woff
+  - woff2
+  - ttf
+  - svg
+  - ico
+
+evolve_gates:
+  min_recall_score_to_activate: 0.42
+  min_topology_score_to_activate: 0.35
+  min_recall_for_stability: 0.32
+  positive_evolve_min_assets: 12
+  positive_evolve_min_topology: 0.72
+  positive_evolve_cooldown_sec: 480
+  evolve_min_interval_sec: 8
+  evolve_domain_cooldown_sec: 75
+  evolve_max_per_batch: 12
+  evolve_max_per_domain_per_batch: 4

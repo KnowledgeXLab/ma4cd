@@ -1,0 +1,21 @@
+version: 1
+
+# 仅在 env 未显式设置时应用（不覆盖用户 export）
+
+env_defaults:
+  # Inspector: relax default strictness for protein research (download/api pages are valuable)
+  MA4CD_INSPECTOR_STRICT: "0"
+  MA4CD_INSPECTOR_MIN_SCORE: "0.55"
+  MA4CD_INSPECTOR_MAX_WORKERS: "4"
+  MA4CD_INSPECTOR_BATCH_SIZE: "6"
+
+  # Miner: keep concurrency modest to reduce 429; users can override
+  MA4CD_MINER_CONCURRENCY: "2"
+
+  # LLM budgeter: on by default, allow Inspector rules-only during outages
+  MA4CD_LLM_BUDGET_MODE: "budgeted"
+  MA4CD_LLM_MODE: "llm_preferred"
+
+  # Curator→Scout/Miner 闭环：盲区触发战术补搜（可被用户 env 覆盖）
+  MA4CD_CURATOR_SCOUT_LOOP: "1"
+  MA4CD_CURATOR_SCOUT_MAX_URLS: "8"

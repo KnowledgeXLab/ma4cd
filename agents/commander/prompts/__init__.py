@@ -1,0 +1,18 @@
+"""
+Commander Prompts Package
+导出核心提示词模板
+"""
+
+from .planning_prompts import (
+    COMMANDER_CORE_IDENTITY,
+    PLANNING_TASK_PROMPT,
+    REFLECTION_TASK_PROMPT,
+    REPORT_GENERATION_PROMPT
+)
+
+__all__ = [
+    "COMMANDER_CORE_IDENTITY",
+    "PLANNING_TASK_PROMPT",
+    "REFLECTION_TASK_PROMPT",
+    "REPORT_GENERATION_PROMPT"
+]

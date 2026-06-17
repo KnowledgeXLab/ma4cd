@@ -1,0 +1,31 @@
+version: 1
+
+# Curator → Scout 战术补搜（蛋白质研究）
+
+priority_sites:
+  - uniprot.org
+  - rcsb.org
+  - wwpdb.org
+  - ebi.ac.uk
+  - pride.ebi.ac.uk
+  - massive.ucsd.edu
+  - proteomexchange.org
+  - string-db.org
+  - interpro.ebi.ac.uk
+  - alphafold.ebi.ac.uk
+
+gap_query_seeds:
+  - 'site:uniprot.org (download OR ftp OR "bulk download" OR biomart)'
+  - 'site:rcsb.org OR site:wwpdb.org (download OR ftp OR api OR data)'
+  - 'site:ebi.ac.uk/pride (archive OR download OR ftp OR "data access")'
+  - 'site:massive.ucsd.edu OR site:proteomexchange.org (download OR repository)'
+  - 'site:string-db.org OR site:biogrid.org (download OR database OR access)'
+  - 'site:interpro.ebi.ac.uk OR site:pfam.xfam.org (download OR api OR ftp)'
+
+scout_prompt_append: |
+  ### 🧩 Skill：Curator 战术补搜（蛋白质研究）
+  - **只返回数据库/门户入口 URL**（download、ftp、api、archive、catalog、bulk），不要论文、新闻、教程。
+  - **优先权威站**：UniProt、RCSB/wwPDB、EBI/InterPro/Pfam、PRIDE/MassIVE/ProteomeXchange、STRING/BioGRID、AlphaFold DB。
+  - 每条结果尽量是 **L1/L2 门户或 L3 子库入口**，带明确数据获取路径。
+
+rank_priority_sites_first: true

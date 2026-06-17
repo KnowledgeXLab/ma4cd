@@ -1,11 +1,17 @@
 # memory/chroma_memory.py
-import chromadb
-from chromadb.config import Settings
-from typing import Dict, List, Any, Optional
+import os
 import json
 import hashlib
 from datetime import datetime
+from typing import Dict, List, Any, Optional
+
 from loguru import logger
+
+try:
+    import chromadb
+    from chromadb.config import Settings
+except ImportError:
+    chromadb = None  # type: ignore
 
 
 class ChromaMemoryManager:
@@ -460,9 +466,11 @@ class ChromaMemoryManager:
 # 全局实例
 _chroma_memory = None
 
-def get_chroma_memory() -> ChromaMemoryManager:
+def get_chroma_memory() -> Optional[ChromaMemoryManager]:
     """获取全局 Chroma 记忆管理器"""
     global _chroma_memory
+    if os.getenv("MA4CD_DISABLE_CHROMA_MEMORY", "").strip().lower() in ("1", "true", "yes", "on"):
+        return None
     if _chroma_memory is None:
         _chroma_memory = ChromaMemoryManager()
     return _chroma_memory

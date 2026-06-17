@@ -1,0 +1,20 @@
+id: _template
+version: "0.0.0"
+description: "Skill template — copy to skills/<your-id>/ and replace placeholders (not loadable)"
+
+rules:
+  commander_task: rules/commander_task.yaml
+  scout_search: rules/scout_search.yaml
+  search_discovery: rules/search_discovery.yaml
+  miner_signals: rules/miner_signals.yaml
+  miner_heuristics: rules/miner_heuristics.yaml
+  miner_evolve_domains: rules/miner_evolve_domains.yaml
+  miner_prompts: rules/miner_prompts.yaml
+  inspector_quality_gates: rules/inspector_quality_gates.yaml
+  inspector_audit: rules/inspector_audit.yaml
+  inspector_fallback_audit: rules/inspector_fallback_audit.yaml
+  rejection_buckets: rules/rejection_buckets.yaml
+  report_taxonomy: rules/report_taxonomy.yaml
+  curator_chain_model: rules/curator_chain_model.yaml
+  curator_supplement: rules/curator_supplement.yaml
+  runtime_profile: rules/runtime_profile.yaml

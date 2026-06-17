@@ -1,0 +1,31 @@
+# Miner evolution domain patterns — protein research skill
+version: 1
+
+trusted_domain_patterns:
+  - (^|\.)ebi\.ac\.uk$
+  - (^|\.)uniprot\.org$
+  - (^|\.)rcsb\.org$
+  - (^|\.)pdbj\.org$
+  - (^|\.)ncbi\.nlm\.nih\.gov$
+  - (^|\.)ensembl\.org$
+  - (^|\.)expasy\.org$
+  - (^|\.)string-db\.org$
+  - (^|\.)pfam\.xfam\.org$
+  - (^|\.)interpro\.ebi\.ac\.uk$
+  - (^|\.)massive\.ucsd\.edu$
+  - (^|\.)iprox\.cn$
+  - (^|\.)cncb\.ac\.cn$
+
+noise_domain_patterns:
+  - (^|\.)instructables\.com$
+  - (^|\.)spacenews\.com$
+  - (^|\.)reddit\.com$
+  - (^|\.)facebook\.com$
+  - (^|\.)x\.com$
+  - (^|\.)twitter\.com$
+  - (^|\.)youtube\.com$
+  - (^|\.)tiktok\.com$
+  - (^|\.)medium\.com$
+  - (^|\.)pinterest\.com$
+  - (^|\.)wikipedia\.org$
+  - (^|\.)wikimedia\.org$

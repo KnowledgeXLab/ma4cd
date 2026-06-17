@@ -1,0 +1,20 @@
+id: genomics-research
+version: "0.1.0"
+description: 基因组学与组学数据源发现 — skill 实例（与 protein-research 同 schema）
+
+rules:
+  inspector_quality_gates: rules/inspector_quality_gates.yaml
+  inspector_audit: rules/inspector_audit.yaml
+  commander_task: rules/commander_task.yaml
+  scout_search: rules/scout_search.yaml
+  miner_signals: rules/miner_signals.yaml
+  curator_chain_model: rules/curator_chain_model.yaml
+  runtime_profile: rules/runtime_profile.yaml
+  miner_evolve_domains: rules/miner_evolve_domains.yaml
+  miner_heuristics: rules/miner_heuristics.yaml
+  rejection_buckets: rules/rejection_buckets.yaml
+  inspector_fallback_audit: rules/inspector_fallback_audit.yaml
+  miner_prompts: rules/miner_prompts.yaml
+  search_discovery: rules/search_discovery.yaml
+  report_taxonomy: rules/report_taxonomy.yaml
+  curator_supplement: rules/curator_supplement.yaml

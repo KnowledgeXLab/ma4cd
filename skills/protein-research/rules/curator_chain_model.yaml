@@ -1,0 +1,91 @@
+version: 1
+
+# Curator 学科链条模型（蛋白质研究专用）
+
+data_chain_dimensions:
+  - id: sequence_annotation
+    label: "序列与注释（UniProt/RefSeq/Ensembl/InterPro）"
+    markers:
+      - uniprot
+      - refseq
+      - ensembl
+      - interpro
+      - pfam
+      - expasy
+      - annotation
+      - sequence
+  - id: structure
+    label: "三维结构与结构预测（PDB/AlphaFold/EMDB）"
+    markers:
+      - pdb
+      - rcsb
+      - wwpdb
+      - pdbj
+      - pdbe
+      - alphafold
+      - emdb
+      - structure
+  - id: interaction_networks
+    label: "互作与网络（STRING/BioGRID/IntAct）"
+    markers:
+      - string
+      - biogrid
+      - intact
+      - interaction
+      - network
+  - id: proteomics_ms
+    label: "质谱蛋白质组学（PRIDE/MassIVE/ProteomeXchange/iProX）"
+    markers:
+      - pride
+      - massive
+      - proteomexchange
+      - proteomexchange
+      - iprox
+      - proteomics
+      - mass
+      - spectrometry
+  - id: catalogs_access
+    label: "批量下载与访问通道（FTP/API/Catalog）"
+    markers:
+      - ftp
+      - api
+      - download
+      - bulk
+      - dataset
+      - catalog
+
+fuse_rules:
+  max_rounds: 3
+  stop_if_gap_coverage: 0.75
+
+# 盲区关键词 → 权威门户入口（Curator 补挖种子，Scout 补搜为空时使用）
+portal_seeds:
+  uniprot: https://www.uniprot.org/downloads
+  refseq: https://www.ncbi.nlm.nih.gov/refseq/
+  ensembl: https://www.ensembl.org/info/data/download.html
+  interpro: https://www.ebi.ac.uk/interpro/download.html
+  pfam: https://www.ebi.ac.uk/interpro/download.html
+  expasy: https://www.expasy.org/downloads
+  pdb: https://www.rcsb.org/downloads
+  rcsb: https://www.rcsb.org/downloads
+  wwpdb: https://www.wwpdb.org/ftp/pdb-ftp-sites
+  pdbj: https://pdbj.org/downloads.html
+  pdbe: https://www.ebi.ac.uk/pdbe/emdb/empiar/
+  alphafold: https://alphafold.ebi.ac.uk/download
+  emdb: https://www.ebi.ac.uk/emdb/
+  string: https://string-db.org/cgi/download
+  biogrid: https://thebiogrid.org/#/downloads
+  intact: https://www.ebi.ac.uk/intact/downloads
+  pride: https://www.ebi.ac.uk/pride/archive
+  massive: https://massive.ucsd.edu/ProteoSAFe/static/massive.jsp
+  proteomexchange: https://www.proteomexchange.org/
+  iprox: https://www.iprox.cn/
+
+prompt_append: |
+  ### 🧩 Skill 指引：Protein Research 学科链条
+  请将本轮标题按以下维度判断“扎堆”和“盲区”，输出 gaps 必须尽量具体（例如“缺乏互作网络数据库入口”“缺乏质谱原始数据仓库下载入口”）：
+  - 序列与注释（UniProt/Ensembl/InterPro/Pfam）
+  - 三维结构与预测（PDB/AlphaFold/EMDB）
+  - 互作网络（STRING/BioGRID/IntAct）
+  - 质谱蛋白质组学（PRIDE/MassIVE/ProteomeXchange/iProX）
+  - 批量访问通道（FTP/API/Download/Catalog）

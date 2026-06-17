@@ -1,0 +1,85 @@
+version: 1
+
+# LLM 不可用时的规则兜底审计（蛋白质研究）
+
+positive_signals:
+  - data
+  - dataset
+  - database
+  - archive
+  - repository
+  - portal
+  - api
+  - download
+  - catalog
+  - search
+  - protein
+  - proteome
+  - proteomics
+  - uniprot
+  - pdb
+  - rcsb
+  - interpro
+  - pfam
+  - string
+  - pride
+  - massive
+  - alphafold
+  - structure
+  - sequence
+  - annotation
+  - biomart
+  - martview
+  - ftp
+  - ebi
+  - ncbi
+
+mission_keywords:
+  - protein
+  - proteome
+  - proteomics
+  - structure
+  - pdb
+  - uniprot
+  - interaction
+  - annotation
+  - sequence
+  - alphafold
+  - pride
+  - mass spectrometry
+  - 蛋白质
+  - 蛋白
+  - 质谱
+  - 结构
+  - 序列
+  - 注释
+  - 互作
+
+noise_signals:
+  - news
+  - blog
+  - career
+  - careers
+  - jobs
+  - login
+  - signup
+  - privacy
+  - terms
+  - policy
+  - forum
+  - event
+  - events
+  - webinar
+  - training
+  - tutorial
+  - paper
+  - article
+
+score_weights:
+  base: 0.35
+  positive_per_hit: 0.08
+  mission_per_hit: 0.05
+  negative_per_hit: 0.10
+  topology_max_bias: 0.20
+  max_score: 0.95
+  binary_url_max_score: 0.25

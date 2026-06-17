@@ -1,0 +1,57 @@
+version: 1
+
+# Miner/Scout 搜索发现策略（与 scout_search.domains / miner_signals 协同）
+
+default_search_type: authoritative
+merge_scout_site_preferences: true
+
+authoritative_sites:
+  - uniprot.org
+  - ebi.ac.uk
+  - ncbi.nlm.nih.gov
+  - rcsb.org
+  - wwpdb.org
+  - pdbj.org
+  - pdbe.org
+  - ensembl.org
+  - expasy.org
+  - string-db.org
+  - interpro.ebi.ac.uk
+  - pfam.xfam.org
+  - massive.ucsd.edu
+  - pride.ebi.ac.uk
+  - proteomexchange.org
+  - iprox.cn
+
+academic_sites:
+  - pubmed.ncbi.nlm.nih.gov
+  - biorxiv.org
+  - arxiv.org
+
+search_limits:
+  max_authoritative_sites: 6
+  results_per_site: 2
+  max_l3_results: 20
+  max_l3_queries_per_keyword: 4
+
+site_l3_query_templates:
+  - '{keyword} site:{domain} (download OR ftp OR api OR dataset)'
+  - '{keyword} site:{domain} (bulk OR export OR "data access")'
+  - '{keyword} site:{domain} filetype:csv'
+  - '{keyword} site:{domain} filetype:xlsx'
+
+dataset_search_boost: '(dataset OR database OR repository OR download OR export OR catalog)'
+
+filetype_extensions:
+  - csv
+  - xlsx
+  - json
+  - xml
+
+# L2 母站外扩：在当前域名之外，向权威蛋白质站发起补充搜索
+l2_discovery:
+  include_authoritative_site_queries: true
+  max_authoritative_site_queries: 4
+  authoritative_query_templates:
+    - '{keyword} site:{site} (download OR ftp OR api OR dataset)'
+    - '{keyword} site:{site} (bulk OR export OR archive)'

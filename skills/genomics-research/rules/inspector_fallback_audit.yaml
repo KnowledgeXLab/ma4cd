@@ -1,0 +1,47 @@
+version: 1
+
+positive_signals:
+  - data
+  - dataset
+  - database
+  - genome
+  - genomics
+  - gene
+  - geo
+  - sra
+  - ena
+  - ncbi
+  - ebi
+  - ensembl
+  - download
+  - ftp
+  - api
+  - variant
+  - expression
+
+mission_keywords:
+  - genome
+  - genomics
+  - gene
+  - omics
+  - 基因
+  - 组学
+  - 测序
+  - 基因组
+
+noise_signals:
+  - news
+  - blog
+  - careers
+  - paper
+  - tutorial
+  - login
+
+score_weights:
+  base: 0.35
+  positive_per_hit: 0.08
+  mission_per_hit: 0.05
+  negative_per_hit: 0.10
+  topology_max_bias: 0.20
+  max_score: 0.95
+  binary_url_max_score: 0.25

@@ -10,13 +10,13 @@ from loguru import logger
 from .base_node import BaseNode
 from ..state.state import SearchSubTask, SearchTrajectory, SearchStatus, Clue
 from ..prompts.prompts import SYSTEM_PROMPT_SEARCH_DECISION
-from ..tools.web_search import WebSearchTool
+from ..tools.web_search import ScoutWebSearchTool
 
 
 class SearchNode(BaseNode):
     """搜索执行节点"""
     
-    def __init__(self, llm_client, search_tool: WebSearchTool, max_steps: int = 5):
+    def __init__(self, llm_client, search_tool: ScoutWebSearchTool, max_steps: int = 5):
         super().__init__(llm_client, "SearchNode")
         self.search_tool = search_tool
         self.max_steps = max_steps
@@ -80,6 +80,32 @@ class SearchNode(BaseNode):
             subtask.mark_failed()
             return subtask
     
+    def run_with_config(self, plan: list[str], config: Dict[str, Any] = None) -> list[Dict]:
+            """
+            [新增接口] 适配 ScoutAgent.run 的便捷接口
+            直接执行搜索计划，无需复杂 ReAct
+            """
+            results = []
+            config = config or {}
+            
+            for step_query in plan:
+                logger.info(f"🔎 [SearchNode] 执行: {step_query}")
+                
+                # 直接调用 Tool
+                # config 会被解包传给 web_search (如 country_code)
+                from utils.prompt_contracts import scout_results_per_query
+
+                per_q = scout_results_per_query(config)
+                tool_results = self.search_tool(
+                    query=step_query,
+                    num_results=per_q,
+                    tavily_only=True,
+                    **{k: v for k, v in config.items() if k != "tavily_only"},
+                )
+                results.extend(tool_results)
+                
+            return results
+
     def _generate_thought(self, subtask: SearchSubTask, step: int) -> str:
         """生成思考"""
         if step == 1:

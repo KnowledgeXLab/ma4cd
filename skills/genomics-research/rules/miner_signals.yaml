@@ -1,0 +1,39 @@
+version: 1
+
+domain_keywords:
+  - genome
+  - genomics
+  - gene
+  - transcriptome
+  - rna-seq
+  - variant
+  - annotation
+  - geo
+  - sra
+  - ena
+  - ensembl
+  - ncbi
+  - refseq
+  - gnomad
+  - clinvar
+
+dataset_access_tokens:
+  - download
+  - ftp
+  - api
+  - bulk
+  - export
+  - dataset
+  - catalog
+
+negative_keywords:
+  - careers
+  - news
+  - blog
+  - paper
+  - tutorial
+  - login
+
+search_templates:
+  - '{kw} site:{domain} (download OR ftp OR api OR dataset)'
+  - '{kw} site:{domain} (bulk OR export OR "data access")'

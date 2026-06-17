@@ -1,0 +1,142 @@
+[
+  {
+    "id": "dataset_nasa_csv",
+    "url": "https://ntrs.nasa.gov/api/citations/20200001234/downloads/data.csv",
+    "expected_label": "DATASET",
+    "description": "Direct structured data file from NASA",
+    "html": "<html><head><title>NASA Data Download</title></head><body><main><h1>Download Data</h1><a href=\"data.csv\">CSV</a><p>Download dataset in CSV format.</p></main></body></html>"
+  },
+  {
+    "id": "dataset_portal_entry",
+    "url": "https://data.nasa.gov/dataset/solid-propulsion-test-data",
+    "expected_label": "DATASET",
+    "description": "Dataset entry page with download signals",
+    "html": "<html><body><div class=\"dataset-table\">Solid Rocket Motor Test Data</div><button>Download Data</button><p>API endpoint and data files are available.</p></body></html>"
+  },
+  {
+    "id": "dataset_github_repo",
+    "url": "https://github.com/nasa/propulsion-analysis",
+    "expected_label": "DATASET",
+    "description": "Repository used as data/code asset",
+    "html": "<html><body><article><h1>nasa/propulsion-analysis</h1><p>Open data processing code and downloadable releases.</p></article></body></html>"
+  },
+  {
+    "id": "dataset_zenodo_zip",
+    "url": "https://zenodo.org/record/123456/files/propulsion_data.zip",
+    "expected_label": "DATASET",
+    "description": "Archive file hosting",
+    "html": "<html><body><a href=\"propulsion_data.zip\">Download ZIP</a><p>Complete dataset archive.</p></body></html>"
+  },
+  {
+    "id": "portal_nasa_browse",
+    "url": "https://data.nasa.gov/browse",
+    "expected_label": "PORTAL",
+    "description": "Classic portal browse page",
+    "html": "<html><body><nav><ul class=\"menu\"><li>Browse</li><li>Categories</li></ul></nav><form action=\"/search\">Search</form><p>Browse by category and filter by topic.</p></body></html>"
+  },
+  {
+    "id": "portal_esa_archive",
+    "url": "https://www.esa.int/Science_Exploration/Space_Science/Data_Archive",
+    "expected_label": "PORTAL",
+    "description": "Archive portal directory",
+    "html": "<html><body><div class=\"category-list\">Browse Missions</div><p>Data catalog and mission archive.</p></body></html>"
+  },
+  {
+    "id": "portal_jannaf_catalog",
+    "url": "https://www.jannaf.org/catalog",
+    "expected_label": "PORTAL",
+    "description": "Catalog style site",
+    "html": "<html><body><h1>JANNAF Catalog</h1><p>Search for reports and browse by subject.</p><form action=\"/search\">search</form></body></html>"
+  },
+  {
+    "id": "portal_sciencegov_topic",
+    "url": "https://www.science.gov/topicpages/a/aerospace+materials+science",
+    "expected_label": "PORTAL",
+    "description": "Search aggregation page",
+    "html": "<html><body><h1>Topic results</h1><p>Browse by topic. Filter by source and format.</p><div class=\"results\">Many result entries...</div></body></html>"
+  },
+  {
+    "id": "article_doi",
+    "url": "https://doi.org/10.1234/aerospace.2024.001",
+    "expected_label": "ARTICLE",
+    "description": "DOI landing",
+    "html": "<html><head><meta name=\"citation_title\" content=\"Solid Propulsion\"/></head><body><div class=\"abstract\">Abstract: propulsion model...</div><p>Published in Journal of Propulsion</p></body></html>"
+  },
+  {
+    "id": "article_arxiv",
+    "url": "https://arxiv.org/abs/2024.12345",
+    "expected_label": "ARTICLE",
+    "description": "arXiv abstract page",
+    "html": "<html><body><h1>arXiv:2024.12345</h1><span class=\"authors\">Authors: Jane Doe</span><p>Abstract: We investigate solid rocket motor performance.</p></body></html>"
+  },
+  {
+    "id": "article_ntrs_citation",
+    "url": "https://ntrs.nasa.gov/citations/20200001234",
+    "expected_label": "ARTICLE",
+    "description": "Citation metadata page",
+    "html": "<html><body><h1>NASA Citation Record</h1><p>Abstract and references listed here.</p></body></html>"
+  },
+  {
+    "id": "article_aiaa_publication",
+    "url": "https://arc.aiaa.org/doi/10.2514/6.2020-1234",
+    "expected_label": "ARTICLE",
+    "description": "AIAA publication page",
+    "html": "<html><body><div class=\"abstract\">Abstract</div><p>Citation DOI and author list.</p></body></html>"
+  },
+  {
+    "id": "garbage_login",
+    "url": "https://example.com/login",
+    "expected_label": "GARBAGE",
+    "description": "Login page",
+    "html": "<html><body><h1>Sign In</h1><form><input placeholder=\"email\"/></form></body></html>"
+  },
+  {
+    "id": "garbage_cart",
+    "url": "https://shop.example.com/cart",
+    "expected_label": "GARBAGE",
+    "description": "Cart page",
+    "html": "<html><body><h1>Shopping Cart</h1><button>Checkout</button></body></html>"
+  },
+  {
+    "id": "garbage_cookie_banner",
+    "url": "https://example.org/about-us",
+    "expected_label": "GARBAGE",
+    "description": "Corporate info with policy noise",
+    "html": "<html><body><header><a>About</a><a>Careers</a></header><p>Privacy policy and cookie policy.</p><footer>Terms</footer></body></html>"
+  },
+  {
+    "id": "garbage_pricing",
+    "url": "https://vendor.example.com/pricing",
+    "expected_label": "GARBAGE",
+    "description": "Pricing subscription page",
+    "html": "<html><body><h1>Pricing</h1><p>Subscribe now and buy now.</p></body></html>"
+  },
+  {
+    "id": "hard_case_nav_noise_dataset",
+    "url": "https://example.org/resource/solid-propellant-data",
+    "expected_label": "DATASET",
+    "description": "Dataset body hidden under heavy navigation noise",
+    "html": "<html><body><header><a>Sign in</a><a>Create account</a><a>Shopping cart</a><a>Subscribe now</a></header><nav><a>Pricing</a><a>Contact</a></nav><main><h1>Solid Propellant Data</h1><p>Download dataset and access data files in CSV format.</p><a href=\"/download/propellant.csv\">download</a></main><footer>Cookie policy</footer></body></html>"
+  },
+  {
+    "id": "hard_case_nav_noise_portal",
+    "url": "https://example.org/space-materials-index",
+    "expected_label": "PORTAL",
+    "description": "Portal body mixed with boilerplate links",
+    "html": "<html><body><header><a>Sign in</a><a>Subscribe now</a><a>Buy now</a></header><aside>cookie policy privacy policy</aside><main><h1>Space Materials Index</h1><p>Browse by category, search for datasets, and filter by source.</p><form action=\"/search\">search</form></main><footer>terms</footer></body></html>"
+  },
+  {
+    "id": "hard_case_article_with_noise",
+    "url": "https://example.org/publication/propellant-kinetics",
+    "expected_label": "ARTICLE",
+    "description": "Article page with noisy wrappers",
+    "html": "<html><body><header><a>Sign in</a><a>Pricing</a></header><main><h1>Propellant Kinetics Study</h1><p>Abstract: combustion kinetics model.</p><p>Published in Aerospace Journal. DOI: 10.1000/xyz</p></main><footer>Cookie policy</footer></body></html>"
+  },
+  {
+    "id": "unknown_sparse_page",
+    "url": "https://example.net/random-page",
+    "expected_label": "UNKNOWN",
+    "description": "Sparse page with no strong signals",
+    "html": "<html><body><p>Welcome to our website.</p><p>General information page.</p></body></html>"
+  }
+]

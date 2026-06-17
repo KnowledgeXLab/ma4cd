@@ -1,0 +1,209 @@
+# Inspector structural quality gates — protein research skill
+version: 1
+
+noise_host_alternatives:
+  - wikipedia\.org
+  - wikimedia\.org
+  - glosbe\.com
+  - scribd\.com
+  - academia\.edu
+  - amazon\.
+  - amzn\.to
+  - facebook\.com
+  - twitter\.com
+  - x\.com
+  - linkedin\.com
+  - youtube\.com
+  - vimeo\.com
+  - service-now\.com
+  - tonex\.com
+  - jobsearch\.
+  - indeed\.com
+  - glassdoor\.com
+  - creativecommons\.org
+  - moluch\.ru
+  - ruwiki\.ru
+  - poobbc-efir\.ru
+  - baesystems\.com/en/career
+  - github\.com/topics
+  - github\.com/search
+
+noise_path_segments:
+  - news
+  - press
+  - blog
+  - article
+  - articles
+  - training
+  - webinar
+  - careers
+  - jobs
+  - privacy
+  - terms
+  - cart
+  - checkout
+  - login
+  - register
+  - signup
+  - products?
+  - solutions?
+  - videos?
+  - about
+  - contact
+  - media
+  - category/gene-expression
+  - en-news
+  - en-media
+  - en-stories
+
+leaf_path_segments:
+  - doi/
+  - /abs/
+  - citations?/
+  - /pdf
+  - /document/
+  - /article/
+  - wiki/[^/]+$
+  - home\.php
+  - index\.html$
+
+container_signal_tokens:
+  - database
+  - databases
+  - repository
+  - repositories
+  - archive
+  - archives
+  - portal
+  - portals
+  - dataset
+  - datasets
+  - catalog
+  - catalogue
+  - collections?
+  - data-portal
+  - dataportal
+  - search
+  - browse
+  - registry
+  - inventory
+  - genbank
+  - ena
+  - gdc
+  - ludb
+  - discover
+  - download
+  - ftp
+  - api
+  - library
+  - digital-library
+  - records
+  - finding-aid
+  - biomart
+  - martview
+  - data\.gov
+  - uniprot
+  - proteomics
+  - proteome
+  - pdb
+  - interpro
+  - pfam
+  - string-db
+  - biogrid
+  - iprox
+
+trusted_data_domains:
+  - apps.dtic.mil
+  - discover.dtic.mil
+  - dtic.mil
+  - archive.org
+  - data.gov
+  - www.ncbi.nlm.nih.gov
+  - ncbi.nlm.nih.gov
+  - pubmed.ncbi.nlm.nih.gov
+  - pmc.ncbi.nlm.nih.gov
+  - ftp.ncbi.nlm.nih.gov
+  - www.ebi.ac.uk
+  - ebi.ac.uk
+  - www.uniprot.org
+  - uniprot.org
+  - www.rcsb.org
+  - rcsb.org
+  - www.pdbj.org
+  - pdbj.org
+  - www.iprox.cn
+  - iprox.cn
+  - ngdc.cncb.ac.cn
+  - www.string-db.org
+  - string-db.org
+  - pfam.xfam.org
+  - interpro.ebi.ac.uk
+  - www.interpro.ebi.ac.uk
+  - massive.ucsd.edu
+  - www.ensembl.org
+  - ensembl.org
+  - www.expasy.org
+  - expasy.org
+
+cjk_mission_markers:
+  - 蛋白质
+  - 蛋白
+  - 蛋白酶
+  - 基因组
+  - 基因
+  - 数据
+  - 结构
+  - 序列
+
+domain_lexicon:
+  protein:
+    - protein
+    - proteome
+    - proteomics
+    - uniprot
+    - pdb
+    - alphafold
+    - interpro
+    - pfam
+    - biogrid
+    - string
+    - iprox
+    - rcsb
+    - pdbe
+    - ensembl
+    - genbank
+    - ncbi
+    - ebi
+    - structure
+    - sequence
+    - interaction
+    - annotation
+  genomics:
+    - genome
+    - genomic
+    - genbank
+    - ensembl
+    - sequence
+    - variant
+    - taxonomy
+    - ncbi
+    - bioinformatics
+
+mission_triggers:
+  protein:
+    - 蛋白质
+    - 蛋白
+    - protein
+    - uniprot
+    - proteome
+    - proteomics
+    - pdb
+    - alphafold
+  genomics:
+    - 基因组
+    - 基因
+    - genbank
+    - genome
+    - genomic
+    - dna
+    - rna

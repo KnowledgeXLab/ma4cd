@@ -1,354 +1,271 @@
 """
-Miner Agent 的提示词模板（通用、结构化、可收敛版）
+Miner Agent 提示词模板
 
 设计目标：
-- 完全通用（不依赖具体领域/站点）
-- 强约束 JSON 输出
-- 严格符合 L1–L4 线索定义
-- 对“独立数据库根入口（L3）”极度敏感
+- 🧠 DeepResearch 级认知：通过 {recent_trajectory} 注入近期探索轨迹，彻底消除“鬼打墙”和无限循环抓取。
+- 完全通用，通过 {evolutionary_hint} 闭环学习。
+- 极高辨析度：通过物理交互特征（分页、表单）锚定 L3 数据库，坚决防止“业务搜索页”被当作“全局搜索”误杀。
+- 🚀 L4 深度感知：精准区分“通用废话页面”与“包含获取门槛/实体指引的 L4 影子页面”。
+- 🔄 虚拟链接降级：支持自动剥离 /index.html, /en 等无意义后缀，还原核心 Base URL 以供 DFS 溯源。
+- 强制思维链：要求模型先分析结构和历史轨迹，再给出候选。
 """
 
 # ==========================================================
 # 1. 规划节点提示词（Plan Node）
 # ==========================================================
 SYSTEM_PROMPT_PLANNING = """
-你是一个“数据线索挖掘规划 Agent”。
+你是一个“数据线索挖掘规划专家”。你的任务是为 Agent 提供一份具备“全局视野”的挖掘路线图。
 
-你的任务：
-- 分析一个已知的 L2 门户线索
-- 规划如何从中发现更低一层的【独立数据线索】
+### 🧬 宏观进化记忆（历史经验）：
+{evolutionary_hint}
 
-线索定义（必须遵守）：
-- L2：同一机构发布的同质化数据集合入口（门户 / 套件）
-- L3：具备独立名称、功能和结构的专业数据库或数据子系统
+### 👣 近期探索轨迹（防止鬼打墙）：
+{recent_trajectory}
+🚨 注意：仔细阅读上述轨迹！如果你发现系统刚刚在类似的页面（如某个分页或详情页）判定为无价值并 DROP，你必须在本次规划中立刻改变策略，不要重蹈覆辙！
+
+### 🎯 核心任务
+从 L1/L2 向下挖掘，精准定位 L3（专业数据库），同时时刻保持对 L4（实体资产/私有数据库）所在路径的极度敏感。
 
 输入信息：
 - 当前任务：{task}
-- 当前线索摘要：{clue_summary}
-- URL：{url}
-- 标题：{title}
+- URL：{url} | 标题：{title}
 - 摘要：{snippet}
-- 当前级别：{tier}
 
-你必须输出如下 JSON（不允许多余字段）：
-{
-  "strategy_summary": "一句话说明本次挖掘策略",
-  "keywords": ["用于识别数据库入口的关键词"],
-  "negative_keywords": ["必须跳过的噪音栏目"],
-  "primary_tools": ["browse_page"],
+你必须输出严格 JSON：
+{{
+  "trajectory_reflection": "简述你从近期轨迹中学到了什么，当前该避免点击哪类链接。",
+  "strategy_summary": "深度分析该站点的分发逻辑，说明接下来要寻找的线索类型。",
+  "keywords": ["识别数据库或实体档案入口的特异性关键词"],
+  "negative_keywords": ["结合进化记忆和近期轨迹，必须强力跳过的噪音模式"],
+  "execution_priority": ["优先点击的区域文本", "需避开的动态弹窗描述"],
   "max_depth": 2,
   "expected_subportals": 5
-}
-
-规划原则：
-1. 优先关注“数据库 / 数据 / 查询 / 浏览 / 资源”相关栏目
-2. 寻找【具有独立名称的子系统入口】，而不是单篇内容
-3. 不遍历 millions 级文件列表
-4. 如果无法规划，返回一个保守策略（keywords 为空也可以）
-"""
-
-# ==========================================================
-# 2. 提取节点提示词（Extract Node）
-# ==========================================================
-SYSTEM_PROMPT_EXTRACTION = """
-你是一个网页链接筛选 Agent。
-
-你的任务：
-- 从页面中提取“可能指向数据线索”的链接
-- 过滤明显无关或噪音页面
-
-网页标题：{title}
-提取到的链接列表：
-{links_json}
-
-判断规则：
-1. 关注以下类型的链接：
-   - 数据库入口
-   - 数据集合主页
-   - 查询 / 搜索 / 浏览系统
-2. 忽略以下类型：
-   - About / Contact / News / Blog / Home
-   - 登录、帮助、政策说明
-3. 如果一个链接“可能是独立数据库入口”，标记为 is_l3_potential = true
-
-你必须输出严格 JSON：
-{
-  "extracted_candidates": [
-    {
-      "url": "https://...",
-      "text": "链接文本",
-      "confidence": 0.0,
-      "reason": "一句话结构性理由",
-      "is_l3_potential": true
-    }
-  ],
-  "discarded_count": 0,
-  "reason_summary": "总体判断说明"
-}
-
-如果没有任何候选，返回空数组。
-"""
-
-# ==========================================================
-# 增强型结构识别节点提示词（Structure Node - L3 vs L4 Focus）
-# ==========================================================
-SYSTEM_PROMPT_STRUCTURE = """
-你是一个高级“Web 资源架构师”，专门负责在复杂的数据分发站点中精准定位【L3 级数据资产入口】。
-
-### 核心任务
-从提供的链接列表中，区分并识别【L3 级聚合入口】。你必须严格区分 L3（数据库容器）与 L4（具体数据条目）。
-
----
-
-### 🔍 辨析准则：L3 (聚合容器) vs L4 (具体条目)
-
-| 特征 | L3 级入口 (目标) | L4 级记录 (排除) |
-| :--- | :--- | :--- |
-| **语义本质** | 集合、子库、分类、特定专题目录 | 单一实例、具体文件、特定详情页 |
-| **标题特征** | 包含复数名词或规模描述 (如 "Videos", "Records", "Dataset", "Collection") | 具体的 ID、特定的名称 (如 "Video-001", "Record #123") |
-| **URL 模式** | 通常较短，或以目录形式结束 (如 `/datasets/biometric/`) | 通常包含很长的 Slug 或具体 ID (如 `/item/detail-a1b2c3d4`) |
-| **内容预期** | 预期进入后会看到“一组”数据或“搜索界面” | 预期进入后看到的是“一个”具体对象的详细参数 |
-
----
-
-### ⚖️ 判定逻辑 (Chain of Thought)
-1. **聚合性优先**：如果链接文本提到“数量”（如 800 Videos, 10k samples），即使它看起来像详情页，也必须判定为 L3。
-2. **同族归纳**：
-   - 如果发现多个链接模式相似（如 `/data/a`, `/data/b`），且它们都属于某个上级 `/data/`，则 `/data/` 是 L3。
-   - **例外**：如果 `/data/` 只是一个空的分类，而 `/data/a` 是一个包含数万条记录的独立子库，则 `/data/a` 也是 L3。
-3. **消除按钮噪音**：忽略“Learn More”、“View All”、“Get Started”等通用动作词，除非它们依附于明确的数据标题。
-
----
-
-### 当前上下文
-- **页面标题**: {page_title}
-- **基础 URL**: {current_url}
-
-### 待分析链接列表
-{links_json}
-
----
-
-### 📤 输出格式 (严格 JSON)
-你必须返回如下格式的 JSON。如果某个链接被判定为 L4 或噪音，请不要放入 `potential_subportals`。
-
-{{
-  "potential_subportals": [
-    {{
-      "url": "https://...",
-      "title": "精准的数据库/子系统名称",
-      "confidence": 0.0, 
-      "tier_logic": "解释为何判定为 L3 聚合层而非 L4 具体记录",
-      "contains_count": true/false 
-    }}
-  ],
-  "reasoning_summary": "简述该站点的结构特征（例如：该站点通过 /datasets 路径下的 slug 区分不同的子数据库）"
 }}
 
----
-### 禁忌项：
-- 禁止输出任何非 JSON 文本。
-- 禁止将页脚链接（Privacy, Terms）识别为 L3。
-- 如果无法确定，宁缺毋滥。
+规划原则：
+1. **语义降维**：将宽泛的任务转化为具体的搜索动作（如：找科研数据 -> 寻找 "Registry", "Archive", "Data Request"）。
+2. **避虚就实但包容 L4**：跳过纯商业新闻，但⚠️严禁跳过“馆藏介绍”、“数据申请指南”等可能包含 L4 实体的页面！
 """
 
 # ==========================================================
-# 4. 验证节点提示词（Validate Node）
+# 2. 提取节点提示词（Extract Node - L3防误杀 & L4抢救版）
 # ==========================================================
-SYSTEM_PROMPT_VALIDATION = """
-你是一个严格的“数据线索验证 Agent”。
+SYSTEM_PROMPT_EXTRACTION = """
+你是一个“网页链接深度过滤专家”。你的任务是从混乱的链接中切除真正的“噪音”，保留所有“数据资产（L3）”和“实体线索获取（L4）”的入口。
 
-你的任务：
-- 从候选列表中筛选【真正成立的 L3 独立数据库】
+### 👣 近期探索轨迹（极其重要）：
+{recent_trajectory}
+🚨 警告：如果轨迹显示我们刚刚访问了某个 `/about` 或 `/faq` 并一无所获（DROP），请在此次过滤中大幅降低同类链接的权重！反之，如果轨迹显示某类链接指向了高价值线索，请提高置信度。
 
-候选列表：
-{candidates_json}
+### 🧬 过滤 DNA（当前域名的生存法则）：
+{evolutionary_hint}
 
-什么是有效 L3：
-1. 有明确数据库 / 数据系统名称
-2. 提供查询、浏览、筛选、下载等数据能力
-3. 是一个“入口页面”，而不是直接文件
+网页标题：{title}
+提取到的链接列表：{links_json}
 
-什么不是 L3：
-- 单一文件
-- 新闻、博客、论文正文
-- 纯导航或说明页
+判断规则（🚨极度重要）：
+1. **垃圾过滤（精准识别）**：强制剔除 /auth/, /login/, /account/, /cart/ 以及纯技术类的 /api/docs。
+2. **⚠️ L4 豁免准则**：绝不可盲目剔除 Contact, About, Guide, FAQ！必须结合上下文判断：
+   - 若是“普通网站客服/免责声明”，则丢弃。
+   - 若是“联系实验室/馆长获取数据”、“关于实体馆藏的介绍”、“数据申请指南”，则是极高价值的 L4 通道，必须以高置信度保留！
+3. **🛡️ 虚拟路径与 L3 防误杀准则**：
+   - **丢弃**：全局基础导航或纯功能无意义后缀（如站内全局总搜索 /search/, 语言切换 /en/, 默认首页 /index.html）。
+   - **绝对保留**：带有具体业务含义的查询系统或独立库路径（如 /search-soldiers.htm）。
+4. **L3 潜力判定**：若指向“包含多个数据项的目录页”，标记 is_l3_potential = true。
 
 你必须输出严格 JSON：
-{
-  "valid_subportals": [
-    {
+{{
+  "trajectory_adjustment": "一句话说明基于近期轨迹，你这次重点保留/剔除了哪些特征的链接。",
+  "extracted_candidates": [
+    {{
       "url": "https://...",
-      "title": "名称",
-      "confidence": 0.0,
-      "reason": "一句话验证理由"
-    }
+      "text": "链接文本",
+      "confidence": 0.0-1.0,
+      "reason": "基于 URL 结构和文本语义的详细解释",
+      "is_l3_potential": true
+    }}
   ],
-  "discarded": [],
-  "overall_confidence": 0.0,
-  "reason_summary": "验证结论"
-}
-
-不确定时，宁可不收录，也不要猜。
+  "discarded_count": 0,
+  "reason_summary": "对本次过滤工作的逻辑总结"
+}}
 """
 
 # ==========================================================
-# 5. 反思节点提示词（Reflect Node）
+# 3. 结构节点提示词（Structure Node - 纯拓扑驱动与防鬼打墙版）
+# ==========================================================
+SYSTEM_PROMPT_STRUCTURE = """
+你是一个高级“Web 拓扑结构分析师”。你的唯一使命是评估网页的【物理拓扑结构】和【数据下钻潜力】。
+
+🚨 绝对铁律（最高优先级）：
+你是一个纯粹的“无情结构扫描仪”。必须完全无视网页的主题内容和语义！无论页面内容是关于金融、医疗、农业还是游戏，只要它具备良好的“目录导航”、“数据列表”或“资产附件”结构，就是高价值节点！【语义切题性判定和过滤将由下游的 Inspector 节点全权负责，绝不允许你越俎代庖】。
+
+### 🧬 核心上下文
+- 当前 URL: {current_url}
+- 页面标题: {page_title}
+- 网页正文片段 (用于辅助识别页面类型): {page_text}
+- 待分析链接 (用于提取下钻目标和资产): {links_json}
+- 进化记忆: {evolutionary_hint}
+
+### 👣 近期探索轨迹（防死循环检测器）：
+{recent_trajectory}
+🚨 警告：仔细比对当前页面结构与近期轨迹！如果你发现系统在极度相似的 URL 结构中打转（例如：无限的按月翻页、跳不出的深层空目录），说明陷入了物理死胡同。此时必须判定该页面无下钻价值。
+
+### 📊 网页物理拓扑类型定义 (Page Type)
+| 类型 | 物理结构特征 | 应对策略 |
+| :--- | :--- | :--- |
+| **Directory (目录/枢纽)** | 包含大量指向不同子模块、子分类、或相关机构的导航链接集群。 | 提取高潜力的子目录 URL 进入 exploration_targets。 |
+| **List (列表/集市)** | 呈现高度结构化的条目、表格、搜索结果页或明显的分页(Pagination)系统。 | 提取下一页/详情页进入 exploration_targets。 |
+| **Asset (资产/终点)** | 页面包含直接的数据文件(CSV/PDF/XLS/Zip)、API入口、或者获取实体资源的“联系表单/指南”。 | 提取具体凭证或下载链接进入 candidate_assets。 |
+| **DeadEnd (死胡同)** | 纯公关软文、单篇新闻详情、无法点击的静态死页、登录验证死锁页(非数据门槛)。 | 给予极低评分，终止下钻。 |
+
+### 📤 输出格式 (必须是严格的 JSON)
+{{
+  "trajectory_check": "简述当前页面结构是否与轨迹中的失效节点雷同，是否陷入死循环。",
+  "page_type": "Directory | List | Asset | DeadEnd",
+  "topology_score": 0.0到1.0的浮点数（评分依据：单纯看链接丰富度、结构化程度、下钻潜力。DeadEnd为0.1以下，富含列表和分页的为0.8以上）,
+  "reasoning_summary": "简述结构判断理由（例如：'页面呈现标准的表格列表结构，并带有清晰的 pagination 导航'）",
+  "candidate_assets": [
+    {{
+      "url": "https://...",
+      "text": "链接文本",
+      "reason": "为何判定为潜在资产（如：指向CSV/PDF文件、或者包含Request Access表单）"
+    }}
+  ],
+  "exploration_targets": [
+    {{
+      "url": "https://...",
+      "reason": "为何具备下钻潜力（如：下一页按钮、高价值子集目录）"
+    }}
+  ]
+}}
+"""
+
+# ==========================================================
+# 4. 反思节点提示词（Reflect Node - DNA 蒸馏与死循环破局版）
 # ==========================================================
 SYSTEM_PROMPT_REFLECTION = """
-你是一个“挖掘流程优化 Agent”。
+你是一个“挖掘进化专家”与“死循环破局者”。你需要为当前页面的挖掘价值打分，决定下一步 DFS 动作，并蒸馏进化规则。
 
-你的任务：
-- 分析为什么本次 L3 挖掘效果不好
-- 给出可执行的改进建议
+### 👣 实时探索轨迹 (死循环检测器)：
+{recent_trajectory}
+🚨 终极指令：如果上述轨迹显示系统陷入了连续的无意义操作（例如连续出现多个 `DROP_IRRELEVANT`，或者在极度相似的 URL 中打转），你必须给出极低的分数，强制输出 `dfs_action`: "stop"，并在 `logic_correction` 中严厉警告前端节点更换提取策略！
 
-输入：
-- 当前门户：{url}
-- 任务：{task}
-- 线索数量：{clue_count}
-- 失败摘要：{error_summary}
+### 🚨 核心打分与动作原则：
+1. **高分保留 (0.7 - 1.0)**：成功提取到了 L3 在线库，或成功发现了 L4 实体馆藏/私有数据的获取途径。-> `dfs_action`: "explore" 或 "deepen"。
+2. **低分终止 (0.0 - 0.3)**：发现轨迹陷入死循环，或是纯商业营销、单篇论文、死链。-> `dfs_action`: "stop"。
 
-输出 JSON：
-{
-  "root_cause": "失败的根本原因",
-  "optimizations": [
-    {
-      "type": "keyword_adjust | depth_adjust | criteria_adjust",
-      "detail": "具体建议"
-    }
-  ],
-  "new_strategy_summary": "新的策略方向"
-}
+### 🧬 DNA 蒸馏禁令：
+⚠️ 严禁将 `about`, `contact`, `archive` 等可能附带 L4 业务属性的词加入 blacklist！这会彻底摧毁系统发现实体和特定 L3 库的能力。黑名单只能添加确定的纯技术噪音（如 login, cart）。
+
+输入上下文：
+- 当前页面 URL：{url} | 线索数量：{clue_count}
+- 提取结果摘要：{reflection_context}
+
+### 📤 输出格式 (必须是严格的 JSON)
+{{
+  "loop_detected": true/false,
+  "quality_score": 0.9,
+  "dfs_action": "explore | deepen | stop",
+  "root_cause": "为何给出此分数和动作的解释（若判定死循环，请说明依据）",
+  "distilled_dna": {{
+     "new_blacklist_keywords": ["仅限绝对的业务无关词"],
+     "new_high_value_patterns": ["发现的高价值 URL 正则，如 /holdings/"],
+     "logic_correction": "给 Structure 节点的纠偏指导或破局策略"
+  }}
+}}
 """
 
 # ==========================================================
-# 6. 分裂节点提示词（Split Node）
+# 5. 验证节点及其他小任务 Agent 节点 (保持原有高效设定)
 # ==========================================================
-SYSTEM_PROMPT_SPLIT = """
-你是一个线索生成 Agent。
+SYSTEM_PROMPT_VALIDATION = """
+你是一个严苛的“数据线索终审官”。
+候选列表：{candidates_json}
 
-输入：
-{validation_json}
-
-你的任务：
-- 将已验证的 L3 数据库转化为新的线索对象
-
-规则：
-1. 每个 L3 只生成一个线索
-2. 标题必须是数据库名称
-3. 不夸大、不拆分内部子表
+验证标准：该页面是否真的提供“数据检索”（L3）或明确记载了“实体资产/私有数据的获取门槛”（L4）？
 
 输出 JSON：
-{
-  "new_clues": [
-    {
+{{
+  "valid_subportals": [
+    {{
       "url": "https://...",
-      "title": "数据库名称",
-      "snippet": "一句话描述",
-      "likely_level": "L3",
-      "confidence": 0.0
-    }
+      "title": "官方正式名称",
+      "confidence": 0.0-1.0,
+      "functional_tags": ["Search", "Archive-Request", "Physical-Access", "API"],
+      "reason": "为何符合 L3/L4 标准的最终定论"
+    }}
   ],
-  "split_count": 0,
-  "reason_summary": "生成说明"
-}
+  "discarded": [{{ "url": "...", "reason": "丢弃的具体理由" }}],
+  "overall_confidence": 0.0,
+  "reason_summary": "评估总结"
+}}
 """
 
-# ==========================================================
-# 7. 提取规划提示词（Extract Plan）
-# ==========================================================
+SYSTEM_PROMPT_SPLIT = """
+你是一个线索转化 Agent。将已验证的 L3/L4 线索转化为标准格式。
+输出 JSON:
+{{
+  "new_clues": [
+    {{
+      "url": "https://...",
+      "title": "最简正式名称",
+      "snippet": "核心价值描述",
+      "likely_level": "L3 或者 L4",
+      "confidence": 0.9
+    }}
+  ]
+}}
+"""
+
 SYSTEM_PROMPT_EXTRACT_PLAN = """
-你是一个网页抽取规划 Agent。
-
-当前任务：{task}
-当前线索：{url} ({title})
-
-你需要告诉系统：
-- 本页是否值得继续抽取
-- 重点关注哪些类型链接
-
-输出 JSON：
-{
+你是一个网页抽取规划 Agent。判断本页是否为“黄金挖掘区”。
+输出 JSON:
+{{
+  "worth_extracting": true/false,
   "strategy_summary": "抽取策略",
-  "keywords": ["data", "database", "browse", "search"],
-  "negative_keywords": ["about", "contact", "news"],
-  "browse_instructions": "提取所有可能的数据库入口链接",
-  "expected_link_count": 10,
-  "max_depth": 2
-}
+  "keywords": ["data", "search", "archive", "collection"],
+  "negative_keywords": ["checkout", "cart"],
+  "expected_link_count": 10
+}}
 """
 
-# ==========================================================
-# 8. 智能导航决策提示词（Smart Navigation）
-# ==========================================================
 SYSTEM_PROMPT_NAVIGATION_DECISION = """
-你是一个模拟真实用户的导航决策 Agent。
-
-目标：
-- 从当前页面进入“数据列表页”或“搜索页”
-
-当前页面 URL：{current_url}
-页面主要链接：
-{links_json}
-
-返回 JSON：
-{
-  "target_href": "/path" 或 null,
-  "reason": "选择依据"
-}
-
-如果当前页面已经是数据入口，返回 null。
+你是一个智能导航决策 Agent。模仿人类专家点击最有希望的链接。
+### 🧬 进化记忆：{evolutionary_hint}
+### 👣 近期轨迹：{recent_trajectory}
+输出 JSON:
+{{
+  "target_href": "/path",
+  "reason": "为何点击此链接比点击其他链接更能导向在线数据或实体藏品记录（注意避开轨迹中已证明无效的路径）",
+  "action_type": "click | hover | scroll"
+}}
 """
 
-# ==========================================================
-# 9. L4 列表页识别提示词（List Recognition）
-# ==========================================================
 SYSTEM_PROMPT_L4_LIST_RECOGNITION = """
-你是一个网页结构分析 Agent。
-
-输入 HTML 片段：
-{html_snippet}
-
-你的任务：
-- 判断该页面是否为“数据记录列表页”
-
-判断依据：
-- 是否存在大量重复结构（表格行 / 列表项）
-- 每一项是否代表一条数据记录
-
-输出 JSON：
-{
-  "is_list_page": true,
-  "confidence": 0.0,
-  "container_tag": "tr | div | li",
-  "container_class": "class 名或 null",
-  "title_tag": "a | span | h3",
-  "reason": "判断理由"
-}
+你是一个网页结构分析 Agent。判断该页面是否为“L4 记录孵化器（如：实体藏品目录清单）”。
+输出 JSON:
+{{
+  "is_list_page": true/false,
+  "confidence": 0.0-1.0,
+  "container_selector": "用于定位记录行的 CSS/XPath",
+  "item_count": 0,
+  "reason": "识别依据"
+}}
 """
 
 # ==========================================================
-# 通用关键词（保留命名）
+# 通用配置
 # ==========================================================
 CORE_DATABASE_KEYWORDS = [
-    "data", "database", "dataset", "repository",
-    "archive", "catalog", "search", "browse",
-    "statistics", "registry"
-]
-
-DATABASE_URL_PATTERNS = [
-    r"/data/",
-    r"/database/",
-    r"/db/",
-    r"/datasets/",
-    r"/archive/",
-    r"/repository/",
-    r"/browse/",
-    r"/search/"
+    "data", "database", "dataset", "repository", "archive", "catalog", 
+    "search", "browse", "statistics", "registry", "inventory", "records",
+    "atlas", "kb", "knowledgebase", "collection", "portal", "platform",
+    "accession", "metadata", "download", "ftp", "api", 
+    "holdings", "request access", "curator"
 ]
 
 NEGATIVE_KEYWORDS = [
-    "about", "contact", "news", "blog",
-    "login", "register", "privacy",
-    "terms", "help", "faq"
+    "login", "register", "privacy", "terms", "press", "legal", 
+    "careers", "staff", "advertise", "cookies", "sitemap", "disclaimer", 
+    "checkout", "cart", "password" 
 ]

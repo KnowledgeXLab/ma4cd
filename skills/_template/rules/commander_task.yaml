@@ -1,0 +1,16 @@
+version: 1
+
+# Generic commander task template — replace placeholders when creating a skill instance.
+
+core_intent_template: "发现与任务相关的开放数据源容器、数据库入口与可获取数据集线索"
+
+task_profile:
+  goal: "识别权威数据库、数据门户、FTP/API 下载入口"
+  scope: global
+
+planning_guidance: |
+  1. 容器优先：database / repository / download / ftp / api
+  2. 评分驱动，避免硬编码绝对禁词
+  3. 覆盖 L1–L4 线索层级
+
+seed_query_examples: []
